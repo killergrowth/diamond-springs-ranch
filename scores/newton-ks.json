@@ -1,0 +1,181 @@
+{
+  "slug": "newton-ks",
+  "scoredAt": "2026-07-15T03:20:05.482Z",
+  "killerSEO": 73,
+  "killerGEO": 52,
+  "seoStatus": "CONDITIONAL",
+  "geoStatus": "GEO_REJECT",
+  "passes": false,
+  "seo": {
+    "total_score": 73,
+    "status": "CONDITIONAL",
+    "category_scores": {
+      "cat1_local_uniqueness": {
+        "score": 18,
+        "max": 30,
+        "breakdown": {
+          "local_intro": 7,
+          "market_specific_why": 6,
+          "hyperlocal_proof": 5,
+          "neighborhood_refs": 0
+        }
+      },
+      "cat2_content_depth": {
+        "score": 19,
+        "max": 25,
+        "breakdown": {
+          "word_count": 5,
+          "search_intent": 6,
+          "faq_quality": 6,
+          "original_insight": 2
+        }
+      },
+      "cat3_seo_structure": {
+        "score": 17,
+        "max": 20,
+        "breakdown": {
+          "h1": 4,
+          "h2s": 4,
+          "keyword_first_100": 3,
+          "title_tag": 3,
+          "meta_desc": 2,
+          "url": 1
+        }
+      },
+      "cat4_trust_eeat": {
+        "score": 11,
+        "max": 15,
+        "breakdown": {
+          "customer_review": 5,
+          "certifications": 4,
+          "real_photo": 0,
+          "nap": 2
+        }
+      },
+      "cat5_technical": {
+        "score": 8,
+        "max": 10,
+        "breakdown": {
+          "schema": 4,
+          "internal_links": 1,
+          "core_web_vitals": 3
+        }
+      }
+    },
+    "auto_fail_triggered": false,
+    "auto_fail_reason": null,
+    "cat1_passes_minimum": false,
+    "flags": [
+      "CRITICAL: Cat1 score 18/30 fails minimum threshold of 20 — page cannot publish",
+      "Zero neighborhood/subdivision references within Newton city limits in article body",
+      "No real geo-tagged photos — missing visual local proof",
+      "Meta description at 144 chars but lacks strong CTA",
+      "Internal links are placeholders — only 1 point awarded",
+      "Limited original insight — content feels template-driven despite local details",
+      "No specific Newton neighborhoods, streets, or subdivisions mentioned in body paragraphs"
+    ],
+    "strengths": [
+      "Strong local intro with specific distance (12 miles), route (US-81), and drive time (15 minutes)",
+      "Excellent market-specific 'why' — Chisholm Trail heritage connection is compelling and historically accurate",
+      "Hyperlocal proof includes specific address, Google rating with review count, years in operation",
+      "H1 and title tag properly optimized with primary keyword + city",
+      "Primary keyword appears in first 100 words",
+      "5+ relevant FAQs with local context (Newton church groups, Bethel College, Harvey County)",
+      "Valid LocalBusiness and FAQPage schema present",
+      "NAP visible and consistent",
+      "Certifications mentioned (equine handling, Kansas Dept of Agriculture, liability insurance)",
+      "Word count exceeds 800 (2740 words)"
+    ],
+    "recommended_fixes": [
+      "PRIORITY 1: Add 2+ specific Newton neighborhood/area references in body paragraphs (e.g., 'families from the Bethel College neighborhood along East 27th Street,' 'residents near Athletic Park on North Main,' 'the Broadway corridor,' 'Sand Creek area,' 'Military Ridge subdivision') to reach Cat1 minimum of 20",
+      "PRIORITY 2: Include at least one real, geo-tagged photo with descriptive alt text showing Newton visitors at the ranch or ranch signage with Newton reference",
+      "Add 2+ more functional internal links in article body (currently placeholder links) to reach 3+ for full points",
+      "Strengthen meta description CTA — current version is informational but could be more action-oriented",
+      "Inject one unique data point or customer story specific to Newton visitors to boost original insight score",
+      "Consider adding a brief mention of a Newton-specific event or seasonal pattern (e.g., 'Newton families often book after the Harvey County Fair' or 'Bethel College alumni reunions')"
+    ]
+  },
+  "geo": {
+    "geo_total_score": 52,
+    "geo_status": "GEO_REJECT",
+    "category_scores": {
+      "cat1_direct_answer": {
+        "score": 12,
+        "max": 25
+      },
+      "cat2_schema": {
+        "score": 13,
+        "max": 25
+      },
+      "cat3_entity_clarity": {
+        "score": 20,
+        "max": 20
+      },
+      "cat4_paa_coverage": {
+        "score": 2,
+        "max": 20
+      },
+      "cat5_citation_worthiness": {
+        "score": 5,
+        "max": 10
+      }
+    },
+    "auto_fail_triggered": true,
+    "auto_fail_reason": "FAQPage schema absent - only LocalBusiness schema present",
+    "cat1_passes_minimum": false,
+    "geo_flags": [
+      "CRITICAL: No FAQPage schema present despite FAQ-style headers",
+      "CRITICAL: Cat1 score (12) below minimum threshold of 15",
+      "Opening paragraph does not answer primary question in first 2 sentences",
+      "FAQ answers are not self-contained - most redirect to other pages or lack direct answers",
+      "No FAQ covers cost or timeline information",
+      "Headers are questions but answers are weak or missing"
+    ],
+    "geo_strengths": [
+      "All H2 headers written as questions (4/4 question format)",
+      "Business name used 10+ times naturally in body content",
+      "Strong entity clarity with 3+ sameAs links (Google, Facebook, Instagram)",
+      "Explicit credentials: 15 years in operation, owner name, certifications, insurance, KS Dept of Agriculture registration",
+      "Specific verifiable facts: 4.9-star rating, 281 reviews, 12 miles from Newton, 18,700 residents",
+      "Zero AI filler phrases detected",
+      "LocalBusiness schema complete with all required fields"
+    ],
+    "geo_recommended_fixes": [
+      "PRIORITY 1: Add FAQPage schema matching the 4 question headers on page",
+      "PRIORITY 2: Rewrite opening paragraph to directly answer 'What ranch experiences are available in Newton, KS?' in first 2 sentences",
+      "PRIORITY 3: Add standalone answers under each FAQ header - currently 'Why Do Newton Families Visit' and 'Which Services' lack direct answers",
+      "PRIORITY 4: Add at least one FAQ covering cost or timeline (e.g., 'How much do horseback rides cost?' or 'How far in advance should I book?')",
+      "PRIORITY 5: Ensure each FAQ answer is 40-60 words and citation-ready without requiring context from surrounding paragraphs"
+    ]
+  },
+  "seoFlags": [
+    "CRITICAL: Cat1 score 18/30 fails minimum threshold of 20 — page cannot publish",
+    "Zero neighborhood/subdivision references within Newton city limits in article body",
+    "No real geo-tagged photos — missing visual local proof",
+    "Meta description at 144 chars but lacks strong CTA",
+    "Internal links are placeholders — only 1 point awarded",
+    "Limited original insight — content feels template-driven despite local details",
+    "No specific Newton neighborhoods, streets, or subdivisions mentioned in body paragraphs"
+  ],
+  "geoFlags": [
+    "CRITICAL: No FAQPage schema present despite FAQ-style headers",
+    "CRITICAL: Cat1 score (12) below minimum threshold of 15",
+    "Opening paragraph does not answer primary question in first 2 sentences",
+    "FAQ answers are not self-contained - most redirect to other pages or lack direct answers",
+    "No FAQ covers cost or timeline information",
+    "Headers are questions but answers are weak or missing"
+  ],
+  "recommendedFixes": [
+    "PRIORITY 1: Add 2+ specific Newton neighborhood/area references in body paragraphs (e.g., 'families from the Bethel College neighborhood along East 27th Street,' 'residents near Athletic Park on North Main,' 'the Broadway corridor,' 'Sand Creek area,' 'Military Ridge subdivision') to reach Cat1 minimum of 20",
+    "PRIORITY 2: Include at least one real, geo-tagged photo with descriptive alt text showing Newton visitors at the ranch or ranch signage with Newton reference",
+    "Add 2+ more functional internal links in article body (currently placeholder links) to reach 3+ for full points",
+    "Strengthen meta description CTA — current version is informational but could be more action-oriented",
+    "Inject one unique data point or customer story specific to Newton visitors to boost original insight score",
+    "Consider adding a brief mention of a Newton-specific event or seasonal pattern (e.g., 'Newton families often book after the Harvey County Fair' or 'Bethel College alumni reunions')",
+    "PRIORITY 1: Add FAQPage schema matching the 4 question headers on page",
+    "PRIORITY 2: Rewrite opening paragraph to directly answer 'What ranch experiences are available in Newton, KS?' in first 2 sentences",
+    "PRIORITY 3: Add standalone answers under each FAQ header - currently 'Why Do Newton Families Visit' and 'Which Services' lack direct answers",
+    "PRIORITY 4: Add at least one FAQ covering cost or timeline (e.g., 'How much do horseback rides cost?' or 'How far in advance should I book?')",
+    "PRIORITY 5: Ensure each FAQ answer is 40-60 words and citation-ready without requiring context from surrounding paragraphs"
+  ]
+}

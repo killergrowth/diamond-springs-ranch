@@ -1,0 +1,59 @@
+<div class="kg-emergency-bar">{{CLIENT_EMERGENCY_BAR}}</div>
+<header class="kg-header" id="kg-header">
+  <div class="kg-header__inner">
+    <a href="/" class="kg-logo">
+      <!-- Black logo for light/transparent header; white logo shown via CSS when scrolled/dark -->
+      <img src="/images/logo-black.png" alt="{{CLIENT_NAME}}" class="kg-logo-dark" style="width:180px;height:auto;display:block;">
+      <img src="/images/logo-white.png" alt="{{CLIENT_NAME}}" class="kg-logo-light" style="width:180px;height:auto;display:none;">
+    </a>
+    <nav class="kg-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <div class="kg-nav-dropdown">
+        <a href="/services/">Experiences</a>
+        <div class="kg-dropdown-menu">
+          {{SERVICE_NAV_LINKS}}
+        </div>
+      </div>
+      <div class="kg-nav-dropdown">
+        <a href="/service-areas/">Nearby Cities</a>
+        <div class="kg-dropdown-menu">
+          {{CITY_NAV_LINKS}}
+          <a href="/service-areas/">View All &rarr;</a>
+        </div>
+      </div>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <div class="kg-header-cta">
+      <a href="tel:{{CLIENT_PHONE_RAW}}" class="kg-header-phone">&#9742; {{CLIENT_PHONE}}</a>
+      <a href="/contact/" class="btn btn-primary" style="padding:11px 22px;font-size:0.82rem;">Book a Visit &rarr;</a>
+    </div>
+    <button class="kg-hamburger" id="kg-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="kg-mobile-nav" id="kg-mobile-nav" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <button class="mobile-section-toggle" aria-expanded="false">Experiences <span class="mobile-toggle-icon">+</span></button>
+  <div class="mobile-group">
+    <a href="/services/">All Experiences</a>
+    {{SERVICE_MOBILE_LINKS}}
+  </div>
+  <button class="mobile-section-toggle" aria-expanded="false">Nearby Cities <span class="mobile-toggle-icon">+</span></button>
+  <div class="mobile-group">
+    <a href="/service-areas/">All Cities</a>
+    {{CITY_MOBILE_LINKS}}
+  </div>
+  <a href="/about/">About Us</a>
+  <a href="/contact/">Contact</a>
+  <a href="tel:{{CLIENT_PHONE_RAW}}" style="color:var(--kg-primary);font-size:1.1rem;font-weight:700;margin-top:12px;">{{CLIENT_PHONE}}</a>
+</nav>
+<style>
+  /* Logo swap: show white logo when header is scrolled/dark */
+  .kg-header.scrolled .kg-logo-dark  { display: none !important; }
+  .kg-header.scrolled .kg-logo-light { display: block !important; }
+  /* On hero pages where header overlays a dark image, always show white logo */
+  .kg-header--hero .kg-logo-dark  { display: none !important; }
+  .kg-header--hero .kg-logo-light { display: block !important; }
+</style>

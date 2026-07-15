@@ -1,0 +1,151 @@
+<footer class="kg-footer">
+  <div class="container">
+    <div class="kg-footer-grid">
+      <div class="kg-footer-about">
+        <img src="/images/logo-white.png" alt="{{CLIENT_NAME}}" style="width:200px;height:auto;display:block;margin-bottom:14px;">
+        <p>{{CLIENT_DESCRIPTION}}</p>
+        <div style="display:flex;gap:12px;margin-top:14px;">
+          {{CLIENT_SOCIAL_LINKS}}
+        </div>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <ul class="kg-footer-links">
+          {{SERVICE_FOOTER_LINKS}}
+        </ul>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <ul class="kg-footer-links">
+          {{CITY_FOOTER_LINKS}}
+          <li><a href="/service-areas/">All Service Areas &rarr;</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <ul class="kg-footer-contact">
+          <li>
+            <span>&#128205;</span>
+            <span>{{CLIENT_ADDRESS}}</span>
+          </li>
+          <li>
+            <span>&#128222;</span>
+            <a href="tel:{{CLIENT_PHONE_RAW}}">{{CLIENT_PHONE}}</a>
+          </li>
+          <li>
+            <span>&#9993;</span>
+            <a href="mailto:{{CLIENT_EMAIL}}">{{CLIENT_EMAIL}}</a>
+          </li>
+          <li>
+            <span>&#128336;</span>
+            <span>{{CLIENT_HOURS}}</span>
+          </li>
+        </ul>
+        <p style="font-size:0.78rem;margin-top:14px;color:rgba(255,255,255,0.4);">Licensed &amp; Insured &mdash; {{CLIENT_STATE}}<br>Serving {{CLIENT_CITY}} since {{CLIENT_YEAR_FOUNDED}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="kg-footer-bottom">
+    <div class="container">
+      <p>&copy; <span class="dynamic-year"></span> {{CLIENT_NAME}}. All Rights Reserved.</p>
+      <p>Website by <a href="https://killergrowth.com" target="_blank" rel="noopener noreferrer">KillerGrowth</a></p>
+    </div>
+  </div>
+</footer>
+<script>
+  document.querySelectorAll('.dynamic-year').forEach(el => el.textContent = new Date().getFullYear());
+  const hdr = document.getElementById('kg-header');
+  if (hdr) {
+    // If page has a hero section with dark overlay, start with white logo
+    if (document.querySelector('.kg-hero')) {
+      hdr.classList.add('kg-header--hero');
+    }
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY > 60;
+      hdr.classList.toggle('scrolled', scrolled);
+      // Once scrolled, remove hero class so dark-bg logo rules apply
+      if (scrolled) hdr.classList.remove('kg-header--hero');
+      else if (document.querySelector('.kg-hero')) hdr.classList.add('kg-header--hero');
+    }, { passive: true });
+  }
+  const ham = document.getElementById('kg-hamburger');
+  const mob = document.getElementById('kg-mobile-nav');
+  if (ham && mob) ham.addEventListener('click', () => {
+    const open = mob.classList.toggle('open');
+    ham.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('.mobile-section-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.nextElementSibling;
+      if (!group || !group.classList.contains('mobile-group')) return;
+      const isOpen = group.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  });
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.gsap-fade').forEach(el => {
+      gsap.to(el, { opacity:1, y:0, duration:0.7, ease:'power2.out', scrollTrigger:{ trigger:el, start:'top 88%', once:true } });
+    });
+    gsap.utils.toArray('.gsap-fade-left').forEach(el => {
+      gsap.to(el, { opacity:1, x:0, duration:0.7, ease:'power2.out', scrollTrigger:{ trigger:el, start:'top 88%', once:true } });
+    });
+    gsap.utils.toArray('.gsap-fade-right').forEach(el => {
+      gsap.to(el, { opacity:1, x:0, duration:0.7, ease:'power2.out', scrollTrigger:{ trigger:el, start:'top 88%', once:true } });
+    });
+    document.querySelectorAll('.kg-grid').forEach(grid => {
+      const cards = grid.querySelectorAll('.kg-card, .kg-review-card');
+      if (cards.length > 1) {
+        gsap.set(cards, { opacity:0, y:30 });
+        ScrollTrigger.create({ trigger:grid, start:'top 85%', once:true,
+          onEnter: () => gsap.to(cards, { opacity:1, y:0, stagger:0.1, duration:0.6, ease:'power2.out' })
+        });
+      }
+    });
+  }
+  if (typeof Swiper !== 'undefined' && document.querySelector('.kg-swiper')) {
+    new Swiper('.kg-swiper', {
+      slidesPerView:1, spaceBetween:24, loop:true,
+      autoplay:{ delay:5000, disableOnInteraction:false },
+      pagination:{ el:'.swiper-pagination', clickable:true },
+      breakpoints:{ 640:{ slidesPerView:2 }, 1024:{ slidesPerView:3 } }
+    });
+  }
+  if (typeof CountUp !== 'undefined') {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          const target = parseInt(el.dataset.count, 10);
+          const cu = new CountUp.CountUp(el, target, { duration:2.5, separator:',' });
+          if (!cu.error) cu.start();
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold:0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => obs.observe(el));
+  }
+  gsap.set('.kg-hero-badge, .kg-hero-content h1, .kg-hero-content p, .kg-hero-btns, .kg-hero-form', { opacity:0, y:30 });
+  gsap.to('.kg-hero-badge',       { opacity:1, y:0, duration:0.5, ease:'power2.out', delay:0.1 });
+  gsap.to('.kg-hero-content h1',  { opacity:1, y:0, duration:0.6, ease:'power2.out', delay:0.25 });
+  gsap.to('.kg-hero-content p',   { opacity:1, y:0, duration:0.6, ease:'power2.out', delay:0.4 });
+  gsap.to('.kg-hero-btns',        { opacity:1, y:0, duration:0.5, ease:'power2.out', delay:0.55 });
+  gsap.to('.kg-hero-form',        { opacity:1, y:0, duration:0.6, ease:'power2.out', delay:0.35 });
+});
+</script>

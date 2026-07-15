@@ -1,0 +1,178 @@
+{
+  "slug": "highland-cattle-experience",
+  "scoredAt": "2026-07-15T03:17:36.870Z",
+  "killerSEO": 81,
+  "killerGEO": 82,
+  "seoStatus": "CONDITIONAL",
+  "geoStatus": "GEO_READY",
+  "passes": false,
+  "seo": {
+    "total_score": 81,
+    "status": "CONDITIONAL",
+    "category_scores": {
+      "cat1_local_uniqueness": {
+        "score": 20,
+        "max": 30,
+        "breakdown": {
+          "local_intro": 7,
+          "market_specific_why": 4,
+          "hyperlocal_proof": 7,
+          "neighborhood_refs": 2
+        }
+      },
+      "cat2_content_depth": {
+        "score": 22,
+        "max": 25,
+        "breakdown": {
+          "word_count": 5,
+          "search_intent": 8,
+          "faq_quality": 6,
+          "original_insight": 3
+        }
+      },
+      "cat3_seo_structure": {
+        "score": 17,
+        "max": 20,
+        "breakdown": {
+          "h1": 4,
+          "h2s": 4,
+          "keyword_first_100": 3,
+          "title_tag": 3,
+          "meta_desc": 3,
+          "url": 0
+        }
+      },
+      "cat4_trust_eeat": {
+        "score": 15,
+        "max": 15,
+        "breakdown": {
+          "customer_review": 5,
+          "certifications": 4,
+          "real_photo": 4,
+          "nap": 2
+        }
+      },
+      "cat5_technical": {
+        "score": 7,
+        "max": 10,
+        "breakdown": {
+          "schema": 4,
+          "internal_links": 0,
+          "core_web_vitals": 3
+        }
+      }
+    },
+    "auto_fail_triggered": true,
+    "auto_fail_reason": "URL structure incorrect - canonical points to /highland-cattle-experience/ but this is not a city-specific location page. Page targets Sedgwick, KS but URL does not include city name, making it a service page rather than a proper local landing page.",
+    "cat1_passes_minimum": true,
+    "flags": [
+      "URL does not follow city-specific structure (should be /sedgwick-ks/ or /highland-cattle-experience-sedgwick-ks/)",
+      "Neighborhood references weak - only mentions adjacent cities (Derby, Haysville, Andover, Newton) with minimal in-city Sedgwick detail",
+      "Market-specific 'why' is weak - doesn't explain why Highland cattle are rare/unique specifically in Sedgwick or Kansas context",
+      "No internal links present in article body (placeholders only)",
+      "Original insight limited - mostly describes the experience without unique data or angles",
+      "Page appears to be a service page masquerading as a location page"
+    ],
+    "strengths": [
+      "Strong hyperlocal proof with specific address (1734 SE 96th St), verifiable business details, and 281 Google reviews",
+      "Excellent E-E-A-T signals with certifications, insurance, 15 years operation, owner credentials",
+      "Complete FAQ schema with 5 relevant questions",
+      "H1 and title tag properly optimized with keyword + city",
+      "Keyword appears in first 100 words",
+      "Strong word count at 2362 words",
+      "Valid schema markup present (LocalBusiness, FAQPage, HowTo, BreadcrumbList)",
+      "NAP clearly visible and consistent"
+    ],
+    "recommended_fixes": [
+      "CRITICAL: Fix URL structure to include city name (e.g., /highland-cattle-experience-sedgwick-ks/ or create proper /sedgwick-ks/ location page)",
+      "Add 3+ working internal links in article body to other ranch services and area pages",
+      "Strengthen neighborhood references - add 3-5 specific Sedgwick neighborhoods, streets, or landmarks within article paragraphs (not just adjacent cities)",
+      "Add market-specific 'why' section explaining why Highland cattle are rare in Kansas/Sedgwick specifically (climate, agricultural context, etc.)",
+      "Include original insight - visitor data, seasonal patterns, unique angles not found on competitor ranch pages",
+      "Consider whether this should be a service page OR a location page - current hybrid approach creates SEO confusion"
+    ]
+  },
+  "geo": {
+    "geo_total_score": 82,
+    "geo_status": "GEO_READY",
+    "category_scores": {
+      "cat1_direct_answer": {
+        "score": 22,
+        "max": 25
+      },
+      "cat2_schema": {
+        "score": 23,
+        "max": 25
+      },
+      "cat3_entity_clarity": {
+        "score": 20,
+        "max": 20
+      },
+      "cat4_paa_coverage": {
+        "score": 15,
+        "max": 20
+      },
+      "cat5_citation_worthiness": {
+        "score": 2,
+        "max": 10
+      }
+    },
+    "auto_fail_triggered": false,
+    "auto_fail_reason": null,
+    "cat1_passes_minimum": true,
+    "geo_flags": [
+      "Opening paragraph is 3 sentences (exceeds 2-sentence limit for full points)",
+      "Only 1 H2 header is question format out of 5 total (60% are statements)",
+      "Multiple AI filler phrases detected: 'when it comes to' pattern not found but generic phrasing present",
+      "No specific statistics or data points beyond review count",
+      "Cost/timeline FAQ present but vague (directs to call)"
+    ],
+    "geo_strengths": [
+      "Direct answer in opening paragraph clearly defines the experience",
+      "FAQPage schema present and matches 5 on-page FAQ questions",
+      "Complete LocalBusiness schema with all required fields (name, description, areaServed, provider, telephone)",
+      "Business name 'Diamond Springs Ranch' used 10+ times naturally in body",
+      "3 sameAs links present (Google Maps, Facebook, Instagram)",
+      "Strong entity clarity: 15+ years in business, owner name, certifications, insurance status, KS Dept of Agriculture registration",
+      "5 FAQ questions covering safety, kids, availability, photography, duration",
+      "All FAQ answers are standalone and direct",
+      "Cost/timeline FAQ present (calls for pricing)",
+      "281 Google reviews mentioned (verifiable stat)"
+    ],
+    "geo_recommended_fixes": [
+      "Rewrite 3-4 statement H2 headers as questions (e.g., 'Finding Diamond Springs Ranch' → 'Where is Diamond Springs Ranch Located in Sedgwick?')",
+      "Tighten opening paragraph to 2 sentences maximum for full Cat1 points",
+      "Add 1-2 specific data points: acreage, herd size, average visit duration in minutes, or percentage of repeat visitors",
+      "Add specific pricing range or starting price in FAQ answer instead of 'call for pricing' to improve citation-worthiness",
+      "Remove any remaining generic phrases and replace with concrete details"
+    ]
+  },
+  "seoFlags": [
+    "URL does not follow city-specific structure (should be /sedgwick-ks/ or /highland-cattle-experience-sedgwick-ks/)",
+    "Neighborhood references weak - only mentions adjacent cities (Derby, Haysville, Andover, Newton) with minimal in-city Sedgwick detail",
+    "Market-specific 'why' is weak - doesn't explain why Highland cattle are rare/unique specifically in Sedgwick or Kansas context",
+    "No internal links present in article body (placeholders only)",
+    "Original insight limited - mostly describes the experience without unique data or angles",
+    "Page appears to be a service page masquerading as a location page"
+  ],
+  "geoFlags": [
+    "Opening paragraph is 3 sentences (exceeds 2-sentence limit for full points)",
+    "Only 1 H2 header is question format out of 5 total (60% are statements)",
+    "Multiple AI filler phrases detected: 'when it comes to' pattern not found but generic phrasing present",
+    "No specific statistics or data points beyond review count",
+    "Cost/timeline FAQ present but vague (directs to call)"
+  ],
+  "recommendedFixes": [
+    "CRITICAL: Fix URL structure to include city name (e.g., /highland-cattle-experience-sedgwick-ks/ or create proper /sedgwick-ks/ location page)",
+    "Add 3+ working internal links in article body to other ranch services and area pages",
+    "Strengthen neighborhood references - add 3-5 specific Sedgwick neighborhoods, streets, or landmarks within article paragraphs (not just adjacent cities)",
+    "Add market-specific 'why' section explaining why Highland cattle are rare in Kansas/Sedgwick specifically (climate, agricultural context, etc.)",
+    "Include original insight - visitor data, seasonal patterns, unique angles not found on competitor ranch pages",
+    "Consider whether this should be a service page OR a location page - current hybrid approach creates SEO confusion",
+    "Rewrite 3-4 statement H2 headers as questions (e.g., 'Finding Diamond Springs Ranch' → 'Where is Diamond Springs Ranch Located in Sedgwick?')",
+    "Tighten opening paragraph to 2 sentences maximum for full Cat1 points",
+    "Add 1-2 specific data points: acreage, herd size, average visit duration in minutes, or percentage of repeat visitors",
+    "Add specific pricing range or starting price in FAQ answer instead of 'call for pricing' to improve citation-worthiness",
+    "Remove any remaining generic phrases and replace with concrete details"
+  ]
+}

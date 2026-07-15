@@ -1,0 +1,21 @@
+{
+  "city": "Serving guests from across Kansas",
+  "state": "Kansas",
+  "slug": "serving-guests-from-across-kansas-kansas",
+  "fetchedAt": "2026-07-15T01:32:43.044Z",
+  "census": {
+    "population": 3428,
+    "total_housing_units": 1148,
+    "median_household_income": 82037,
+    "median_year_built": 219,
+    "median_home_age": 1807
+  },
+  "airnow": {
+    "aqi_category": "Good",
+    "note": "No forecast data available — defaulting to Good"
+  },
+  "places": {
+    "nearby_neighborhoods": [],
+    "notable_landmarks": []
+  }
+}

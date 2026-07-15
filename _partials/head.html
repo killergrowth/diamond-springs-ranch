@@ -1,0 +1,162 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/images/logo-black.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Roboto Condensed (body/subheadings) + Playfair Display fallback -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+<!-- Norwester via CDN (display/headline) -->
+<link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/kg-base.css?v={{BUILD_VERSION}}">
+<link rel="stylesheet" href="/assets/css/kg-forms.css?v={{BUILD_VERSION}}">
+<style>
+  /* === Diamond Springs Ranch Brand Variables === */
+  :root {
+    /* Brand palette */
+    --kg-primary:        #F7A843;   /* Sunset Gold */
+    --kg-primary-dark:   #c47d1a;   /* Sunset Gold dark */
+    --kg-secondary:      #2F2A26;   /* Horsehide Black */
+    --kg-accent:         #7C4B2A;   /* Barnwood Brown */
+    --kg-cream:          #F1E7D1;   /* Prairie Cream */
+    --kg-tan:            #B17C4B;   /* Saddle Tan */
+
+    /* Typography */
+    --kg-font-family:        'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
+    --kg-font-display:       'Norwester', 'Roboto Condensed', Arial, sans-serif;
+    --kg-font-body:          'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  /* Apply display font to headings */
+  h1, h2, h3 {
+    font-family: var(--kg-font-display);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Section labels use Saddle Tan instead of default primary */
+  .section-label {
+    color: var(--kg-accent);
+    font-family: var(--kg-font-body);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+  }
+
+  /* Hero badge — warm cream on dark */
+  .kg-hero-badge {
+    background: rgba(247,168,67,0.18);
+    border: 1px solid rgba(247,168,67,0.45);
+    color: #F7A843;
+    font-family: var(--kg-font-body);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+
+  /* Button overrides */
+  .btn-primary {
+    background: var(--kg-primary);
+    color: var(--kg-secondary);
+    font-family: var(--kg-font-display);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+  }
+  .btn-primary:hover {
+    background: var(--kg-primary-dark);
+    color: #fff;
+  }
+  .btn-outline-white {
+    border-color: rgba(255,255,255,0.6);
+    color: #fff;
+    font-family: var(--kg-font-display);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* Card accent line uses Barnwood Brown */
+  .kg-card::before {
+    background: var(--kg-accent);
+  }
+
+  /* Process numbers — Sunset Gold */
+  .kg-process-num {
+    background: var(--kg-primary);
+    color: var(--kg-secondary);
+  }
+
+  /* Header on scroll — dark barnwood background */
+  .kg-header.scrolled {
+    background: var(--kg-secondary);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+  }
+
+  /* Section dark bg: Horsehide Black */
+  .section-dark {
+    background: var(--kg-secondary);
+  }
+
+  /* CTA section: Barnwood Brown warmth */
+  .kg-cta {
+    background: linear-gradient(135deg, var(--kg-accent) 0%, var(--kg-secondary) 100%);
+  }
+
+  /* Trust bar: Prairie Cream */
+  .kg-trust-bar {
+    background: var(--kg-cream);
+    color: var(--kg-secondary);
+    border-top: 2px solid var(--kg-primary);
+    border-bottom: 2px solid var(--kg-primary);
+  }
+  .kg-trust-bar .kg-trust-item span:first-child {
+    color: var(--kg-primary);
+  }
+  .kg-trust-bar .kg-trust-item span:last-child {
+    color: var(--kg-secondary);
+    font-weight: 600;
+  }
+
+  /* Footer: Horsehide Black */
+  .kg-footer {
+    background: var(--kg-secondary);
+  }
+  .kg-footer-bottom {
+    background: #1a1511;
+  }
+
+  /* Nav links */
+  .kg-nav a {
+    font-family: var(--kg-font-body);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+  }
+
+  /* Section alt: warm cream background */
+  .section-alt {
+    background: var(--kg-cream);
+  }
+  .section-alt h2, .section-alt h3 {
+    color: var(--kg-secondary);
+  }
+
+  /* Stats: Sunset Gold values */
+  .kg-stat-value {
+    color: var(--kg-primary);
+    font-family: var(--kg-font-display);
+  }
+
+  /* Hover tint */
+  .link-btn:hover { background: color-mix(in srgb, var(--kg-primary) 10%, transparent); }
+  .link-btn {
+    border-color: var(--kg-accent);
+    color: var(--kg-secondary);
+    font-family: var(--kg-font-body);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+</style>

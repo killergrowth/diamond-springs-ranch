@@ -1,0 +1,174 @@
+{
+  "slug": "guided-horseback-rides",
+  "scoredAt": "2026-07-15T03:16:15.873Z",
+  "killerSEO": 81,
+  "killerGEO": 68,
+  "seoStatus": "CONDITIONAL",
+  "geoStatus": "GEO_CONDITIONAL",
+  "passes": false,
+  "seo": {
+    "total_score": 81,
+    "status": "CONDITIONAL",
+    "category_scores": {
+      "cat1_local_uniqueness": {
+        "score": 25,
+        "max": 30,
+        "breakdown": {
+          "local_intro": 8,
+          "market_specific_why": 6,
+          "hyperlocal_proof": 6,
+          "neighborhood_refs": 5
+        }
+      },
+      "cat2_content_depth": {
+        "score": 19,
+        "max": 25,
+        "breakdown": {
+          "word_count": 5,
+          "search_intent": 8,
+          "faq_quality": 6,
+          "original_insight": 0
+        }
+      },
+      "cat3_seo_structure": {
+        "score": 17,
+        "max": 20,
+        "breakdown": {
+          "h1": 4,
+          "h2s": 4,
+          "keyword_first_100": 3,
+          "title_tag": 3,
+          "meta_desc": 2,
+          "url": 1
+        }
+      },
+      "cat4_trust_eeat": {
+        "score": 13,
+        "max": 15,
+        "breakdown": {
+          "customer_review": 5,
+          "certifications": 4,
+          "real_photo": 2,
+          "nap": 2
+        }
+      },
+      "cat5_technical": {
+        "score": 7,
+        "max": 10,
+        "breakdown": {
+          "schema": 4,
+          "internal_links": 0,
+          "core_web_vitals": 3
+        }
+      }
+    },
+    "auto_fail_triggered": false,
+    "auto_fail_reason": null,
+    "cat1_passes_minimum": true,
+    "flags": [
+      "Meta description exceeds 155 characters (currently 137 chars but close to limit)",
+      "No original insight or unique data - relies on generic ranch experience descriptions",
+      "No visible internal links in article body - only placeholder links at end",
+      "Real photo status unclear - may be stock image",
+      "URL structure unknown - scored conservatively"
+    ],
+    "strengths": [
+      "Strong local neighborhood references: College Hill, Riverside, Delano, Crown Heights, Eastborough, Main Street district, Hillside Drive, SE Prairie View, Oak Ridge subdivision",
+      "Excellent hyperlocal proof: specific address (1734 SE 96th St), 4.9-star Google rating with 281+ reviews, 15 years operation since 2010",
+      "Comprehensive FAQ schema with 5 relevant questions",
+      "Strong credentials: Kansas Department of Agriculture registration, equine handling certifications, liability insurance, KS Dept of Wildlife compliance",
+      "Primary keyword in first 100 words and H1",
+      "Valid LocalBusiness, FAQPage, and HowTo schema markup",
+      "NAP clearly visible and consistent",
+      "Word count exceeds 800 (2629 words)",
+      "Market-specific explanation of why Wichita residents seek this experience"
+    ],
+    "recommended_fixes": [
+      "Add original insight: include specific data like 'average ride duration', 'number of horses in rotation', 'most popular trail route name', or unique seasonal observations not found on competitor pages",
+      "Add 3+ functional internal links within article body paragraphs (not just at end) - link to related services, about page, or location pages naturally within content flow",
+      "Confirm and add real geo-tagged photo with descriptive alt text showing actual ranch horses/trails",
+      "Verify URL structure follows best practices (should be /guided-horseback-rides-sedgwick-ks/ or similar)",
+      "Add one unique angle: interview quote from owner Susan Schrag, specific horse names/personalities, or data on trail difficulty levels",
+      "Consider adding embedded Google Reviews widget in review section for additional social proof visibility"
+    ]
+  },
+  "geo": {
+    "geo_total_score": 68,
+    "geo_status": "GEO_CONDITIONAL",
+    "category_scores": {
+      "cat1_direct_answer": {
+        "score": 18,
+        "max": 25
+      },
+      "cat2_schema": {
+        "score": 18,
+        "max": 25
+      },
+      "cat3_entity_clarity": {
+        "score": 20,
+        "max": 20
+      },
+      "cat4_paa_coverage": {
+        "score": 7,
+        "max": 20
+      },
+      "cat5_citation_worthiness": {
+        "score": 5,
+        "max": 10
+      }
+    },
+    "auto_fail_triggered": false,
+    "auto_fail_reason": null,
+    "cat1_passes_minimum": true,
+    "geo_flags": [
+      "FAQPage schema contains only 3 questions in 'What Are Common Questions' section, not matching the 7 H2 question headers",
+      "Opening paragraph is 3 sentences, not ≤2 sentences for direct answer",
+      "No cost/timeline FAQ answer is truly standalone - pricing FAQ defers to phone call",
+      "H2 headers are questions but corresponding answers in body are not always 40-60 word standalone blocks"
+    ],
+    "geo_strengths": [
+      "All 7 H2 headers are written as questions",
+      "Business name 'Diamond Springs Ranch' used 15+ times throughout body content",
+      "LocalBusiness schema complete with name, description, areaServed, provider, telephone, email, address",
+      "sameAs links present: Google Maps, Facebook, Instagram (3 total)",
+      "Specific credentials stated: 15 years operation since 2010, 4.9-star rating across 281+ reviews, Kansas Department of Agriculture registration, liability insurance",
+      "Multiple specific data points: 4.9 stars, 281 reviews, 17 miles from Wichita, 15 years in business, address",
+      "Zero AI filler phrases detected",
+      "FAQ section present with practical questions",
+      "Entity clarity is excellent with owner name, certifications, and verifiable facts"
+    ],
+    "geo_recommended_fixes": [
+      "Add 2-3 more FAQ questions to FAQPage schema to reach 5-6 total and match the on-page H2 question coverage (add 'What Makes Different' and 'What Do Guests Say' as FAQ schema entries)",
+      "Condense opening paragraph to 2 sentences maximum with direct answer to 'What are guided horseback rides at Diamond Springs Ranch'",
+      "Create 40-60 word standalone answer blocks immediately after each H2 question header before expanding with details",
+      "Add one FAQ with specific cost range or typical timeline (e.g., '1-2 hour rides, $X-$Y range' instead of 'call for pricing')",
+      "Consider adding HowTo schema for 'What to expect on your first trail ride' process to capture additional 7 points in Cat2"
+    ]
+  },
+  "seoFlags": [
+    "Meta description exceeds 155 characters (currently 137 chars but close to limit)",
+    "No original insight or unique data - relies on generic ranch experience descriptions",
+    "No visible internal links in article body - only placeholder links at end",
+    "Real photo status unclear - may be stock image",
+    "URL structure unknown - scored conservatively"
+  ],
+  "geoFlags": [
+    "FAQPage schema contains only 3 questions in 'What Are Common Questions' section, not matching the 7 H2 question headers",
+    "Opening paragraph is 3 sentences, not ≤2 sentences for direct answer",
+    "No cost/timeline FAQ answer is truly standalone - pricing FAQ defers to phone call",
+    "H2 headers are questions but corresponding answers in body are not always 40-60 word standalone blocks"
+  ],
+  "recommendedFixes": [
+    "Add original insight: include specific data like 'average ride duration', 'number of horses in rotation', 'most popular trail route name', or unique seasonal observations not found on competitor pages",
+    "Add 3+ functional internal links within article body paragraphs (not just at end) - link to related services, about page, or location pages naturally within content flow",
+    "Confirm and add real geo-tagged photo with descriptive alt text showing actual ranch horses/trails",
+    "Verify URL structure follows best practices (should be /guided-horseback-rides-sedgwick-ks/ or similar)",
+    "Add one unique angle: interview quote from owner Susan Schrag, specific horse names/personalities, or data on trail difficulty levels",
+    "Consider adding embedded Google Reviews widget in review section for additional social proof visibility",
+    "Add 2-3 more FAQ questions to FAQPage schema to reach 5-6 total and match the on-page H2 question coverage (add 'What Makes Different' and 'What Do Guests Say' as FAQ schema entries)",
+    "Condense opening paragraph to 2 sentences maximum with direct answer to 'What are guided horseback rides at Diamond Springs Ranch'",
+    "Create 40-60 word standalone answer blocks immediately after each H2 question header before expanding with details",
+    "Add one FAQ with specific cost range or typical timeline (e.g., '1-2 hour rides, $X-$Y range' instead of 'call for pricing')",
+    "Consider adding HowTo schema for 'What to expect on your first trail ride' process to capture additional 7 points in Cat2"
+  ]
+}

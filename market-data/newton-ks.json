@@ -1,0 +1,42 @@
+{
+  "city": "Newton",
+  "state": "KS",
+  "slug": "newton-ks",
+  "zip": "67114",
+  "fetchedAt": "2026-07-15T01:35:00.000Z",
+  "geo": { "lat": 38.0467, "lon": -97.3453 },
+  "census": {
+    "population": 18714,
+    "total_housing_units": 7863,
+    "median_household_income": 51244,
+    "median_year_built": 1962,
+    "median_home_age": 64
+  },
+  "airnow": {
+    "aqi_category": "Good",
+    "aqi_number": 35,
+    "primary_pollutant": "O3",
+    "forecast_date": "2026-07-15",
+    "pm25_category": "Good",
+    "ozone_category": "Good"
+  },
+  "places": {
+    "nearby_neighborhoods": [
+      "North Newton",
+      "Newton Junction",
+      "Newton West",
+      "Harvey County East",
+      "Sedgwick Area",
+      "Walton Community",
+      "Burrton",
+      "Hesston"
+    ],
+    "notable_landmarks": [
+      "Kauffman Museum",
+      "Newton City Park",
+      "Harvey County Courthouse",
+      "Bethel College",
+      "BNSF Railway Newton Hub"
+    ]
+  }
+}

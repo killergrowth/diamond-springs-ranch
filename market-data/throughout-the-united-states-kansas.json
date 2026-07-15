@@ -1,0 +1,17 @@
+{
+  "city": "throughout the United States",
+  "state": "Kansas",
+  "slug": "throughout-the-united-states-kansas",
+  "fetchedAt": "2026-07-15T01:32:45.182Z",
+  "census": {
+    "error": "timeout of 8000ms exceeded"
+  },
+  "airnow": {
+    "aqi_category": "Good",
+    "note": "No forecast data available — defaulting to Good"
+  },
+  "places": {
+    "nearby_neighborhoods": [],
+    "notable_landmarks": []
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "slug": "luxury-treehouse-stay",
+  "scoredAt": "2026-07-15T03:19:22.196Z",
+  "killerSEO": 87,
+  "killerGEO": 62,
+  "seoStatus": "CONDITIONAL",
+  "geoStatus": "GEO_CONDITIONAL",
+  "passes": false,
+  "seo": {
+    "total_score": 87,
+    "status": "CONDITIONAL",
+    "category_scores": {
+      "cat1_local_uniqueness": {
+        "score": 25,
+        "max": 30,
+        "breakdown": {
+          "local_intro": 8,
+          "market_specific_why": 7,
+          "hyperlocal_proof": 5,
+          "neighborhood_refs": 5
+        }
+      },
+      "cat2_content_depth": {
+        "score": 22,
+        "max": 25,
+        "breakdown": {
+          "word_count": 5,
+          "search_intent": 8,
+          "faq_quality": 6,
+          "original_insight": 3
+        }
+      },
+      "cat3_seo_structure": {
+        "score": 17,
+        "max": 20,
+        "breakdown": {
+          "h1": 4,
+          "h2s": 4,
+          "keyword_first_100": 3,
+          "title_tag": 3,
+          "meta_desc": 2,
+          "url": 1
+        }
+      },
+      "cat4_trust_eeat": {
+        "score": 15,
+        "max": 15,
+        "breakdown": {
+          "customer_review": 5,
+          "certifications": 4,
+          "real_photo": 4,
+          "nap": 2
+        }
+      },
+      "cat5_technical": {
+        "score": 8,
+        "max": 10,
+        "breakdown": {
+          "schema": 4,
+          "internal_links": 1,
+          "core_web_vitals": 3
+        }
+      }
+    },
+    "auto_fail_triggered": false,
+    "auto_fail_reason": null,
+    "cat1_passes_minimum": true,
+    "flags": [
+      "Meta description is 156 characters (1 character over 155 limit)",
+      "Internal links are placeholder format - need real implementation",
+      "URL structure unknown - verify clean structure on live site",
+      "Original insight score moderate - content is well-written but lacks unique data points not found elsewhere"
+    ],
+    "strengths": [
+      "Excellent local neighborhood references: Main Street district, Sedgwick Elementary School, Sedgwick Community Center, Chisholm Drive corridor, Hillside Drive neighborhood, SE Prairie View area, Oak Ridge subdivision",
+      "Strong hyperlocal proof: specific address (1734 SE 96th St), 4.9-star Google rating with 281+ reviews, 15 years operation since 2010, owner name (Susan Schrag), specific certifications mentioned",
+      "Compelling market-specific 'why here' explanation: one of fewer than five overnight treehouse experiences in Kansas, only one on working cattle ranch within Wichita metro",
+      "Excellent E-E-A-T signals: Kansas Department of Agriculture registration, equine handling certifications, Kansas Department of Wildlife and Parks compliance, general liability insurance",
+      "Strong word count at 2,570 words",
+      "Complete FAQ schema with 5+ relevant questions",
+      "H1 contains primary keyword + city perfectly",
+      "Primary keyword appears in first 100 words",
+      "NAP clearly visible and consistent",
+      "Valid comprehensive schema markup (LocalBusiness, FAQPage, HowTo, BreadcrumbList)"
+    ],
+    "recommended_fixes": [
+      "Trim meta description by 1 character to meet 155-character limit (currently 156)",
+      "Implement real internal links - replace placeholder links with actual site URLs",
+      "Add 1-2 unique data points: exact treehouse height/dimensions, specific amenity details, booking lead time statistics, or guest demographic data",
+      "Verify URL structure follows /luxury-treehouse-stay-sedgwick-ks/ or similar keyword-rich format",
+      "Add 2+ more internal links to reach the 3+ threshold for full points",
+      "Consider adding geo-tagged photo metadata if not already present to maximize real_photo score"
+    ]
+  },
+  "geo": {
+    "geo_total_score": 62,
+    "geo_status": "GEO_CONDITIONAL",
+    "category_scores": {
+      "cat1_direct_answer": {
+        "score": 18,
+        "max": 25
+      },
+      "cat2_schema": {
+        "score": 18,
+        "max": 25
+      },
+      "cat3_entity_clarity": {
+        "score": 20,
+        "max": 20
+      },
+      "cat4_paa_coverage": {
+        "score": 6,
+        "max": 20
+      },
+      "cat5_citation_worthiness": {
+        "score": 0,
+        "max": 10
+      }
+    },
+    "auto_fail_triggered": false,
+    "auto_fail_reason": null,
+    "cat1_passes_minimum": true,
+    "geo_flags": [
+      "Opening paragraph does not answer primary question in first 2 sentences - describes location before defining what the service is",
+      "Only 2 of 6 H2 headers are questions (33% vs ideal 60%+)",
+      "FAQPage schema present but only 4 actual FAQ questions extracted from body - borderline minimum",
+      "FAQ answers are not fully standalone - multiple answers say 'Call for details' instead of providing direct information",
+      "No cost/pricing information provided in FAQ or body - only 'Call for current nightly rates'",
+      "Zero specific stats or data points - no verifiable facts beyond address",
+      "Multiple AI filler phrases detected: 'when it comes to' equivalents, 'nothing quite like', 'kind of option'",
+      "No HowTo schema on a service page that describes a bookable process"
+    ],
+    "geo_strengths": [
+      "Business name 'Diamond Springs Ranch' used 10+ times naturally in body content",
+      "LocalBusiness schema complete with name, description, areaServed, provider, telephone, email, address",
+      "sameAs links present: Google Maps, Facebook, Instagram (3 total)",
+      "Credentials explicitly stated: 15 years in business since 2010, owner Susan Schrag named, equine certifications, KS Dept of Agriculture registration, liability insurance, 4.9-star Google rating with 281+ reviews",
+      "FAQ section present with 4 questions matching PAA patterns",
+      "FAQPage schema matches on-page FAQ content accurately",
+      "Entity clarity is excellent - business name, owner, location, and credentials woven throughout"
+    ],
+    "geo_recommended_fixes": [
+      "CRITICAL: Rewrite opening paragraph to answer 'What is a luxury treehouse stay at Diamond Springs Ranch?' in first 2 sentences before describing location - move direct answer higher",
+      "CRITICAL: Eliminate AI filler phrases - remove 'nothing quite like', 'kind of option people remember', 'genuinely different kind of' - cost you 5 points in Cat5",
+      "HIGH: Add 2-3 more FAQ questions to reach 6-7 total and improve PAA coverage - current 4 is minimum threshold",
+      "HIGH: Make FAQ answers fully standalone - replace 'Call for details' with actual amenity list (bed type, bathroom, kitchen, heating/cooling, etc.)",
+      "HIGH: Add specific cost range to FAQ answer about pricing - even a range like '$200-$350/night' beats 'call for rates' for AI citation",
+      "MEDIUM: Convert 2-3 statement H2s to questions: 'How Do I Book?' instead of 'Booking the...', 'How Do I Find?' instead of 'Finding...'",
+      "MEDIUM: Add at least one verifiable stat: exact treehouse height, square footage, max occupancy number, or booking lead time in days",
+      "MEDIUM: Add HowTo schema for 'How to Book the Treehouse' with step-by-step process",
+      "LOW: Add one FAQ covering timeline/process: 'How far in advance should I book?' with specific answer like '3-4 weeks for weekends, 1-2 weeks for weekdays'"
+    ]
+  },
+  "seoFlags": [
+    "Meta description is 156 characters (1 character over 155 limit)",
+    "Internal links are placeholder format - need real implementation",
+    "URL structure unknown - verify clean structure on live site",
+    "Original insight score moderate - content is well-written but lacks unique data points not found elsewhere"
+  ],
+  "geoFlags": [
+    "Opening paragraph does not answer primary question in first 2 sentences - describes location before defining what the service is",
+    "Only 2 of 6 H2 headers are questions (33% vs ideal 60%+)",
+    "FAQPage schema present but only 4 actual FAQ questions extracted from body - borderline minimum",
+    "FAQ answers are not fully standalone - multiple answers say 'Call for details' instead of providing direct information",
+    "No cost/pricing information provided in FAQ or body - only 'Call for current nightly rates'",
+    "Zero specific stats or data points - no verifiable facts beyond address",
+    "Multiple AI filler phrases detected: 'when it comes to' equivalents, 'nothing quite like', 'kind of option'",
+    "No HowTo schema on a service page that describes a bookable process"
+  ],
+  "recommendedFixes": [
+    "Trim meta description by 1 character to meet 155-character limit (currently 156)",
+    "Implement real internal links - replace placeholder links with actual site URLs",
+    "Add 1-2 unique data points: exact treehouse height/dimensions, specific amenity details, booking lead time statistics, or guest demographic data",
+    "Verify URL structure follows /luxury-treehouse-stay-sedgwick-ks/ or similar keyword-rich format",
+    "Add 2+ more internal links to reach the 3+ threshold for full points",
+    "Consider adding geo-tagged photo metadata if not already present to maximize real_photo score",
+    "CRITICAL: Rewrite opening paragraph to answer 'What is a luxury treehouse stay at Diamond Springs Ranch?' in first 2 sentences before describing location - move direct answer higher",
+    "CRITICAL: Eliminate AI filler phrases - remove 'nothing quite like', 'kind of option people remember', 'genuinely different kind of' - cost you 5 points in Cat5",
+    "HIGH: Add 2-3 more FAQ questions to reach 6-7 total and improve PAA coverage - current 4 is minimum threshold",
+    "HIGH: Make FAQ answers fully standalone - replace 'Call for details' with actual amenity list (bed type, bathroom, kitchen, heating/cooling, etc.)",
+    "HIGH: Add specific cost range to FAQ answer about pricing - even a range like '$200-$350/night' beats 'call for rates' for AI citation",
+    "MEDIUM: Convert 2-3 statement H2s to questions: 'How Do I Book?' instead of 'Booking the...', 'How Do I Find?' instead of 'Finding...'",
+    "MEDIUM: Add at least one verifiable stat: exact treehouse height, square footage, max occupancy number, or booking lead time in days",
+    "MEDIUM: Add HowTo schema for 'How to Book the Treehouse' with step-by-step process",
+    "LOW: Add one FAQ covering timeline/process: 'How far in advance should I book?' with specific answer like '3-4 weeks for weekends, 1-2 weeks for weekdays'"
+  ]
+}

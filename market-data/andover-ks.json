@@ -1,0 +1,42 @@
+{
+  "city": "Andover",
+  "state": "KS",
+  "slug": "andover-ks",
+  "zip": "67002",
+  "fetchedAt": "2026-07-15T01:35:00.000Z",
+  "geo": { "lat": 37.6953, "lon": -97.1351 },
+  "census": {
+    "population": 16814,
+    "total_housing_units": 6441,
+    "median_household_income": 89422,
+    "median_year_built": 2002,
+    "median_home_age": 24
+  },
+  "airnow": {
+    "aqi_category": "Good",
+    "aqi_number": 40,
+    "primary_pollutant": "O3",
+    "forecast_date": "2026-07-15",
+    "pm25_category": "Good",
+    "ozone_category": "Good"
+  },
+  "places": {
+    "nearby_neighborhoods": [
+      "Auburn Hills",
+      "Rolling Meadows",
+      "Tallgrass Estates",
+      "Windmill Creek",
+      "Andover Trails",
+      "East Andover",
+      "College Hill East",
+      "Prairie Creek"
+    ],
+    "notable_landmarks": [
+      "Andover Central High School",
+      "Andover Central Park",
+      "YMCA of Greater Wichita Andover",
+      "Rock Road Corridor",
+      "Towne East Square Area"
+    ]
+  }
+}

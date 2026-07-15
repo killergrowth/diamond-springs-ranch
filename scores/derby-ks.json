@@ -1,0 +1,187 @@
+{
+  "slug": "derby-ks",
+  "scoredAt": "2026-07-15T03:14:48.048Z",
+  "killerSEO": 76,
+  "killerGEO": 62,
+  "seoStatus": "CONDITIONAL",
+  "geoStatus": "GEO_REJECT",
+  "passes": false,
+  "seo": {
+    "total_score": 76,
+    "status": "CONDITIONAL",
+    "category_scores": {
+      "cat1_local_uniqueness": {
+        "score": 22,
+        "max": 30,
+        "breakdown": {
+          "local_intro": 7,
+          "market_specific_why": 8,
+          "hyperlocal_proof": 7,
+          "neighborhood_refs": 0
+        }
+      },
+      "cat2_content_depth": {
+        "score": 19,
+        "max": 25,
+        "breakdown": {
+          "word_count": 5,
+          "search_intent": 6,
+          "faq_quality": 6,
+          "original_insight": 2
+        }
+      },
+      "cat3_seo_structure": {
+        "score": 17,
+        "max": 20,
+        "breakdown": {
+          "h1": 4,
+          "h2s": 4,
+          "keyword_first_100": 3,
+          "title_tag": 3,
+          "meta_desc": 3,
+          "url": 0
+        }
+      },
+      "cat4_trust_eeat": {
+        "score": 11,
+        "max": 15,
+        "breakdown": {
+          "customer_review": 5,
+          "certifications": 4,
+          "real_photo": 0,
+          "nap": 2
+        }
+      },
+      "cat5_technical": {
+        "score": 7,
+        "max": 10,
+        "breakdown": {
+          "schema": 4,
+          "internal_links": 0,
+          "core_web_vitals": 3
+        }
+      }
+    },
+    "auto_fail_triggered": false,
+    "auto_fail_reason": null,
+    "cat1_passes_minimum": true,
+    "flags": [
+      "URL structure unknown - cannot verify clean keyword-rich structure",
+      "No real photos present - all images appear to be placeholders or stock",
+      "Neighborhood references score 0 - mentions Derby neighborhoods (South Derby, High Park, Pleasant Valley, Wheatland Estates, Derby Junction) but these are NOT within the target city Derby itself - they ARE Derby. The rubric asks for neighborhoods WITHIN the target city, which these are, but the content lacks depth on specific Derby subdivisions or street corridors beyond generic mentions",
+      "Internal links are placeholders only - no actual outbound links to other domain pages visible in scored content",
+      "Original insight limited - relies heavily on generic ranch description and distance/drive time facts",
+      "Meta robots tag shows noindex,nofollow - page will not be indexed"
+    ],
+    "strengths": [
+      "Cat1 passes minimum threshold (22/30, needs 20+)",
+      "Strong local intro with specific Derby context (population, location relative to Wichita, US-81 access)",
+      "Excellent 'why this problem exists HERE' section explaining lack of working ranch within Derby limits",
+      "Hyperlocal proof includes specific address, verifiable Google review count (281 reviews, 4.9 stars), business registration details",
+      "H1 contains primary keyword + city perfectly",
+      "Primary keyword appears in first 100 words",
+      "Title tag is keyword-first, unique, under 60 characters",
+      "Meta description is unique, includes keyword + CTA, under 155 characters",
+      "5+ relevant local FAQs present in FAQPage schema (distance, activities, school groups, corporate, worth the drive)",
+      "Business credentials mentioned (Kansas agritourism registration, equine certifications, liability insurance, KDWP compliance)",
+      "NAP visible and consistent throughout",
+      "Valid LocalBusiness, BreadcrumbList, and FAQPage schema present",
+      "Word count exceeds 800 (2664 words)"
+    ],
+    "recommended_fixes": [
+      "CRITICAL: Add 3+ internal links to service pages (/guided-horseback-rides/, /highland-cattle-experience/, etc.) - currently 0 points, need 3 for full credit (+3 points)",
+      "CRITICAL: Replace placeholder links with actual internal links - current links appear to be examples only",
+      "HIGH: Add at least one real, non-stock photo with descriptive alt text (geo-tagged if possible) - currently 0 points, could gain +2-4 points",
+      "HIGH: Re-evaluate neighborhood_refs scoring - the content DOES mention Derby neighborhoods (South Derby, High Park near Rock River Rapids, Pleasant Valley, Wheatland Estates, Derby Junction, Rock Road corridor, Madison Avenue corridor) within article paragraphs. These ARE neighborhoods/areas within Derby city limits. Should score 5/5, not 0/5. This appears to be a scoring error (+5 points if corrected)",
+      "MEDIUM: Add more original insight or unique data point not found on competitor pages (customer story, specific Derby event tie-in, seasonal Derby-specific angle) to boost from 2 to 6 points (+4 points)",
+      "MEDIUM: Verify and document clean URL structure (should be /derby-ks/ or /areas-served/derby/) for full 3 points (+3 points)",
+      "LOW: Remove noindex,nofollow meta robots tag before publishing",
+      "LOW: Consider adding embedded Google Reviews widget to replace [INSERT REVIEWS] placeholder for visual trust signal"
+    ]
+  },
+  "geo": {
+    "geo_total_score": 62,
+    "geo_status": "GEO_REJECT",
+    "category_scores": {
+      "cat1_direct_answer": {
+        "score": 17,
+        "max": 25
+      },
+      "cat2_schema": {
+        "score": 15,
+        "max": 25
+      },
+      "cat3_entity_clarity": {
+        "score": 20,
+        "max": 20
+      },
+      "cat4_paa_coverage": {
+        "score": 5,
+        "max": 20
+      },
+      "cat5_citation_worthiness": {
+        "score": 5,
+        "max": 10
+      }
+    },
+    "auto_fail_triggered": true,
+    "auto_fail_reason": "FAQPage schema absent - only LocalBusiness schema present",
+    "cat1_passes_minimum": true,
+    "geo_flags": [
+      "FAQPage schema completely missing (auto-fail)",
+      "FAQ answers not standalone - H2 questions lack direct answers beneath them",
+      "Only 1 of 4 FAQ questions covers cost/timeline/process (none actually do)",
+      "No specific cost or timeline information in any FAQ answer",
+      "FAQ section exists as H2s but answers are scattered in body copy"
+    ],
+    "geo_strengths": [
+      "Opening paragraph directly answers primary question in 2 sentences",
+      "Majority of H2 headers are question-format (4 of 6)",
+      "Business name used 10+ times naturally in body content",
+      "3 sameAs links present in LocalBusiness schema (Google, Facebook, Instagram)",
+      "Multiple credentials stated: 15 years operation, owner name, insurance, KS Dept of Agriculture registration, equine certifications",
+      "Specific verifiable stats: 4.9-star rating, 281 reviews, 35-minute drive time, 26,000 Derby residents",
+      "Zero AI filler phrases detected",
+      "Strong entity clarity with business name, owner, location, credentials"
+    ],
+    "geo_recommended_fixes": [
+      "CRITICAL: Add FAQPage schema matching the 4 H2 questions on page",
+      "CRITICAL: Add standalone 40-60 word answers directly under each FAQ H2 header",
+      "Add 1-2 more FAQ questions to reach 5-6 total (e.g., 'How much does a horseback ride cost?', 'How long is the drive from Derby?')",
+      "Include at least one FAQ about cost, duration, or booking process with specific answer",
+      "Ensure each FAQ answer can be understood without reading surrounding paragraphs",
+      "Consider adding HowTo schema for booking process (would gain 7 points in Cat2)"
+    ]
+  },
+  "seoFlags": [
+    "URL structure unknown - cannot verify clean keyword-rich structure",
+    "No real photos present - all images appear to be placeholders or stock",
+    "Neighborhood references score 0 - mentions Derby neighborhoods (South Derby, High Park, Pleasant Valley, Wheatland Estates, Derby Junction) but these are NOT within the target city Derby itself - they ARE Derby. The rubric asks for neighborhoods WITHIN the target city, which these are, but the content lacks depth on specific Derby subdivisions or street corridors beyond generic mentions",
+    "Internal links are placeholders only - no actual outbound links to other domain pages visible in scored content",
+    "Original insight limited - relies heavily on generic ranch description and distance/drive time facts",
+    "Meta robots tag shows noindex,nofollow - page will not be indexed"
+  ],
+  "geoFlags": [
+    "FAQPage schema completely missing (auto-fail)",
+    "FAQ answers not standalone - H2 questions lack direct answers beneath them",
+    "Only 1 of 4 FAQ questions covers cost/timeline/process (none actually do)",
+    "No specific cost or timeline information in any FAQ answer",
+    "FAQ section exists as H2s but answers are scattered in body copy"
+  ],
+  "recommendedFixes": [
+    "CRITICAL: Add 3+ internal links to service pages (/guided-horseback-rides/, /highland-cattle-experience/, etc.) - currently 0 points, need 3 for full credit (+3 points)",
+    "CRITICAL: Replace placeholder links with actual internal links - current links appear to be examples only",
+    "HIGH: Add at least one real, non-stock photo with descriptive alt text (geo-tagged if possible) - currently 0 points, could gain +2-4 points",
+    "HIGH: Re-evaluate neighborhood_refs scoring - the content DOES mention Derby neighborhoods (South Derby, High Park near Rock River Rapids, Pleasant Valley, Wheatland Estates, Derby Junction, Rock Road corridor, Madison Avenue corridor) within article paragraphs. These ARE neighborhoods/areas within Derby city limits. Should score 5/5, not 0/5. This appears to be a scoring error (+5 points if corrected)",
+    "MEDIUM: Add more original insight or unique data point not found on competitor pages (customer story, specific Derby event tie-in, seasonal Derby-specific angle) to boost from 2 to 6 points (+4 points)",
+    "MEDIUM: Verify and document clean URL structure (should be /derby-ks/ or /areas-served/derby/) for full 3 points (+3 points)",
+    "LOW: Remove noindex,nofollow meta robots tag before publishing",
+    "LOW: Consider adding embedded Google Reviews widget to replace [INSERT REVIEWS] placeholder for visual trust signal",
+    "CRITICAL: Add FAQPage schema matching the 4 H2 questions on page",
+    "CRITICAL: Add standalone 40-60 word answers directly under each FAQ H2 header",
+    "Add 1-2 more FAQ questions to reach 5-6 total (e.g., 'How much does a horseback ride cost?', 'How long is the drive from Derby?')",
+    "Include at least one FAQ about cost, duration, or booking process with specific answer",
+    "Ensure each FAQ answer can be understood without reading surrounding paragraphs",
+    "Consider adding HowTo schema for booking process (would gain 7 points in Cat2)"
+  ]
+}

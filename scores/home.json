@@ -1,0 +1,209 @@
+{
+  "slug": "home",
+  "scoredAt": "2026-07-15T03:18:33.453Z",
+  "killerSEO": 42,
+  "killerGEO": 48,
+  "seoStatus": "REJECT",
+  "geoStatus": "GEO_REJECT",
+  "passes": false,
+  "seo": {
+    "total_score": 42,
+    "status": "REJECT",
+    "category_scores": {
+      "cat1_local_uniqueness": {
+        "score": 12,
+        "max": 30,
+        "breakdown": {
+          "local_intro": 5,
+          "market_specific_why": 0,
+          "hyperlocal_proof": 7,
+          "neighborhood_refs": 0
+        }
+      },
+      "cat2_content_depth": {
+        "score": 8,
+        "max": 25,
+        "breakdown": {
+          "word_count": 5,
+          "search_intent": 0,
+          "faq_quality": 3,
+          "original_insight": 0
+        }
+      },
+      "cat3_seo_structure": {
+        "score": 9,
+        "max": 20,
+        "breakdown": {
+          "h1": 0,
+          "h2s": 0,
+          "keyword_first_100": 0,
+          "title_tag": 3,
+          "meta_desc": 3,
+          "url": 3
+        }
+      },
+      "cat4_trust_eeat": {
+        "score": 10,
+        "max": 15,
+        "breakdown": {
+          "customer_review": 5,
+          "certifications": 0,
+          "real_photo": 3,
+          "nap": 2
+        }
+      },
+      "cat5_technical": {
+        "score": 3,
+        "max": 10,
+        "breakdown": {
+          "schema": 0,
+          "internal_links": 0,
+          "core_web_vitals": 3
+        }
+      }
+    },
+    "auto_fail_triggered": true,
+    "auto_fail_reason": "Page targets a city client does not serve — this is a ranch experience business homepage, not a local SEO service page targeting a specific city for a service vertical",
+    "cat1_passes_minimum": false,
+    "flags": [
+      "CRITICAL: Cat1 score 12/30 — fails minimum threshold of 20 points",
+      "CRITICAL: This appears to be a business homepage for Diamond Springs Ranch, not a local SEO location page for a service",
+      "CRITICAL: No primary service keyword in H1 — reads like brand tagline, not SEO-optimized heading",
+      "CRITICAL: No market-specific 'why this problem exists HERE' section (0/8 points)",
+      "CRITICAL: Zero neighborhood/sub-location references within Sedgwick (0/5 points) — only lists surrounding cities",
+      "CRITICAL: No secondary keyword H2s — headings are generic service categories",
+      "CRITICAL: Primary keyword not identifiable or present in first 100 words",
+      "CRITICAL: Search intent unclear — page does not answer a specific service query",
+      "CRITICAL: No original insight, data, or unique angle — generic ranch experience descriptions",
+      "CRITICAL: FAQs are generic business questions, not service-specific local queries (scored 3/6)",
+      "CRITICAL: No business certifications or credentials mentioned",
+      "CRITICAL: Schema markup incomplete — LocalBusiness schema present but no Service schema for specific offerings",
+      "Page content appears to be a homepage, not a location-specific service page",
+      "Internal links present but pointing to service pages, not demonstrating inbound link structure"
+    ],
+    "strengths": [
+      "Strong hyperlocal proof: specific address (1734 SE 96th St, Sedgwick, KS 67135), geo-coordinates, verifiable location",
+      "NAP present and consistent throughout page",
+      "Title tag and meta description well-optimized, under character limits",
+      "Customer reviews referenced (4.9 stars, 281 reviews) with placeholder for embed",
+      "Word count exceeds 800 words (2845 words)",
+      "Clean URL structure",
+      "Real business with verifiable online presence (Google Maps, social media links in schema)"
+    ],
+    "recommended_fixes": [
+      "FUNDAMENTAL ISSUE: This page is a business homepage, not a local SEO service page. If the goal is to rank for '[service] in [city]', create dedicated service+location pages (e.g., 'Horseback Riding in Wichita, KS' or 'Wedding Venue near Sedgwick, KS')",
+      "Rewrite H1 to include primary service keyword + target city (e.g., 'Horseback Riding & Ranch Experiences in Sedgwick, KS')",
+      "Add market-specific 'why' section explaining local demand (e.g., 'Why Wichita Families Choose Diamond Springs Ranch' with local context about lack of authentic ranch experiences near the city)",
+      "Include 2+ specific neighborhood/area references within Sedgwick or the target service area (e.g., 'serving families from Riverside, Delano, and College Hill neighborhoods in Wichita')",
+      "Restructure H2s to include secondary keywords (e.g., 'Guided Trail Rides for Wichita Families', 'Corporate Retreats Near Sedgwick County')",
+      "Place primary keyword in first 100 words of body content",
+      "Expand FAQ section to include service-specific local queries (e.g., 'How far is Diamond Springs Ranch from downtown Wichita?', 'What should I wear for a horseback ride in Kansas?')",
+      "Add business credentials (e.g., years in operation, safety certifications, horse training credentials, event planning experience)",
+      "Add Service schema markup for each offering (HorsebackRiding, EventVenue, TouristAttraction)",
+      "Clarify page purpose: if this is the homepage, create separate location pages; if this IS a location page, retarget it for a specific service+city combination"
+    ]
+  },
+  "geo": {
+    "geo_total_score": 48,
+    "geo_status": "GEO_REJECT",
+    "category_scores": {
+      "cat1_direct_answer": {
+        "score": 10,
+        "max": 25
+      },
+      "cat2_schema": {
+        "score": 18,
+        "max": 25
+      },
+      "cat3_entity_clarity": {
+        "score": 12,
+        "max": 20
+      },
+      "cat4_paa_coverage": {
+        "score": 8,
+        "max": 20
+      },
+      "cat5_citation_worthiness": {
+        "score": 0,
+        "max": 10
+      }
+    },
+    "auto_fail_triggered": true,
+    "auto_fail_reason": "Content contains 3+ AI filler phrases: 'when it comes to' (implied context), 'what matters most', 'gets people off their phones and into the moment', 'nothing short of amazing', 'I can't say enough', 'hands down', 'made the evening feel', 'you can truly tell', 'I can't say enough amazing things'",
+    "cat1_passes_minimum": false,
+    "geo_flags": [
+      "CRITICAL: Cat1 score 10/25 fails minimum threshold of 15",
+      "Opening paragraph does not answer a primary search question in first 2 sentences",
+      "H2 headers contain broken/incomplete questions: 'Why Do Homeowners Choose ?' and 'Which Communities Does Serve?' missing business name",
+      "Only 2 of 5 H2 headers are questions (40%)",
+      "No FAQ section visible in body content - only in schema",
+      "Multiple AI filler phrases detected in testimonials and body copy",
+      "No specific statistics, data points, or verifiable facts in main content",
+      "FAQ answers in schema do not appear on page for users to read"
+    ],
+    "geo_strengths": [
+      "FAQPage schema present with 5 questions",
+      "LocalBusiness schema includes name, description, areaServed, telephone, email, address",
+      "sameAs links present (Google Maps, Facebook, Instagram) - 3 links",
+      "Business name 'Diamond Springs Ranch' used 10+ times in body",
+      "Credentials stated: 'Serving Sedgwick since 2016' and 'Licensed & Insured'",
+      "Strong review count (281 reviews) and rating (4.9 stars) displayed"
+    ],
+    "geo_recommended_fixes": [
+      "PRIORITY 1: Rewrite opening paragraph to directly answer 'What is Diamond Springs Ranch?' or 'What ranch experiences are available near Wichita?' in first 2 sentences",
+      "PRIORITY 2: Add visible FAQ section to page body matching the 5 FAQ schema questions - currently schema exists but content is invisible to users",
+      "PRIORITY 3: Fix broken H2 headers - complete 'Why Do Homeowners Choose [Diamond Springs Ranch]?' and 'Which Communities Does [Diamond Springs Ranch] Serve?'",
+      "PRIORITY 4: Convert at least 1 more H2 to question format to reach majority threshold (need 3 of 5)",
+      "PRIORITY 5: Add at least one specific, verifiable stat to body content (e.g., 'Over 2,500 guests hosted since 2016' or 'Highland cattle herd of 12 Scottish Highlands')",
+      "PRIORITY 6: Remove AI filler language from body copy, especially phrases like 'what matters most to people', 'gets people off their phones', 'the kind of place people drive hours to experience'",
+      "PRIORITY 7: Ensure FAQ answers are 40-60 words and completely standalone - current schema answers are good but need to be visible on page",
+      "PRIORITY 8: Add HowTo schema for at least one process (e.g., 'How to Book a Horseback Ride' or 'How to Prepare for Your Ranch Visit')"
+    ]
+  },
+  "seoFlags": [
+    "CRITICAL: Cat1 score 12/30 — fails minimum threshold of 20 points",
+    "CRITICAL: This appears to be a business homepage for Diamond Springs Ranch, not a local SEO location page for a service",
+    "CRITICAL: No primary service keyword in H1 — reads like brand tagline, not SEO-optimized heading",
+    "CRITICAL: No market-specific 'why this problem exists HERE' section (0/8 points)",
+    "CRITICAL: Zero neighborhood/sub-location references within Sedgwick (0/5 points) — only lists surrounding cities",
+    "CRITICAL: No secondary keyword H2s — headings are generic service categories",
+    "CRITICAL: Primary keyword not identifiable or present in first 100 words",
+    "CRITICAL: Search intent unclear — page does not answer a specific service query",
+    "CRITICAL: No original insight, data, or unique angle — generic ranch experience descriptions",
+    "CRITICAL: FAQs are generic business questions, not service-specific local queries (scored 3/6)",
+    "CRITICAL: No business certifications or credentials mentioned",
+    "CRITICAL: Schema markup incomplete — LocalBusiness schema present but no Service schema for specific offerings",
+    "Page content appears to be a homepage, not a location-specific service page",
+    "Internal links present but pointing to service pages, not demonstrating inbound link structure"
+  ],
+  "geoFlags": [
+    "CRITICAL: Cat1 score 10/25 fails minimum threshold of 15",
+    "Opening paragraph does not answer a primary search question in first 2 sentences",
+    "H2 headers contain broken/incomplete questions: 'Why Do Homeowners Choose ?' and 'Which Communities Does Serve?' missing business name",
+    "Only 2 of 5 H2 headers are questions (40%)",
+    "No FAQ section visible in body content - only in schema",
+    "Multiple AI filler phrases detected in testimonials and body copy",
+    "No specific statistics, data points, or verifiable facts in main content",
+    "FAQ answers in schema do not appear on page for users to read"
+  ],
+  "recommendedFixes": [
+    "FUNDAMENTAL ISSUE: This page is a business homepage, not a local SEO service page. If the goal is to rank for '[service] in [city]', create dedicated service+location pages (e.g., 'Horseback Riding in Wichita, KS' or 'Wedding Venue near Sedgwick, KS')",
+    "Rewrite H1 to include primary service keyword + target city (e.g., 'Horseback Riding & Ranch Experiences in Sedgwick, KS')",
+    "Add market-specific 'why' section explaining local demand (e.g., 'Why Wichita Families Choose Diamond Springs Ranch' with local context about lack of authentic ranch experiences near the city)",
+    "Include 2+ specific neighborhood/area references within Sedgwick or the target service area (e.g., 'serving families from Riverside, Delano, and College Hill neighborhoods in Wichita')",
+    "Restructure H2s to include secondary keywords (e.g., 'Guided Trail Rides for Wichita Families', 'Corporate Retreats Near Sedgwick County')",
+    "Place primary keyword in first 100 words of body content",
+    "Expand FAQ section to include service-specific local queries (e.g., 'How far is Diamond Springs Ranch from downtown Wichita?', 'What should I wear for a horseback ride in Kansas?')",
+    "Add business credentials (e.g., years in operation, safety certifications, horse training credentials, event planning experience)",
+    "Add Service schema markup for each offering (HorsebackRiding, EventVenue, TouristAttraction)",
+    "Clarify page purpose: if this is the homepage, create separate location pages; if this IS a location page, retarget it for a specific service+city combination",
+    "PRIORITY 1: Rewrite opening paragraph to directly answer 'What is Diamond Springs Ranch?' or 'What ranch experiences are available near Wichita?' in first 2 sentences",
+    "PRIORITY 2: Add visible FAQ section to page body matching the 5 FAQ schema questions - currently schema exists but content is invisible to users",
+    "PRIORITY 3: Fix broken H2 headers - complete 'Why Do Homeowners Choose [Diamond Springs Ranch]?' and 'Which Communities Does [Diamond Springs Ranch] Serve?'",
+    "PRIORITY 4: Convert at least 1 more H2 to question format to reach majority threshold (need 3 of 5)",
+    "PRIORITY 5: Add at least one specific, verifiable stat to body content (e.g., 'Over 2,500 guests hosted since 2016' or 'Highland cattle herd of 12 Scottish Highlands')",
+    "PRIORITY 6: Remove AI filler language from body copy, especially phrases like 'what matters most to people', 'gets people off their phones', 'the kind of place people drive hours to experience'",
+    "PRIORITY 7: Ensure FAQ answers are 40-60 words and completely standalone - current schema answers are good but need to be visible on page",
+    "PRIORITY 8: Add HowTo schema for at least one process (e.g., 'How to Book a Horseback Ride' or 'How to Prepare for Your Ranch Visit')"
+  ]
+}

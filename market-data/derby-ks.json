@@ -1,0 +1,42 @@
+{
+  "city": "Derby",
+  "state": "KS",
+  "slug": "derby-ks",
+  "zip": "67037",
+  "fetchedAt": "2026-07-15T01:35:00.000Z",
+  "geo": { "lat": 37.5476, "lon": -97.2689 },
+  "census": {
+    "population": 26026,
+    "total_housing_units": 10142,
+    "median_household_income": 72311,
+    "median_year_built": 1991,
+    "median_home_age": 35
+  },
+  "airnow": {
+    "aqi_category": "Good",
+    "aqi_number": 38,
+    "primary_pollutant": "O3",
+    "forecast_date": "2026-07-15",
+    "pm25_category": "Good",
+    "ozone_category": "Good"
+  },
+  "places": {
+    "nearby_neighborhoods": [
+      "South Derby",
+      "Derby Junction",
+      "Pleasant Valley",
+      "West Derby",
+      "Wheatland Estates",
+      "Derby Hills",
+      "Meadowlark Hills",
+      "Buckner Heights"
+    ],
+    "notable_landmarks": [
+      "Derby City Park",
+      "Derby Recreation Center",
+      "Meadowlark Nature Trail",
+      "Derby USD 260 Schools",
+      "Kellogg Avenue Corridor"
+    ]
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "slug": "covered-wagon-stay",
+  "scoredAt": "2026-07-15T03:13:54.878Z",
+  "killerSEO": 73,
+  "killerGEO": 68,
+  "seoStatus": "REJECT",
+  "geoStatus": "GEO_CONDITIONAL",
+  "passes": false,
+  "seo": {
+    "total_score": 73,
+    "status": "REJECT",
+    "category_scores": {
+      "cat1_local_uniqueness": {
+        "score": 17,
+        "max": 30,
+        "breakdown": {
+          "local_intro": 5,
+          "market_specific_why": 4,
+          "hyperlocal_proof": 7,
+          "neighborhood_refs": 1
+        }
+      },
+      "cat2_content_depth": {
+        "score": 22,
+        "max": 25,
+        "breakdown": {
+          "word_count": 5,
+          "search_intent": 8,
+          "faq_quality": 6,
+          "original_insight": 3
+        }
+      },
+      "cat3_seo_structure": {
+        "score": 14,
+        "max": 20,
+        "breakdown": {
+          "h1": 4,
+          "h2s": 2,
+          "keyword_first_100": 3,
+          "title_tag": 3,
+          "meta_desc": 1,
+          "url": 1
+        }
+      },
+      "cat4_trust_eeat": {
+        "score": 13,
+        "max": 15,
+        "breakdown": {
+          "customer_review": 5,
+          "certifications": 4,
+          "real_photo": 2,
+          "nap": 2
+        }
+      },
+      "cat5_technical": {
+        "score": 7,
+        "max": 10,
+        "breakdown": {
+          "schema": 4,
+          "internal_links": 0,
+          "core_web_vitals": 3
+        }
+      }
+    },
+    "auto_fail_triggered": false,
+    "auto_fail_reason": null,
+    "cat1_passes_minimum": false,
+    "flags": [
+      "CRITICAL: Category 1 score (17/30) falls below minimum threshold of 20 — page fails regardless of total score",
+      "Neighborhood references score only 1/5 — mentions Sedgwick neighborhoods but lacks depth and specificity within article body",
+      "Local intro is generic (5/10) — mentions Kansas sky and Wichita area but lacks compelling specific local context",
+      "Market-specific 'why' section weak (4/8) — mentions Wichita area uniqueness but doesn't explain local cause or demand drivers",
+      "Meta description exceeds 155 characters (currently 127 chars but generic)",
+      "H2s lack secondary keywords and local variation — only 2 H2s present, both generic",
+      "No internal links visible in article content (0/3) — placeholder links present but scored as non-functional per instructions",
+      "Original insight limited (3/6) — content is repackaged Western experience marketing without unique data or angle"
+    ],
+    "strengths": [
+      "Word count exceeds 800 (2426 words)",
+      "Primary keyword 'covered wagon' appears in first 100 words",
+      "H1 contains primary keyword + city (Sedgwick, KS)",
+      "Title tag is keyword-first and under 60 characters",
+      "Strong hyperlocal proof: specific address (1734 SE 96th St), verifiable business details, 281+ Google reviews, 15 years operation",
+      "FAQ section with 5+ relevant questions in FAQPage schema",
+      "Valid schema markup present (LocalBusiness, FAQPage, HowTo, BreadcrumbList)",
+      "Business credentials mentioned: equine handling certifications, Kansas Dept of Agriculture registration, liability insurance, KDWP compliance",
+      "NAP visible and consistent throughout page",
+      "Search intent fully addressed for covered wagon overnight stay booking"
+    ],
+    "recommended_fixes": [
+      "PRIORITY 1: Add 2-3 specific Sedgwick neighborhood/subdivision names within article paragraphs (not just navigation) to reach neighborhood_refs threshold of 5 points",
+      "PRIORITY 2: Rewrite local intro with compelling specific details about Sedgwick's rural character, climate patterns, or local context that makes covered wagon stays uniquely suited here (target 10/10)",
+      "PRIORITY 3: Add market-specific 'why this exists HERE' section explaining local demand drivers — proximity to Wichita metro seeking rural escapes, Kansas pioneer heritage tourism, lack of similar offerings in region (target 8/8)",
+      "Add 3+ functional internal links within article body pointing to other ranch services or area pages",
+      "Expand H2 count to 4-5 with secondary keywords: 'Covered Wagon Camping Near Wichita', 'What to Expect During Your Wagon Stay', 'Best Times to Book in Sedgwick'",
+      "Optimize meta description to be more compelling with stronger CTA while staying under 155 chars",
+      "Add original insight: guest testimonial quotes, booking data (most popular months), unique ranch history, or comparison to other Kansas agritourism options",
+      "Include real geo-tagged photo with descriptive alt text showing covered wagon on property (currently unclear if image is real or stock)"
+    ]
+  },
+  "geo": {
+    "geo_total_score": 68,
+    "geo_status": "GEO_CONDITIONAL",
+    "category_scores": {
+      "cat1_direct_answer": {
+        "score": 18,
+        "max": 25
+      },
+      "cat2_schema": {
+        "score": 18,
+        "max": 25
+      },
+      "cat3_entity_clarity": {
+        "score": 20,
+        "max": 20
+      },
+      "cat4_paa_coverage": {
+        "score": 12,
+        "max": 20
+      },
+      "cat5_citation_worthiness": {
+        "score": 0,
+        "max": 10
+      }
+    },
+    "auto_fail_triggered": false,
+    "auto_fail_reason": null,
+    "cat1_passes_minimum": true,
+    "geo_flags": [
+      "Opening paragraph is 3 sentences, not ≤2 - answer present but not optimally direct",
+      "Only 1 of 5 H2 headers written as question (20% vs 50%+ needed)",
+      "Multiple AI filler phrases detected: 'genuinely', 'kind of experience that', 'combination is what', 'something different'",
+      "No specific statistics, data points, or verifiable facts in content",
+      "FAQ answers redirect to phone call rather than providing standalone information",
+      "Cost information deferred to phone call instead of providing range"
+    ],
+    "geo_strengths": [
+      "Business name 'Diamond Springs Ranch' used 10+ times naturally in body",
+      "LocalBusiness schema complete with name, description, areaServed, provider, telephone, email, address",
+      "sameAs links present: Google Maps, Facebook, Instagram (3 total)",
+      "Specific credentials: 15 years operation since 2010, 4.9-star Google rating, 281+ reviews, owner Susan Schrag named with certifications",
+      "FAQPage schema present and matches 5 on-page FAQ questions",
+      "FAQ covers process/booking timeline question",
+      "Entity clarity excellent with licensed status, insurance, KS Dept of Agriculture registration mentioned"
+    ],
+    "geo_recommended_fixes": [
+      "PRIORITY 1: Rewrite opening paragraph to answer 'What is a covered wagon stay?' in first 2 sentences max (currently 3 sentences to get to answer)",
+      "PRIORITY 2: Convert at least 2 more H2 headers to questions (e.g., 'How Do I Book the Covered Wagon?' and 'Where Is Diamond Springs Ranch Located?')",
+      "PRIORITY 3: Remove AI filler phrases: 'genuinely Western', 'kind of experience that resets something', 'combination is what people come back for', 'something different'",
+      "PRIORITY 4: Add at least one specific stat: wagon dimensions, exact capacity (number of guests), temperature range, or booking lead time in days",
+      "PRIORITY 5: Expand FAQ answers to be fully standalone - provide actual amenity list, bedding details, and cost range instead of deferring to phone call",
+      "PRIORITY 6: Add cost range directly in FAQ answer (e.g., '$150-$250 per night' or 'starting at $X') to satisfy cost/timeline PAA pattern"
+    ]
+  },
+  "seoFlags": [
+    "CRITICAL: Category 1 score (17/30) falls below minimum threshold of 20 — page fails regardless of total score",
+    "Neighborhood references score only 1/5 — mentions Sedgwick neighborhoods but lacks depth and specificity within article body",
+    "Local intro is generic (5/10) — mentions Kansas sky and Wichita area but lacks compelling specific local context",
+    "Market-specific 'why' section weak (4/8) — mentions Wichita area uniqueness but doesn't explain local cause or demand drivers",
+    "Meta description exceeds 155 characters (currently 127 chars but generic)",
+    "H2s lack secondary keywords and local variation — only 2 H2s present, both generic",
+    "No internal links visible in article content (0/3) — placeholder links present but scored as non-functional per instructions",
+    "Original insight limited (3/6) — content is repackaged Western experience marketing without unique data or angle"
+  ],
+  "geoFlags": [
+    "Opening paragraph is 3 sentences, not ≤2 - answer present but not optimally direct",
+    "Only 1 of 5 H2 headers written as question (20% vs 50%+ needed)",
+    "Multiple AI filler phrases detected: 'genuinely', 'kind of experience that', 'combination is what', 'something different'",
+    "No specific statistics, data points, or verifiable facts in content",
+    "FAQ answers redirect to phone call rather than providing standalone information",
+    "Cost information deferred to phone call instead of providing range"
+  ],
+  "recommendedFixes": [
+    "PRIORITY 1: Add 2-3 specific Sedgwick neighborhood/subdivision names within article paragraphs (not just navigation) to reach neighborhood_refs threshold of 5 points",
+    "PRIORITY 2: Rewrite local intro with compelling specific details about Sedgwick's rural character, climate patterns, or local context that makes covered wagon stays uniquely suited here (target 10/10)",
+    "PRIORITY 3: Add market-specific 'why this exists HERE' section explaining local demand drivers — proximity to Wichita metro seeking rural escapes, Kansas pioneer heritage tourism, lack of similar offerings in region (target 8/8)",
+    "Add 3+ functional internal links within article body pointing to other ranch services or area pages",
+    "Expand H2 count to 4-5 with secondary keywords: 'Covered Wagon Camping Near Wichita', 'What to Expect During Your Wagon Stay', 'Best Times to Book in Sedgwick'",
+    "Optimize meta description to be more compelling with stronger CTA while staying under 155 chars",
+    "Add original insight: guest testimonial quotes, booking data (most popular months), unique ranch history, or comparison to other Kansas agritourism options",
+    "Include real geo-tagged photo with descriptive alt text showing covered wagon on property (currently unclear if image is real or stock)",
+    "PRIORITY 1: Rewrite opening paragraph to answer 'What is a covered wagon stay?' in first 2 sentences max (currently 3 sentences to get to answer)",
+    "PRIORITY 2: Convert at least 2 more H2 headers to questions (e.g., 'How Do I Book the Covered Wagon?' and 'Where Is Diamond Springs Ranch Located?')",
+    "PRIORITY 3: Remove AI filler phrases: 'genuinely Western', 'kind of experience that resets something', 'combination is what people come back for', 'something different'",
+    "PRIORITY 4: Add at least one specific stat: wagon dimensions, exact capacity (number of guests), temperature range, or booking lead time in days",
+    "PRIORITY 5: Expand FAQ answers to be fully standalone - provide actual amenity list, bedding details, and cost range instead of deferring to phone call",
+    "PRIORITY 6: Add cost range directly in FAQ answer (e.g., '$150-$250 per night' or 'starting at $X') to satisfy cost/timeline PAA pattern"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "_comment": "Image manifest for Diamond Springs Ranch",
+  "images": {
+    "hero-bg.jpg": {
+      "type": "ai-generated",
+      "promptUsed": "Cinematic wide-angle sunset over open Kansas prairie ranch land, wooden fence posts in foreground, golden hour light, horses grazing in distance, dramatic sky, no text, no watermark, no people",
+      "negativePrompt": "no text, no watermark, no people, no buildings",
+      "model": "dall-e-3",
+      "generatedAt": "2026-07-14"
+    },
+    "og-default.jpg": {
+      "type": "ai-generated",
+      "promptUsed": "Diamond Springs Ranch Kansas branding image, Western ranch with horses and Highland cattle, open prairie, rustic barn, warm sunset colors, no text, no watermark, no people, photorealistic",
+      "negativePrompt": "no text, no watermark, no people, no logos",
+      "model": "dall-e-3",
+      "generatedAt": "2026-07-14"
+    },
+    "logo.jpg": {
+      "type": "client-provided",
+      "source": "onboarding-form",
+      "generatedAt": "2026-07-14"
+    }
+  }
+}

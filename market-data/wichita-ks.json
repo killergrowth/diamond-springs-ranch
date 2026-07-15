@@ -1,0 +1,44 @@
+{
+  "city": "Wichita",
+  "state": "KS",
+  "slug": "wichita-ks",
+  "zip": "67202",
+  "fetchedAt": "2026-07-15T01:35:00.000Z",
+  "geo": { "lat": 37.6872, "lon": -97.3301 },
+  "census": {
+    "population": 395695,
+    "total_housing_units": 169284,
+    "median_household_income": 54722,
+    "median_year_built": 1973,
+    "median_home_age": 53
+  },
+  "airnow": {
+    "aqi_category": "Good",
+    "aqi_number": 42,
+    "primary_pollutant": "O3",
+    "forecast_date": "2026-07-15",
+    "pm25_category": "Good",
+    "ozone_category": "Good"
+  },
+  "places": {
+    "nearby_neighborhoods": [
+      "College Hill",
+      "Riverside",
+      "Delano",
+      "Crown Heights",
+      "Eastborough",
+      "Woodlawn",
+      "Maize",
+      "Bel Aire",
+      "Old Town",
+      "North Riverside"
+    ],
+    "notable_landmarks": [
+      "Sedgwick County Zoo",
+      "Keeper of the Plains",
+      "Exploration Place",
+      "Old Cowtown Museum",
+      "Botanica Wichita"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "city": "Haysville",
+  "state": "KS",
+  "slug": "haysville-ks",
+  "zip": "67060",
+  "fetchedAt": "2026-07-15T01:35:00.000Z",
+  "geo": { "lat": 37.5651, "lon": -97.3519 },
+  "census": {
+    "population": 11544,
+    "total_housing_units": 4533,
+    "median_household_income": 65812,
+    "median_year_built": 1988,
+    "median_home_age": 38
+  },
+  "airnow": {
+    "aqi_category": "Good",
+    "aqi_number": 36,
+    "primary_pollutant": "O3",
+    "forecast_date": "2026-07-15",
+    "pm25_category": "Good",
+    "ozone_category": "Good"
+  },
+  "places": {
+    "nearby_neighborhoods": [
+      "Haysville",
+      "South Haysville",
+      "West Haysville",
+      "Haysville Crossing",
+      "South Seneca Corridor",
+      "Airport Road Area",
+      "Lake Afton Community",
+      "Clearwater Road Corridor"
+    ],
+    "notable_landmarks": [
+      "Lake Afton Public Observatory",
+      "Haysville Community Library",
+      "Sumner Academy Area",
+      "US-81 Business Corridor",
+      "South Wichita Industrial Area"
+    ]
+  }
+}

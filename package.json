@@ -1,0 +1,14 @@
+{
+  "name": "{{CLIENT_SLUG}}",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "score": "node score-pages.js",
+    "deploy:staging": "node ../../tools/automated-build-pipeline/deploy-staging.js",
+    "deploy:prod": "npx wrangler pages deploy ./dist --project-name {{CLIENT_SLUG}}"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

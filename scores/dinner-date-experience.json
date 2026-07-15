@@ -1,0 +1,186 @@
+{
+  "slug": "dinner-date-experience",
+  "scoredAt": "2026-07-15T03:15:33.569Z",
+  "killerSEO": 74,
+  "killerGEO": 62,
+  "seoStatus": "REJECT",
+  "geoStatus": "GEO_REJECT",
+  "passes": false,
+  "seo": {
+    "total_score": 74,
+    "status": "REJECT",
+    "category_scores": {
+      "cat1_local_uniqueness": {
+        "score": 17,
+        "max": 30,
+        "breakdown": {
+          "local_intro": 7,
+          "market_specific_why": 4,
+          "hyperlocal_proof": 6,
+          "neighborhood_refs": 0
+        }
+      },
+      "cat2_content_depth": {
+        "score": 22,
+        "max": 25,
+        "breakdown": {
+          "word_count": 5,
+          "search_intent": 8,
+          "faq_quality": 6,
+          "original_insight": 3
+        }
+      },
+      "cat3_seo_structure": {
+        "score": 17,
+        "max": 20,
+        "breakdown": {
+          "h1": 4,
+          "h2s": 4,
+          "keyword_first_100": 3,
+          "title_tag": 3,
+          "meta_desc": 2,
+          "url": 1
+        }
+      },
+      "cat4_trust_eeat": {
+        "score": 11,
+        "max": 15,
+        "breakdown": {
+          "customer_review": 5,
+          "certifications": 4,
+          "real_photo": 0,
+          "nap": 2
+        }
+      },
+      "cat5_technical": {
+        "score": 7,
+        "max": 10,
+        "breakdown": {
+          "schema": 4,
+          "internal_links": 0,
+          "core_web_vitals": 3
+        }
+      }
+    },
+    "auto_fail_triggered": false,
+    "auto_fail_reason": null,
+    "cat1_passes_minimum": false,
+    "flags": [
+      "CRITICAL: Category 1 score (17/30) falls below minimum threshold of 20 — page fails regardless of total score",
+      "Neighborhood references score 0/5: No specific Sedgwick neighborhoods, subdivisions, or streets mentioned in article body. References like 'Hillside Drive neighborhood,' 'SE Prairie View area,' and 'Oak Ridge subdivision' appear to be fabricated or unverifiable — these read as AI-generated placeholders rather than authentic local landmarks",
+      "Local intro is generic (7/10): Mentions Sedgwick and Kansas sky but lacks compelling specific local context",
+      "Market-specific 'why' is weak (4/8): Does not explain why this experience is uniquely suited to Sedgwick/Wichita area",
+      "No real photos: Image appears to be placeholder, no geo-tagged or verifiable ranch photos",
+      "Internal links score 0/3: Placeholder links visible but marked as non-functional in instructions",
+      "Meta description exceeds 155 characters (currently 156 characters)"
+    ],
+    "strengths": [
+      "Word count exceeds 800 (2413 words)",
+      "H1 contains primary keyword + city correctly",
+      "Primary keyword appears in first 100 words",
+      "Title tag is keyword-first and under 60 characters",
+      "5+ relevant FAQs present in schema with local context",
+      "Strong schema implementation (LocalBusiness, FAQPage, HowTo, BreadcrumbList)",
+      "NAP visible and consistent throughout",
+      "Specific certifications mentioned (equine handling, Kansas Dept of Agriculture registration, Wildlife & Parks compliance)",
+      "Real business details (4.9-star rating, 281+ reviews, 15 years operation, owner name)",
+      "Search intent addressed (romantic dinner experience on ranch)"
+    ],
+    "recommended_fixes": [
+      "PRIORITY 1: Add 2+ verifiable Sedgwick neighborhood/street/landmark references in article body (not navigation). Research actual Sedgwick subdivisions, named streets, or local landmarks. Remove fabricated references like 'Oak Ridge subdivision' if unverifiable",
+      "PRIORITY 2: Strengthen local intro with specific Sedgwick context (e.g., reference to actual local events, specific climate patterns, real housing characteristics)",
+      "PRIORITY 3: Add 'why this experience exists HERE' section explaining Sedgwick/Kansas-specific reasons (e.g., open land availability, ranch culture, proximity to Wichita metro)",
+      "Add real geo-tagged ranch photos with descriptive alt text",
+      "Reduce meta description to under 155 characters",
+      "Replace placeholder internal links with functional same-domain links",
+      "Add original insight or data point not found on competitor pages (e.g., specific guest feedback, unique ranch feature)"
+    ]
+  },
+  "geo": {
+    "geo_total_score": 62,
+    "geo_status": "GEO_REJECT",
+    "category_scores": {
+      "cat1_direct_answer": {
+        "score": 12,
+        "max": 25
+      },
+      "cat2_schema": {
+        "score": 23,
+        "max": 25
+      },
+      "cat3_entity_clarity": {
+        "score": 20,
+        "max": 20
+      },
+      "cat4_paa_coverage": {
+        "score": 7,
+        "max": 20
+      },
+      "cat5_citation_worthiness": {
+        "score": 0,
+        "max": 10
+      }
+    },
+    "auto_fail_triggered": true,
+    "auto_fail_reason": "Cat1 score (12) below minimum threshold of 15 points",
+    "cat1_passes_minimum": false,
+    "geo_flags": [
+      "Opening paragraph does not answer primary question in first 2 sentences",
+      "Only 1 of 5 H2 headers written as question",
+      "No specific stats, data points, or verifiable facts",
+      "AI filler phrases detected: 'simply is not enough', 'does not exist', 'made possible'",
+      "FAQ answers reference external actions (call for pricing) rather than being fully standalone",
+      "Missing cost/timeline FAQ answer with actual information"
+    ],
+    "geo_strengths": [
+      "FAQPage schema present and properly matched to on-page content",
+      "LocalBusiness schema complete with all required fields including sameAs links",
+      "Business name (Diamond Springs Ranch) used 10+ times naturally in body",
+      "Credentials explicitly stated: 15 years operation, owner certifications, insurance, KS Dept of Ag registration",
+      "5 FAQ questions present matching PAA patterns",
+      "Strong entity clarity with specific location details and verifiable business information"
+    ],
+    "geo_recommended_fixes": [
+      "CRITICAL: Rewrite opening paragraph to answer 'What is the Dinner Date Experience?' in first 2 sentences with standalone definition",
+      "CRITICAL: Convert at least 2 more H2 headers to question format (e.g., 'How Do I Book the Dinner Date Experience?' and 'Where is Diamond Springs Ranch Located?')",
+      "Add specific stat to opening: 'Over 500 couples have booked this experience since 2010' or similar verifiable claim",
+      "Add one FAQ with actual cost range or timeline: 'What does the Dinner Date Experience cost?' with answer like '$XXX-$XXX per couple, 3-hour experience'",
+      "Make FAQ answers fully standalone - avoid 'Call for pricing' deflections in answers meant to be cited",
+      "Remove AI filler: replace 'simply is not enough' with concrete differentiation",
+      "Add HowTo schema for booking process to capture additional 7 points in Cat2"
+    ]
+  },
+  "seoFlags": [
+    "CRITICAL: Category 1 score (17/30) falls below minimum threshold of 20 — page fails regardless of total score",
+    "Neighborhood references score 0/5: No specific Sedgwick neighborhoods, subdivisions, or streets mentioned in article body. References like 'Hillside Drive neighborhood,' 'SE Prairie View area,' and 'Oak Ridge subdivision' appear to be fabricated or unverifiable — these read as AI-generated placeholders rather than authentic local landmarks",
+    "Local intro is generic (7/10): Mentions Sedgwick and Kansas sky but lacks compelling specific local context",
+    "Market-specific 'why' is weak (4/8): Does not explain why this experience is uniquely suited to Sedgwick/Wichita area",
+    "No real photos: Image appears to be placeholder, no geo-tagged or verifiable ranch photos",
+    "Internal links score 0/3: Placeholder links visible but marked as non-functional in instructions",
+    "Meta description exceeds 155 characters (currently 156 characters)"
+  ],
+  "geoFlags": [
+    "Opening paragraph does not answer primary question in first 2 sentences",
+    "Only 1 of 5 H2 headers written as question",
+    "No specific stats, data points, or verifiable facts",
+    "AI filler phrases detected: 'simply is not enough', 'does not exist', 'made possible'",
+    "FAQ answers reference external actions (call for pricing) rather than being fully standalone",
+    "Missing cost/timeline FAQ answer with actual information"
+  ],
+  "recommendedFixes": [
+    "PRIORITY 1: Add 2+ verifiable Sedgwick neighborhood/street/landmark references in article body (not navigation). Research actual Sedgwick subdivisions, named streets, or local landmarks. Remove fabricated references like 'Oak Ridge subdivision' if unverifiable",
+    "PRIORITY 2: Strengthen local intro with specific Sedgwick context (e.g., reference to actual local events, specific climate patterns, real housing characteristics)",
+    "PRIORITY 3: Add 'why this experience exists HERE' section explaining Sedgwick/Kansas-specific reasons (e.g., open land availability, ranch culture, proximity to Wichita metro)",
+    "Add real geo-tagged ranch photos with descriptive alt text",
+    "Reduce meta description to under 155 characters",
+    "Replace placeholder internal links with functional same-domain links",
+    "Add original insight or data point not found on competitor pages (e.g., specific guest feedback, unique ranch feature)",
+    "CRITICAL: Rewrite opening paragraph to answer 'What is the Dinner Date Experience?' in first 2 sentences with standalone definition",
+    "CRITICAL: Convert at least 2 more H2 headers to question format (e.g., 'How Do I Book the Dinner Date Experience?' and 'Where is Diamond Springs Ranch Located?')",
+    "Add specific stat to opening: 'Over 500 couples have booked this experience since 2010' or similar verifiable claim",
+    "Add one FAQ with actual cost range or timeline: 'What does the Dinner Date Experience cost?' with answer like '$XXX-$XXX per couple, 3-hour experience'",
+    "Make FAQ answers fully standalone - avoid 'Call for pricing' deflections in answers meant to be cited",
+    "Remove AI filler: replace 'simply is not enough' with concrete differentiation",
+    "Add HowTo schema for booking process to capture additional 7 points in Cat2"
+  ]
+}
