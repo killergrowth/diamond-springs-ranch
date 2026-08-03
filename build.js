@@ -209,18 +209,18 @@ function formHtml(formId, serviceSlug) {
       </div>
     </div>
     <div class="kg-form-group">
-      <label for="${formId}-service">Service Needed</label>
+      <label for="${formId}-service">Experience Interested In</label>
       <select id="${formId}-service" name="service">
-        <option value="">Select a service</option>
+        <option value="">Select an experience</option>
             ${serviceOptions}
       </select>
     </div>
     <div class="kg-form-group">
-      <label for="${formId}-message">Tell Us About Your Project (optional)</label>
-      <textarea id="${formId}-message" name="message" placeholder="Describe your project..."></textarea>
+      <label for="${formId}-message">Anything Else We Should Know? (optional)</label>
+      <textarea id="${formId}-message" name="message" placeholder="Group size, dates, special requests..."></textarea>
     </div>
     <div class="cf-turnstile" data-sitekey="${CLIENT.turnstileSiteKey}"></div>
-    <button type="submit" class="kg-form-submit">Get My Free Estimate</button>
+    <button type="submit" class="kg-form-submit">Send My Request</button>
     <span class="kg-form-note">We respond within one business day. No spam, ever.</span>
     <div id="${formId}-status" style="display:none;padding:12px 16px;border-radius:6px;margin-top:12px;font-weight:600;"></div>
   </form>
@@ -248,7 +248,7 @@ function formHtml(formId, serviceSlug) {
         status.style.color = '#c0392b';
         status.textContent = data.error || 'Something went wrong. Please try again or call us.';
         btn.disabled = false;
-        btn.textContent = 'Get My Free Estimate';
+        btn.textContent = 'Send My Request';
       }
     } catch(err) {
       status.style.display = 'block';
@@ -256,7 +256,7 @@ function formHtml(formId, serviceSlug) {
       status.style.color = '#c0392b';
       status.textContent = 'Network error. Please try again or call us directly.';
       btn.disabled = false;
-      btn.textContent = 'Get My Free Estimate';
+      btn.textContent = 'Send My Request';
     }
   });
 })();
@@ -567,14 +567,9 @@ function buildHomepage() {
       <h1>${CLIENT.heroHeading || CLIENT.primaryCity + '\'s Trusted ' + CLIENT.tradeLabel}</h1>
       <p>${CLIENT.heroSubtext}</p>
       <div class="kg-hero-btns">
-        <a href="/contact/" class="btn btn-primary">Get a Free Estimate</a>
+        <a href="/contact/" class="btn btn-primary">Book a Visit &rarr;</a>
         <a href="tel:${CLIENT.phoneRaw}" class="btn btn-outline-white">${CLIENT.phone}</a>
       </div>
-    </div>
-    <div class="kg-hero-form">
-      <h3>Request a Free Estimate</h3>
-      <p>We respond within one business day.</p>
-      ${formHtml('hero-form')}
     </div>
   </div>
 </section>
@@ -591,7 +586,7 @@ function buildHomepage() {
   <div class="container">
     <div class="section-title gsap-fade">
       <span class="section-label">Our Services</span>
-      <h2>Why Do  Homeowners Choose ?</h2>
+      <h2>Everything Diamond Springs Ranch Has to Offer</h2>
     </div>
     <div class="kg-grid ${gridClass(SERVICES.length)}">
       ${serviceCards}
@@ -662,22 +657,22 @@ ${CTA}`;
 
 function buildContactPage() {
   const meta = buildPageMeta({
-    title: `Contact ${CLIENT.name} | Free Estimate in ${CLIENT.primaryCity}, ${CLIENT.state}`,
-    description: `Get a free estimate from ${CLIENT.name}. Call ${CLIENT.phone} or fill out our online form. Serving ${CLIENT.primaryCity} and surrounding areas.`,
+    title: `Contact ${CLIENT.name} | Book a Ranch Experience | ${CLIENT.primaryCity}, ${CLIENT.state}`,
+    description: `Book your experience at ${CLIENT.name}. Call ${CLIENT.phone} or fill out our form. Horseback rides, treehouse stays, private events &mdash; all by reservation.`,
     canonical: '/contact/',
   });
   const body = `
 <div class="kg-page-header">
   <div class="container">
     <h1>Contact ${CLIENT.name}</h1>
-    <p>Get a free estimate. We respond within one business day.</p>
+    <p>All activities are by reservation. Reach out and we'll get you booked.</p>
   </div>
 </div>
 <section>
   <div class="container">
     <div class="kg-two-col">
       <div>
-        <h2>Request a Free Estimate</h2>
+        <h2>Book Your Ranch Experience</h2>
         <p style="color:var(--kg-text-light);margin-bottom:28px;">Fill out the form and we'll be in touch within one business day. Or call us directly at <a href="tel:${CLIENT.phoneRaw}">${CLIENT.phone}</a>.</p>
         ${formHtml('contact-form')}
       </div>
@@ -806,8 +801,8 @@ ${svcSchema}
       </article>
       <div>
         <div style="background:var(--kg-bg-alt);border-radius:8px;padding:28px;">
-          <h3>Get a Free Estimate</h3>
-          <p style="color:var(--kg-text-light);margin-bottom:20px;">Questions about ${svc.name.toLowerCase()}? Contact us today.</p>
+          <h3>Book This Experience</h3>
+          <p style="color:var(--kg-text-light);margin-bottom:20px;">Questions about ${svc.name.toLowerCase()}? Reach out and we'll get you scheduled.</p>
           ${formHtml(`svc-form-${svc.slug}`, svc.slug)}
         </div>
       </div>
@@ -881,7 +876,7 @@ ${citySchema}
       </article>
       <div>
         <div style="background:var(--kg-bg-alt);border-radius:8px;padding:28px;">
-          <h3>Get a Free Estimate in ${city.name}</h3>
+          <h3>Book a Ranch Experience</h3>
           ${formHtml(`city-form-${city.slug}`)}
         </div>
       </div>
