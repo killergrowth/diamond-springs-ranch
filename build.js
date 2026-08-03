@@ -518,7 +518,7 @@ ${FOOTER}
 
 function buildHomepage() {
   const meta = buildPageMeta({
-    title: `${CLIENT.primaryCity} ${CLIENT.tradeLabel} | ${CLIENT.name}`,
+    title: CLIENT.homepageTitle || `${CLIENT.primaryCity} ${CLIENT.tradeLabel} | ${CLIENT.name}`,
     description: CLIENT.homepageDescription,
     canonical: '/',
   });
