@@ -2,8 +2,9 @@
 <header class="kg-header" id="kg-header">
   <div class="kg-header__inner">
     <a href="/" class="kg-logo">
-      <!-- Yellow logo (transparent bg) default; white logo fades in on scroll -->
-      <img src="/images/logo-yellow.png" alt="{{CLIENT_NAME}}" class="kg-logo-dark" style="height:36px;width:auto;">
+      <!-- Black logo: mix-blend-mode:multiply knocks out white bg on light nav -->
+      <!-- White logo: screen blend fades in when nav goes dark on scroll -->
+      <img src="/images/logo-black.png" alt="{{CLIENT_NAME}}" class="kg-logo-dark" style="height:36px;width:auto;mix-blend-mode:multiply;">
       <img src="/images/logo-white.png" alt="{{CLIENT_NAME}}" class="kg-logo-light" style="height:36px;width:auto;mix-blend-mode:screen;position:absolute;top:50%;left:0;transform:translateY(-50%);opacity:0;pointer-events:none;">
     </a>
     <nav class="kg-nav" aria-label="Main navigation">
@@ -54,10 +55,10 @@
   .kg-logo { position: relative; display: flex; align-items: center; }
   /* Both logos transition opacity */
   .kg-logo-dark, .kg-logo-light { transition: opacity 0.4s ease; }
-  /* Scrolled: fade black out, white in */
+  /* Scrolled over hero: black out, white in */
   .kg-header.scrolled .kg-logo-dark  { opacity: 0; }
   .kg-header.scrolled .kg-logo-light { opacity: 1 !important; }
-  /* Hero pages with dark overlay: always white */
-  .kg-header--hero .kg-logo-dark  { opacity: 0; }
-  .kg-header--hero .kg-logo-light { opacity: 1 !important; }
+  /* Over hero dark overlay (top of page, not scrolled): show white */
+  .kg-header--hero:not(.scrolled) .kg-logo-dark  { opacity: 0; }
+  .kg-header--hero:not(.scrolled) .kg-logo-light { opacity: 1 !important; }
 </style>
