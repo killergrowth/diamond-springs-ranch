@@ -2,7 +2,11 @@
 <header class="kg-header" id="kg-header">
   <div class="kg-header__inner">
     <a href="/" class="kg-logo">
-      <img src="/images/logo-black.png" alt="{{CLIENT_NAME}}" style="height:40px;width:auto;display:block;">
+      <span class="kg-logo-wrap">
+        <img src="/images/logo-black.png" alt="{{CLIENT_NAME}}" class="kg-logo-dark" style="height:36px;width:auto;">
+        <img src="/images/logo-white.png" alt="{{CLIENT_NAME}}" class="kg-logo-light" style="height:36px;width:auto;position:absolute;top:50%;left:0;transform:translateY(-50%);opacity:0;">
+      </span>
+      <span class="kg-logo-text">Diamond Springs Ranch</span>
     </a>
     <nav class="kg-nav" aria-label="Main navigation">
       <a href="/">Home</a>
@@ -48,5 +52,20 @@
   <a href="tel:{{CLIENT_PHONE_RAW}}" style="color:var(--kg-primary);font-size:1.1rem;font-weight:700;margin-top:12px;">{{CLIENT_PHONE}}</a>
 </nav>
 <style>
-  .kg-logo { display: flex; align-items: center; }
+  .kg-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .kg-logo-wrap { position: relative; display: flex; align-items: center; flex-shrink: 0; }
+  .kg-logo-dark, .kg-logo-light { transition: opacity 0.4s ease; }
+  .kg-logo-text {
+    font-family: var(--kg-font-heading, serif);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--kg-secondary);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+    transition: color 0.4s ease;
+  }
+  /* On scroll: swap to white logo + white text */
+  .kg-header.scrolled .kg-logo-dark  { opacity: 0; }
+  .kg-header.scrolled .kg-logo-light { opacity: 1; }
+  .kg-header.scrolled .kg-logo-text  { color: #fff; }
 </style>
