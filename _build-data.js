@@ -46,6 +46,7 @@ const CLIENT = {
   phoneRaw:        '3163036195',
   tradeLabel:      'Ranch Experiences',
   openingHours:    'By Reservation Only',
+  homepageTitle:       'Diamond Springs Ranch | Horseback Rides, Treehouse Stays &amp; More | Sedgwick, KS',
   homepageDescription: 'Diamond Springs Ranch in Sedgwick, KS: horseback rides, Highland cattle, treehouse stays &amp; private events. 17 miles north of Wichita. (316) 303-6195.',
   heroHeading:     'Where the Cowboy Way Comes Alive &mdash; 17 Miles North of Wichita',
   heroSubtext:     'Guided horseback trail rides. Highland cattle encounters. A luxury treehouse perched in the cottonwoods. A covered wagon under a Kansas sky. Authentic Western experiences for families, couples, and corporate groups &mdash; all by reservation.',
