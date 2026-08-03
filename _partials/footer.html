@@ -56,16 +56,16 @@
   document.querySelectorAll('.dynamic-year').forEach(el => el.textContent = new Date().getFullYear());
   const hdr = document.getElementById('kg-header');
   if (hdr) {
-    // If page has a hero section with dark overlay, start with white logo
-    if (document.querySelector('.kg-hero')) {
-      hdr.classList.add('kg-header--hero');
-    }
+    const logoBlack = hdr.querySelector('.kg-logo-dark');
+    const logoWhite = hdr.querySelector('.kg-logo-light');
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY > 60;
       hdr.classList.toggle('scrolled', scrolled);
-      // Once scrolled, remove hero class so dark-bg logo rules apply
-      if (scrolled) hdr.classList.remove('kg-header--hero');
-      else if (document.querySelector('.kg-hero')) hdr.classList.add('kg-header--hero');
+      // Swap logo images: black on top (transparent header), white on scroll (dark header)
+      if (logoBlack && logoWhite) {
+        logoBlack.style.display = scrolled ? 'none' : 'block';
+        logoWhite.style.display = scrolled ? 'block' : 'none';
+      }
     }, { passive: true });
   }
   const ham = document.getElementById('kg-hamburger');
@@ -141,11 +141,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold:0.5 });
     document.querySelectorAll('[data-count]').forEach(el => obs.observe(el));
   }
-  gsap.set('.kg-hero-badge, .kg-hero-content h1, .kg-hero-content p, .kg-hero-btns, .kg-hero-form', { opacity:0, y:30 });
+  gsap.set('.kg-hero-badge, .kg-hero-content h1, .kg-hero-content p, .kg-hero-btns', { opacity:0, y:30 });
   gsap.to('.kg-hero-badge',       { opacity:1, y:0, duration:0.5, ease:'power2.out', delay:0.1 });
   gsap.to('.kg-hero-content h1',  { opacity:1, y:0, duration:0.6, ease:'power2.out', delay:0.25 });
   gsap.to('.kg-hero-content p',   { opacity:1, y:0, duration:0.6, ease:'power2.out', delay:0.4 });
   gsap.to('.kg-hero-btns',        { opacity:1, y:0, duration:0.5, ease:'power2.out', delay:0.55 });
-  gsap.to('.kg-hero-form',        { opacity:1, y:0, duration:0.6, ease:'power2.out', delay:0.35 });
+  // hero form removed — destination site
 });
 </script>

@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 <!-- Norwester via CDN (display/headline) -->
 <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
+<!-- Glacial Indifference via CDN (body copy) -->
+<link href="https://fonts.cdnfonts.com/css/glacial-indifference" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/kg-base.css?v={{BUILD_VERSION}}">
 <link rel="stylesheet" href="/assets/css/kg-forms.css?v={{BUILD_VERSION}}">
 <style>
@@ -22,9 +24,9 @@
     --kg-tan:            #B17C4B;   /* Saddle Tan */
 
     /* Typography */
-    --kg-font-family:        'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
+    --kg-font-family:        'Glacial Indifference', 'Roboto Condensed', Arial, sans-serif;
     --kg-font-display:       'Norwester', 'Roboto Condensed', Arial, sans-serif;
-    --kg-font-body:          'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
+    --kg-font-body:          'Glacial Indifference', 'Roboto Condensed', Arial, sans-serif;
   }
 
   /* Apply display font to headings */
@@ -90,9 +92,14 @@
 
   /* Header on scroll — dark barnwood background */
   .kg-header.scrolled {
-    background: var(--kg-secondary);
+    background: var(--kg-secondary) !important;
     box-shadow: 0 2px 16px rgba(0,0,0,0.35);
   }
+  .kg-header.scrolled .kg-nav > a,
+  .kg-header.scrolled .kg-nav-dropdown > a { color: #fff !important; }
+  .kg-header.scrolled .kg-header-phone { color: rgba(255,255,255,0.85) !important; }
+  .kg-header.scrolled .kg-logo-text { color: #fff !important; }
+  .kg-header.scrolled .kg-hamburger span { background: #fff; }
 
   /* Section dark bg: Horsehide Black */
   .section-dark {
@@ -127,13 +134,21 @@
     background: #1a1511;
   }
 
-  /* Nav links */
-  .kg-nav a {
-    font-family: var(--kg-font-body);
-    font-weight: 700;
+  /* Nav links — Norwester display font */
+  .kg-nav a, .kg-nav-dropdown > a {
+    font-family: 'Norwester', var(--kg-font-display);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.88rem;
+  }
+  /* Logo text — Norwester */
+  .kg-logo-text {
+    font-family: 'Norwester', var(--kg-font-display) !important;
+    font-weight: 400;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    font-size: 0.82rem;
+    font-size: 1.05rem;
   }
 
   /* Section alt: warm cream background */

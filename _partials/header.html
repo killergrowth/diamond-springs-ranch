@@ -3,8 +3,8 @@
   <div class="kg-header__inner">
     <a href="/" class="kg-logo">
       <span class="kg-logo-wrap">
-        <img src="/images/logo-black.png" alt="{{CLIENT_NAME}}" class="kg-logo-dark" style="height:36px;width:auto;">
-        <img src="/images/logo-white.png" alt="{{CLIENT_NAME}}" class="kg-logo-light" style="height:36px;width:auto;position:absolute;top:50%;left:0;transform:translateY(-50%);opacity:0;">
+        <img src="/images/logo-black.png" alt="{{CLIENT_NAME}}" class="kg-logo-dark">
+        <img src="/images/logo-white.png" alt="{{CLIENT_NAME}}" class="kg-logo-light">
       </span>
       <span class="kg-logo-text">Diamond Springs Ranch</span>
     </a>
@@ -51,20 +51,58 @@
   <a href="/contact/">Contact</a>
   <a href="tel:{{CLIENT_PHONE_RAW}}" style="color:var(--kg-primary);font-size:1.1rem;font-weight:700;margin-top:12px;">{{CLIENT_PHONE}}</a>
 </nav>
+
 <style>
-  .kg-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .kg-logo-wrap { position: relative; display: flex; align-items: center; flex-shrink: 0; }
-  .kg-logo-dark, .kg-logo-light { transition: opacity 0.4s ease; }
-  .kg-logo-text {
-    font-family: var(--kg-font-heading, serif);
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--kg-secondary);
-    white-space: nowrap;
-    letter-spacing: 0.01em;
-    transition: color 0.4s ease;
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+  /* Logo lockup */
+  .kg-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
   }
-  /* On scroll: swap to white logo + white text */
+
+  /* Logo image wrapper — stacks black and white on top of each other */
+  .kg-logo-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .kg-logo-dark,
+  .kg-logo-light {
+    height: 36px;
+    width: auto;
+    display: block;
+    transition: opacity 0.35s ease;
+  }
+
+  /* White logo sits on top, hidden by default */
+  .kg-logo-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  /* Brand name — Norwester via local fallback, Roboto Condensed as web fallback */
+  .kg-logo-text {
+    font-family: 'Norwester', 'Roboto Condensed', 'Arial Narrow', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #2F2A26;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.35s ease;
+    line-height: 1;
+  }
+
+  /* Scrolled state: white logo fades in, black fades out, text goes white */
   .kg-header.scrolled .kg-logo-dark  { opacity: 0; }
   .kg-header.scrolled .kg-logo-light { opacity: 1; }
   .kg-header.scrolled .kg-logo-text  { color: #fff; }

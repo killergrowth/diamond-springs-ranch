@@ -634,7 +634,7 @@ ${REVIEWS_HTML}
   <div class="container">
     <div class="section-title gsap-fade">
       <span class="section-label">Service Areas</span>
-      <h2>Which Communities Does  Serve?</h2>
+      <h2>Which Communities Does ${CLIENT.nameShort} Serve?</h2>
       <p>${CLIENT.serviceAreaIntro || 'We provide ' + CLIENT.tradeLabel.toLowerCase() + ' services across ' + CLIENT.state + '.'}</p>
     </div>
     <div class="link-grid">
