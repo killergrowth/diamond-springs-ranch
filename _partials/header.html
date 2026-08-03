@@ -2,9 +2,9 @@
 <header class="kg-header" id="kg-header">
   <div class="kg-header__inner">
     <a href="/" class="kg-logo">
-      <!-- Black logo for light header; white logo crossfades in when scrolled -->
-      <img src="/images/logo-black.png" alt="{{CLIENT_NAME}}" class="kg-logo-dark" style="height:36px;width:auto;position:absolute;transition:opacity 0.4s ease;">
-      <img src="/images/logo-white.png" alt="{{CLIENT_NAME}}" class="kg-logo-light" style="height:36px;width:auto;position:relative;opacity:0;transition:opacity 0.4s ease;">
+      <!-- Black logo default; white logo crossfades in when scrolled -->
+      <img src="/images/logo-black.png" alt="{{CLIENT_NAME}}" class="kg-logo-dark" style="height:36px;width:auto;">
+      <img src="/images/logo-white.png" alt="{{CLIENT_NAME}}" class="kg-logo-light" style="height:36px;width:auto;position:absolute;top:50%;left:0;transform:translateY(-50%);opacity:0;pointer-events:none;">
     </a>
     <nav class="kg-nav" aria-label="Main navigation">
       <a href="/">Home</a>
@@ -50,12 +50,14 @@
   <a href="tel:{{CLIENT_PHONE_RAW}}" style="color:var(--kg-primary);font-size:1.1rem;font-weight:700;margin-top:12px;">{{CLIENT_PHONE}}</a>
 </nav>
 <style>
-  /* Logo container needs relative positioning for absolute/relative overlap */
+  /* Logo container: relative so white logo can overlap absolutely */
   .kg-logo { position: relative; display: flex; align-items: center; }
-  /* Crossfade logo on scroll: fade out black, fade in white */
-  .kg-header.scrolled .kg-logo-dark  { opacity: 0 !important; }
+  /* Both logos transition opacity */
+  .kg-logo-dark, .kg-logo-light { transition: opacity 0.4s ease; }
+  /* Scrolled: fade black out, white in */
+  .kg-header.scrolled .kg-logo-dark  { opacity: 0; }
   .kg-header.scrolled .kg-logo-light { opacity: 1 !important; }
-  /* On hero pages where header overlays a dark image, always show white logo */
-  .kg-header--hero .kg-logo-dark  { opacity: 0 !important; }
+  /* Hero pages with dark overlay: always white */
+  .kg-header--hero .kg-logo-dark  { opacity: 0; }
   .kg-header--hero .kg-logo-light { opacity: 1 !important; }
 </style>
