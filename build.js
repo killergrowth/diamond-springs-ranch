@@ -1049,6 +1049,12 @@ function copyAssets() {
   copyDir(path.join(__dirname, 'assets'),     path.join(DIST, 'assets'));
   copyDir(path.join(__dirname, 'images'),      path.join(DIST, 'images'));
   copyDir(path.join(__dirname, 'v2'),          path.join(DIST, 'v2'));
+  // v2.css lives at root, copy to dist root for homepage
+  const v2cssSrc = path.join(__dirname, 'v2.css');
+  if (fs.existsSync(v2cssSrc)) fs.copyFileSync(v2cssSrc, path.join(DIST, 'v2.css'));
+  // v2 homepage replaces the generated root index.html
+  const v2HomeSrc = path.join(__dirname, 'index.html');
+  if (fs.existsSync(v2HomeSrc)) fs.copyFileSync(v2HomeSrc, path.join(DIST, 'index.html'));
   ['_headers', '_redirects', '_routes.json'].forEach(f => {
     const src = path.join(__dirname, f);
     if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, f));

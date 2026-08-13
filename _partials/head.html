@@ -1,7 +1,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="/images/logo-black.png" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" href="/images/logo-white.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="/images/favicon-black.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/images/favicon-white.png" media="(prefers-color-scheme: dark)">
+<link rel="shortcut icon" type="image/png" href="/images/favicon-black.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Roboto Condensed (body/subheadings) + Playfair Display fallback -->
@@ -174,5 +175,58 @@
     font-weight: 700;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+  }
+
+  /* === DSR Photo Service Cards === */
+  .dsr-svc-card-link { text-decoration: none; display: block; }
+  .dsr-svc-card {
+    padding: 0 !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .dsr-svc-card-link:hover .dsr-svc-card {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.13);
+  }
+  .dsr-card-photo {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .dsr-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .dsr-svc-card-link:hover .dsr-card-photo img { transform: scale(1.05); }
+  .dsr-card-body {
+    padding: 22px 24px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .dsr-card-body h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--kg-secondary);
+  }
+  .dsr-card-body p {
+    margin: 0;
+    color: var(--kg-text-light, #666);
+    font-size: 0.9rem;
+    flex: 1;
+  }
+  .dsr-card-body span {
+    color: var(--kg-primary);
+    font-weight: 700;
+    font-size: 0.88rem;
+    margin-top: 4px;
   }
 </style>
