@@ -291,9 +291,11 @@ p { line-height: 1.75; }
 .v2-exp-card {
   position: relative; height: 420px;
   overflow: hidden; cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--black);
+  will-change: transform;
+  transition: box-shadow 0.3s ease;
 }
-.v2-exp-card:hover { transform: scale(1.015); box-shadow: 0 8px 40px rgba(0,0,0,0.5); z-index: 2; }
+.v2-exp-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.5); z-index: 2; }
 .v2-exp-card-bg {
   position: absolute; inset: 0; background-size: cover; background-position: center;
   transition: transform 0.55s ease;
