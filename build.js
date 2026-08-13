@@ -21,6 +21,8 @@
 'use strict';
 const fs   = require('fs');
 const path = require('path');
+const { injectScripts, loadSiteScripts } = require('C:\\Users\\KillerGrowth\\.openclaw\\workspace\\tools\\kg-site-builder\\lib\\inject-scripts');
+const SITE_SCRIPTS = loadSiteScripts('diamond-springs-ranch');
 
 // ── Load data ─────────────────────────────────────────────────────────────────
 const { CLIENT, SERVICES, CITIES, REVIEWS, DIFFERENTIATORS, SERVICE_FAQS } = require('./_build-data.js');
@@ -61,6 +63,10 @@ function gridClass(n) {
 function writeFile(relPath, content) {
   const full = path.join(DIST, relPath);
   mkdirp(path.dirname(full));
+  // Inject tracked scripts (GA4, GTM, Feedbucket, etc.) on HTML pages only
+  if (relPath.endsWith('.html') && SITE_SCRIPTS) {
+    content = injectScripts(content, SITE_SCRIPTS);
+  }
   fs.writeFileSync(full, content, 'utf8');
 }
 
@@ -528,12 +534,17 @@ function buildHomepage() {
   ).join('');
 
   const serviceCards = SERVICES.map(s => `
-    <a href="/${s.slug}/" class="kg-card-link">
-      <div class="kg-card">
-        <div class="kg-card-icon">${s.icon || '🔧'}</div>
-        <h3>${s.name}</h3>
-        <p>${s.shortDesc}</p>
-        <span>Learn more &rarr;</span>
+    <a href="/${s.slug}/" class="kg-card-link dsr-svc-card-link">
+      <div class="kg-card dsr-svc-card">
+        ${s.cardPhoto
+          ? `<div class="dsr-card-photo"><img src="/images/client-photos/${s.cardPhoto}" alt="${s.name}" loading="lazy"></div>`
+          : `<div class="kg-card-icon">${s.icon || '🔧'}</div>`
+        }
+        <div class="dsr-card-body">
+          <h3>${s.name}</h3>
+          <p>${s.shortDesc}</p>
+          <span>Learn more &rarr;</span>
+        </div>
       </div>
     </a>`).join('');
 
@@ -610,7 +621,7 @@ function buildHomepage() {
         </div>
       </div>
       <div class="kg-img-round gsap-fade-right">
-        <img src="/images/about-team.jpg" alt="${CLIENT.name} team" style="max-height:480px;">
+        <img src="/images/client-photos/rider-sunset.png" alt="Cowboy riding at sunset at Diamond Springs Ranch" style="max-height:480px;width:100%;object-fit:cover;border-radius:10px;">
       </div>
     </div>
   </div>
@@ -634,7 +645,7 @@ ${REVIEWS_HTML}
   <div class="container">
     <div class="section-title gsap-fade">
       <span class="section-label">Service Areas</span>
-      <h2>Which Communities Does  Serve?</h2>
+      <h2>Which Communities Does ${CLIENT.nameShort} Serve?</h2>
       <p>${CLIENT.serviceAreaIntro || 'We provide ' + CLIENT.tradeLabel.toLowerCase() + ' services across ' + CLIENT.state + '.'}</p>
     </div>
     <div class="link-grid">
@@ -736,12 +747,17 @@ function buildServicesPage() {
     canonical: '/services/',
   });
   const cards = SERVICES.map(s => `
-    <a href="/${s.slug}/" class="kg-card-link">
-      <div class="kg-card">
-        <div class="kg-card-icon">${s.icon || '🔧'}</div>
-        <h3>${s.name}</h3>
-        <p>${s.shortDesc}</p>
-        <span>Learn more &rarr;</span>
+    <a href="/${s.slug}/" class="kg-card-link dsr-svc-card-link">
+      <div class="kg-card dsr-svc-card">
+        ${s.cardPhoto
+          ? `<div class="dsr-card-photo"><img src="/images/client-photos/${s.cardPhoto}" alt="${s.name}" loading="lazy"></div>`
+          : `<div class="kg-card-icon">${s.icon || '🔧'}</div>`
+        }
+        <div class="dsr-card-body">
+          <h3>${s.name}</h3>
+          <p>${s.shortDesc}</p>
+          <span>Learn more &rarr;</span>
+        </div>
       </div>
     </a>`).join('');
   const body = `
@@ -765,24 +781,82 @@ ${CTA}`;
 
 // ── Service pages (1 per service) ────────────────────────────────────────────
 
+function buildPhotoGallery(photos) {
+  if (!photos || !photos.length) return '';
+  const items = photos.map(p => `
+    <div class="dsr-gallery-item">
+      <img src="/images/client-photos/${p.file}" alt="${p.alt}" loading="lazy">
+    </div>`).join('');
+  return `
+<section style="background:var(--kg-cream);padding:60px 0;">
+  <div class="container">
+    <div class="section-title gsap-fade">
+      <span class="section-label">Photo Gallery</span>
+      <h2>See It for Yourself</h2>
+    </div>
+    <div class="dsr-photo-grid">
+      ${items}
+    </div>
+  </div>
+</section>
+<style>
+  .dsr-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 768px) {
+    .dsr-photo-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .dsr-photo-grid { grid-template-columns: 1fr; }
+  }
+  .dsr-gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+  }
+  .dsr-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .dsr-gallery-item:hover img { transform: scale(1.04); }
+</style>`;
+}
+
 function buildServicePage(svc) {
+  const heroBg = svc.heroBg || `/images/client-photos/${svc.heroPhoto || ''}`;
+  const heroStyle = svc.heroPhoto
+    ? `style="background-image:url('${heroBg}');background-size:cover;background-position:center;"`
+    : '';
   const meta = buildPageMeta({
     title: `${svc.name} in ${CLIENT.primaryCity}, ${CLIENT.state} | ${CLIENT.name}`,
     description: svc.metaDescription || `${CLIENT.name} provides professional ${svc.name.toLowerCase()} in ${CLIENT.primaryCity} and surrounding ${CLIENT.state} communities. ${svc.shortDesc}`,
     canonical: `/${svc.slug}/`,
-    ogImage: `/images/svc-${svc.slug}.jpg`,
+    ogImage: svc.heroPhoto ? `/images/client-photos/${svc.heroPhoto}` : `/images/svc-${svc.slug}.jpg`,
   });
   const faqs = svc.faqs || SERVICE_FAQS[svc.slug] || [];
   const svcSchema = buildServiceSchema(svc, faqs);
-  // PKG001: link to city pillar pages, not SxC pages
   const cityLinks = CITIES.map(c =>
     `<a href="/${c.slug}/" class="link-btn">${c.name}</a>`
   ).join('\n      ');
 
+  // Inset photo — show a prominent feature photo mid-page if defined
+  const insetPhotoHtml = svc.insetPhoto ? `
+    <div style="margin:32px 0;border-radius:10px;overflow:hidden;max-height:420px;">
+      <img src="/images/client-photos/${svc.insetPhoto}" alt="${svc.insetAlt || svc.name}" style="width:100%;height:420px;object-fit:cover;display:block;">
+    </div>` : '';
+
+  const galleryHtml = buildPhotoGallery(svc.photos);
+
   const body = `
 ${svcSchema}
-<div class="kg-page-header">
-  <div class="container">
+<div class="kg-page-header" ${heroStyle}>
+  <div style="position:absolute;inset:0;background:rgba(30,20,10,0.58);"></div>
+  <div class="container" style="position:relative;z-index:1;">
     <nav class="kg-breadcrumb" style="color:rgba(255,255,255,0.6);margin-bottom:10px;">
       <a href="/" style="color:rgba(255,255,255,0.7);">Home</a> &rsaquo;
       <a href="/services/" style="color:rgba(255,255,255,0.7);">Services</a> &rsaquo;
@@ -790,6 +864,7 @@ ${svcSchema}
     </nav>
     <h1>${svc.name} in ${CLIENT.primaryCity}, ${CLIENT.state}</h1>
     <p>${svc.shortDesc}</p>
+    ${svc.costRange ? `<p style="margin-top:12px;font-size:1.05rem;color:var(--kg-primary);font-weight:700;">${svc.costRange}</p>` : ''}
   </div>
 </div>
 <section>
@@ -797,10 +872,10 @@ ${svcSchema}
     <div class="kg-two-col">
       <article class="prose">
         ${svc.body || '<p>' + svc.shortDesc + '</p>'}
-        ${svc.costRange ? `<div class="kg-highlight"><p><strong>Typical Cost Range:</strong> ${svc.costRange}</p></div>` : ''}
+        ${insetPhotoHtml}
       </article>
       <div>
-        <div style="background:var(--kg-bg-alt);border-radius:8px;padding:28px;">
+        <div style="background:var(--kg-bg-alt);border-radius:8px;padding:28px;position:sticky;top:100px;">
           <h3>Book This Experience</h3>
           <p style="color:var(--kg-text-light);margin-bottom:20px;">Questions about ${svc.name.toLowerCase()}? Reach out and we'll get you scheduled.</p>
           ${formHtml(`svc-form-${svc.slug}`, svc.slug)}
@@ -809,6 +884,7 @@ ${svcSchema}
     </div>
   </div>
 </section>
+${galleryHtml}
 ${faqs.length ? `
 <section class="section-alt">
   <div class="container">
@@ -972,6 +1048,13 @@ function copyAssets() {
   };
   copyDir(path.join(__dirname, 'assets'),     path.join(DIST, 'assets'));
   copyDir(path.join(__dirname, 'images'),      path.join(DIST, 'images'));
+  copyDir(path.join(__dirname, 'v2'),          path.join(DIST, 'v2'));
+  // v2.css lives at root, copy to dist root for homepage
+  const v2cssSrc = path.join(__dirname, 'v2.css');
+  if (fs.existsSync(v2cssSrc)) fs.copyFileSync(v2cssSrc, path.join(DIST, 'v2.css'));
+  // v2 homepage replaces the generated root index.html
+  const v2HomeSrc = path.join(__dirname, 'index.html');
+  if (fs.existsSync(v2HomeSrc)) fs.copyFileSync(v2HomeSrc, path.join(DIST, 'index.html'));
   ['_headers', '_redirects', '_routes.json'].forEach(f => {
     const src = path.join(__dirname, f);
     if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, f));
