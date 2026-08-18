@@ -143,6 +143,8 @@ const SERVICES = [
   },
   {
     slug:       'luxury-treehouse-stay',
+    lodging:    true,
+    lodgifyRentalId: '391057',
     name:       'Luxury Treehouse Stay',
     shortDesc:  'Spend the night in Diamond Springs Ranch&rsquo;s signature treehouse &mdash; fully equipped, completely private.',
     icon:       '&#x1F333;',
@@ -160,6 +162,8 @@ const SERVICES = [
   },
   {
     slug:       'covered-wagon-stay',
+    lodging:    true,
+    lodgifyRentalId: '687675',
     name:       'Covered Wagon Stay',
     shortDesc:  'Sleep under the stars in a fully equipped covered wagon on the open Kansas ranch.',
     icon:       '&#x1F6FA;',

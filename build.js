@@ -876,9 +876,51 @@ ${svcSchema}
       </article>
       <div>
         <div style="background:var(--kg-bg-alt);border-radius:8px;padding:28px;position:sticky;top:100px;">
+          ${svc.lodging ? `
+          <h3>Reserve Your Stay</h3>
+          <p style="color:var(--kg-text-light);margin-bottom:20px;">Check availability and book your night at Diamond Springs Ranch.</p>
+          <style>
+            :root {
+              --ldg-bnb-background: #ffffff;
+              --ldg-bnb-border-radius: 0.42em;
+              --ldg-bnb-box-shadow: none;
+              --ldg-bnb-padding: 10px;
+              --ldg-bnb-input-background: #ffffff;
+              --ldg-bnb-button-border-radius: 3.58em;
+              --ldg-bnb-color-primary: #C49A3C;
+              --ldg-bnb-color-primary-lighter: #D4AE5A;
+              --ldg-bnb-color-primary-darker: #b38930;
+              --ldg-bnb-color-primary-contrast: #ffffff;
+              --ldg-component-calendar-cell-selection-bg-color: #C49A3C;
+              --ldg-component-calendar-cell-selection-color: #ffffff;
+              --ldg-component-calendar-cell-selected-bg-color: #D4AE5A;
+              --ldg-component-calendar-cell-selected-color: #ffffff;
+              --ldg-bnb-font-family: inherit;
+            }
+            #lodgify-book-now-box { width: 100%; }
+          </style>
+          <div
+            id="lodgify-book-now-box"
+            data-rental-id="${svc.lodgifyRentalId || ''}"
+            data-website-id="372293"
+            data-slug="treelodges"
+            data-language-code="en"
+            data-new-tab="true"
+            data-version="stable"
+            data-currency-code="USD"
+            data-has-guests-breakdown
+            data-check-in-label="Check-in"
+            data-check-out-label="Check-out"
+            data-guests-label="Guests"
+            data-book-button-label="Book Now"
+            data-done-label="Done"
+          ></div>
+          <script src="https://widget.lodgify.com/widget.js" async></script>
+          ` : `
           <h3>Book This Experience</h3>
           <p style="color:var(--kg-text-light);margin-bottom:20px;">Questions about ${svc.name.toLowerCase()}? Reach out and we'll get you scheduled.</p>
           ${formHtml(`svc-form-${svc.slug}`, svc.slug)}
+          `}
         </div>
       </div>
     </div>
