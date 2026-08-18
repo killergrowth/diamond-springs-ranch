@@ -81,8 +81,8 @@
     <h1>Where the <em>real</em> West still lives.</h1>
     <p class="v2-hero-sub">Horseback rides, Highland cattle, a treehouse above the treeline, and a covered wagon under a Kansas sky. Come back to something that matters.</p>
     <div class="v2-hero-btns">
-      <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold">Book Your Visit</a>
-      <a href="/services/" class="btn btn-light">See All Experiences</a>
+      <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold">Book a Trail Ride</a>
+      <a href="#lodging" class="btn btn-light">Book a Stay</a>
     </div>
   </div>
   <div class="v2-hero-scroll-hint">
@@ -276,25 +276,86 @@
     </div>
   </div>
   <div class="v2-lodge-cards">
-    <a href="/services/treehouse-stay/" class="v2-lodge-card">
+    <a href="https://treelodges.lodgify.com/en/sunset-reset-treehouse" target="_blank" rel="noopener noreferrer" class="v2-lodge-card">
       <div class="v2-lodge-card-bg" style="background-image: url('/images/card-treehouse.jpg');"></div>
       <div class="v2-lodge-card-overlay"></div>
       <div class="v2-lodge-card-body">
         <div class="v2-lodge-card-name">Sunset Reset Treehouse</div>
         <div class="v2-lodge-card-price">From $350 per night</div>
-        <span class="btn btn-light">Reserve Your Night &rarr;</span>
+        <span class="btn btn-light">Reserve Your Stay &rarr;</span>
       </div>
     </a>
-    <a href="/services/covered-wagon-stay/" class="v2-lodge-card">
+    <a href="https://treelodges.lodgify.com/en/sunset-schooner" target="_blank" rel="noopener noreferrer" class="v2-lodge-card">
       <div class="v2-lodge-card-bg" style="background-image: url('/images/Wagon-front-in-evening-light-1024x768.jpg');"></div>
       <div class="v2-lodge-card-overlay"></div>
       <div class="v2-lodge-card-body">
         <div class="v2-lodge-card-name">Sunset Schooner</div>
         <div class="v2-lodge-card-price">From $250 per night</div>
-        <span class="btn btn-light">Reserve Your Night &rarr;</span>
+        <span class="btn btn-light">Reserve Your Stay &rarr;</span>
       </div>
     </a>
   </div>
+
+  <!-- Lodgify Booking Widget -->
+  <div class="container" style="padding-top:48px;padding-bottom:48px;">
+    <p style="text-align:center;font-family:'Jost',sans-serif;font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray-body);margin-bottom:24px;">Check Availability &amp; Reserve</p>
+    <style>
+      :root {
+        --ldg-bnb-background: #ffffff;
+        --ldg-bnb-border-radius: 0.42em;
+        --ldg-bnb-box-shadow: 0px 24px 54px 0px rgba(0, 0, 0, 0.1);
+        --ldg-bnb-padding: 14px;
+        --ldg-bnb-input-background: #ffffff;
+        --ldg-bnb-button-border-radius: 3.58em;
+        --ldg-bnb-color-primary: #C49A3C;
+        --ldg-bnb-color-primary-lighter: #D4AE5A;
+        --ldg-bnb-color-primary-darker: #b38930;
+        --ldg-bnb-color-primary-contrast: #ffffff;
+        --ldg-component-calendar-cell-selection-bg-color: #C49A3C;
+        --ldg-component-calendar-cell-selection-color: #ffffff;
+        --ldg-component-calendar-cell-selected-bg-color: #D4AE5A;
+        --ldg-component-calendar-cell-selected-color: #ffffff;
+        --ldg-bnb-font-family: inherit;
+      }
+      #lodgify-book-now-box { width: 100%; }
+    </style>
+    <div
+      id="lodgify-book-now-box"
+      data-rental-id=""
+      data-website-id="372293"
+      data-slug="treelodges"
+      data-language-code="en"
+      data-new-tab="true"
+      data-version="stable"
+      data-currency-code="USD"
+      data-has-guests-breakdown
+      data-check-in-label="Check-in"
+      data-check-out-label="Check-out"
+      data-guests-label="Guests"
+      data-guests-singular-label="{{NumberOfGuests}} guest"
+      data-guests-plural-label="{{NumberOfGuests}} guests"
+      data-location-input-label="Location"
+      data-total-price-label="Total price:"
+      data-select-dates-to-see-price-label="Select dates to see total price"
+      data-minimum-price-per-night-first-label="From"
+      data-minimum-price-per-night-second-label="per night"
+      data-book-button-label="Book Now"
+      data-guests-breakdown-label="Guests"
+      data-adults-label='{"one":"adult","other":"adults"}'
+      data-adults-description="Ages {minAge} or above"
+      data-children-label='{"one":"child","other":"children"}'
+      data-children-description="Ages {minAge}-{maxAge}"
+      data-children-not-allowed-label="Not suitable for children"
+      data-infants-label='{"one":"infant","other":"infants"}'
+      data-infants-description="Under {maxAge}"
+      data-infants-not-allowed-label="Not suitable for infants"
+      data-pets-label='{"one":"pet","other":"pets"}'
+      data-pets-not-allowed-label="Not allowed"
+      data-done-label="Done"
+    ></div>
+    <script src="https://widget.lodgify.com/widget.js" async></script>
+  </div>
+
 </section>
 
 <!-- â”€â”€â”€ REVIEWS â”€â”€â”€ -->
