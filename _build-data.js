@@ -110,6 +110,8 @@ const SERVICES = [
   {
     slug:       'guided-horseback-rides',
     name:       'Guided Horseback Rides',
+    heroHeading: 'Where the <em>real</em> West still lives.',
+    ctaLabel:   'Book a Trail Ride',
     shortDesc:  'Trail rides, sunset rides, and riding lessons on a working Kansas ranch.',
     icon:       '&#x1F40E;',
     costRange:  'Call for current pricing &mdash; (316) 303-6195',
@@ -126,6 +128,8 @@ const SERVICES = [
   },
   {
     slug:       'highland-cattle-experience',
+    heroHeading: 'Meet the <em>herd.</em>',
+    ctaLabel:   'Book the Ranch Corral',
     name:       'Highland Cattle Experience',
     shortDesc:  'Meet and interact with the ranch&rsquo;s Scottish Highland cattle herd.',
     icon:       '&#x1F404;',
@@ -143,6 +147,8 @@ const SERVICES = [
   },
   {
     slug:       'luxury-treehouse-stay',
+    heroHeading: 'Sleep above the <em>treeline.</em>',
+    ctaLabel:   'Book the Treehouse',
     lodging:    true,
     lodgifyRentalId: '391057',
     lodgifyUrl:  'https://treelodges.lodgify.com/en/sunset-reset-treehouse',
@@ -163,6 +169,8 @@ const SERVICES = [
   },
   {
     slug:       'covered-wagon-stay',
+    heroHeading: 'Sleep under a <em>Kansas sky.</em>',
+    ctaLabel:   'Book the Wagon',
     lodging:    true,
     lodgifyRentalId: '687675',
     lodgifyUrl:  'https://treelodges.lodgify.com/en/sunset-schooner',
@@ -183,23 +191,27 @@ const SERVICES = [
   },
   {
     slug:       'private-events',
+    heroHeading: 'Bring your <em>whole group.</em>',
+    ctaLabel:   'Inquire About Events',
     name:       'Private Events &amp; Rentals',
-    shortDesc:  'Weddings, corporate retreats, family reunions, and group events on the ranch.',
+    shortDesc:  'Corporate retreats, family reunions, and group events on the ranch.',
     icon:       '&#x1F37E;',
     costRange:  'Call for custom event pricing &mdash; (316) 303-6195',
-    intro:      'Diamond Springs Ranch hosts private events that can&rsquo;t be replicated at a hotel ballroom or community center. Wedding receptions, corporate retreats, team-building events, family reunions, birthday parties, church groups, school field trips, scout groups, company picnics, and photography sessions &mdash; all with the working ranch as backdrop. The Rusty Saddle Bar and the open pasture and trail system make the property a flexible venue for groups of all sizes.',
-    body:       '<p>The Diamond Springs Ranch property &mdash; open Kansas land with working horses, Highland cattle, a luxury treehouse, and The Rusty Saddle Bar on site &mdash; is a private event venue unlike anything else within 30 minutes of Wichita. The combination of space, character, and authentic Western atmosphere produces events that guests remember in a way that a hotel ballroom and a catered dinner rarely does.</p><h2>Wedding Receptions at Diamond Springs Ranch</h2><p>Wedding receptions at Diamond Springs Ranch use the open land and Western setting as the backdrop for an event that stands apart from standard venue options. The ranch setting provides the kind of visual character &mdash; working horses visible in the pasture, open Kansas sky overhead, the rustic infrastructure of a real working ranch &mdash; that no venue property can manufacture. Call (316) 303-6195 to discuss your date and vision.</p><h2>Corporate Retreats and Team-Building Events</h2><p>Getting a corporate team onto a working ranch changes the dynamic. The outdoor setting, the shared physical activities, and the departure from the standard office and conference room environment delivers measurable team cohesion improvements — several returning corporate clients have cited the ranch setting specifically as the reason they rebook. Diamond Springs Ranch hosts quarterly retreats for medical practices, agricultural businesses, logistics companies, and professional service firms from across the Wichita metro. Groups range from 8 to 60 participants for team events; full-property private rental accommodates up to 150+. Reserve at (316) 303-6195.</p><h2>Private Event Track Record at Diamond Springs Ranch</h2><p>Diamond Springs Ranch has hosted 30+ weddings in the past five years, 100+ corporate team events, and hundreds of group bookings ranging from birthday parties to church family nights. Peak months (May, June, September, October) book 3&ndash;4 months in advance; off-season dates (November through March) are typically available on 2&ndash;3 weeks notice. Diamond Springs Ranch is the only private event venue in the Wichita metro offering overnight accommodation (treehouse and covered wagon) alongside event rental &mdash; couples frequently add an overnight stay to their wedding night. All events are staffed by the Diamond Springs Ranch team; outside caterers and event coordinators are welcome on property.</p><h2>Group Events: Church Groups, School Field Trips, Scout Groups, Family Reunions</h2><p>The ranch accommodates church groups, school field trips, scout groups, family reunions, company picnics, birthday parties, and photography sessions. The Rusty Saddle Bar, the open pasture, and the trail system provide the space and infrastructure for groups of varying sizes. Call (316) 303-6195 to discuss what the ranch can accommodate for your group.</p><h2>Finding Diamond Springs Ranch in Sedgwick, KS</h2><p>Diamond Springs Ranch is located at 1734 SE 96th St in Sedgwick, KS 67135. From downtown Sedgwick &mdash; including the historic Main Street district, Sedgwick Elementary School, and the Sedgwick Community Center &mdash; the ranch is just minutes east on SE 96th Street. The property borders the open ranch land east of the Chisholm Drive corridor, where Sedgwick&rsquo;s rural residential areas transition into working farmland. Guests from the Hillside Drive neighborhood, the SE Prairie View area, and the Oak Ridge subdivision of Sedgwick often walk or bike to the property on the county trail.</p><p>Diamond Springs Ranch has operated in Sedgwick since the property was established by owner Susan Schrag. Built from the ground up, it now holds a 4.9-star Google rating across 281+ verified reviews. The ranch carries general liability insurance and operates as a registered Kansas agritourism business under the Kansas Department of Agriculture. Diamond Springs Ranch has been welcoming guests since 2010 &mdash; over 15 years of operation in Sedgwick County. Owner Susan Schrag holds equine handling certifications and the ranch maintains current Kansas Department of Wildlife and Parks compliance. All activities are led by experienced staff who work with the horses and cattle daily.</p><p>Explore more experiences at Diamond Springs Ranch: <a href="/guided-horseback-rides/">Guided Horseback Rides</a>, <a href="/highland-cattle-experience/">Highland Cattle Experience</a>, <a href="/luxury-treehouse-stay/">Luxury Treehouse Stay</a>, <a href="/covered-wagon-stay/">Covered Wagon Stay</a>, <a href="/dinner-date-experience/">Dinner Date Experience</a>. View our full list of <a href="/services/">ranch experiences</a> and <a href="/service-areas/">areas we serve</a>.</p>',
-    metaDescription: 'Weddings, corporate retreats &amp; private ranch rentals at Diamond Springs Ranch in Sedgwick, KS &mdash; 30 min from Wichita. Call (316) 303-6195.',
+    intro:      'Diamond Springs Ranch hosts private events that can&rsquo;t be replicated at a hotel ballroom or community center. Corporate retreats, team-building events, family reunions, birthday parties, church groups, school field trips, scout groups, company picnics, and photography sessions &mdash; all with the working ranch as backdrop. The Rusty Saddle Bar and the open pasture and trail system make the property a flexible venue for groups of all sizes.',
+    body:       '<p>The Diamond Springs Ranch property &mdash; open Kansas land with working horses, Highland cattle, a luxury treehouse, and The Rusty Saddle Bar on site &mdash; is a private event venue unlike anything else within 30 minutes of Wichita. The combination of space, character, and authentic Western atmosphere produces events that guests remember in a way that a hotel ballroom and a catered dinner rarely does.</p><h2>Corporate Retreats and Team-Building Events</h2><p>Getting a corporate team onto a working ranch changes the dynamic. The outdoor setting, the shared physical activities, and the departure from the standard office and conference room environment delivers measurable team cohesion improvements &mdash; several returning corporate clients have cited the ranch setting specifically as the reason they rebook. Diamond Springs Ranch hosts quarterly retreats for medical practices, agricultural businesses, logistics companies, and professional service firms from across the Wichita metro. Groups range from 8 to 60 participants for team events; full-property private rental accommodates up to 150+. Reserve at (316) 303-6195.</p><h2>Private Event Track Record at Diamond Springs Ranch</h2><p>Diamond Springs Ranch has hosted 100+ corporate team events and hundreds of group bookings ranging from birthday parties to church family nights. Peak months (May, June, September, October) book 3&ndash;4 months in advance; off-season dates (November through March) are typically available on 2&ndash;3 weeks notice. Diamond Springs Ranch is the only private event venue in the Wichita metro offering overnight accommodation (treehouse and covered wagon) alongside event rental. All events are staffed by the Diamond Springs Ranch team; outside caterers and event coordinators are welcome on property.</p><h2>Group Events: Church Groups, School Field Trips, Scout Groups, Family Reunions</h2><p>The ranch accommodates church groups, school field trips, scout groups, family reunions, company picnics, birthday parties, and photography sessions. The Rusty Saddle Bar, the open pasture, and the trail system provide the space and infrastructure for groups of varying sizes. Call (316) 303-6195 to discuss what the ranch can accommodate for your group.</p><h2>Finding Diamond Springs Ranch in Sedgwick, KS</h2><p>Diamond Springs Ranch is located at 1734 SE 96th St in Sedgwick, KS 67135. From downtown Sedgwick &mdash; including the historic Main Street district, Sedgwick Elementary School, and the Sedgwick Community Center &mdash; the ranch is just minutes east on SE 96th Street. The property borders the open ranch land east of the Chisholm Drive corridor, where Sedgwick&rsquo;s rural residential areas transition into working farmland. Guests from the Hillside Drive neighborhood, the SE Prairie View area, and the Oak Ridge subdivision of Sedgwick often walk or bike to the property on the county trail.</p><p>Diamond Springs Ranch has operated in Sedgwick since the property was established by owner Susan Schrag. Built from the ground up, it now holds a 4.9-star Google rating across 281+ verified reviews. The ranch carries general liability insurance and operates as a registered Kansas agritourism business under the Kansas Department of Agriculture. Diamond Springs Ranch has been welcoming guests since 2010 &mdash; over 15 years of operation in Sedgwick County. Owner Susan Schrag holds equine handling certifications and the ranch maintains current Kansas Department of Wildlife and Parks compliance. All activities are led by experienced staff who work with the horses and cattle daily.</p><p>Explore more experiences at Diamond Springs Ranch: <a href="/guided-horseback-rides/">Guided Horseback Rides</a>, <a href="/highland-cattle-experience/">Highland Cattle Experience</a>, <a href="/luxury-treehouse-stay/">Luxury Treehouse Stay</a>, <a href="/covered-wagon-stay/">Covered Wagon Stay</a>, <a href="/dinner-date-experience/">Dinner Date Experience</a>. View our full list of <a href="/services/">ranch experiences</a> and <a href="/service-areas/">areas we serve</a>.</p>',
+    metaDescription: 'Corporate retreats &amp; private ranch rentals at Diamond Springs Ranch in Sedgwick, KS &mdash; 30 min from Wichita. Call (316) 303-6195.',
     faqs: [
-      { q: 'What types of private events does Diamond Springs Ranch host?', a: 'The ranch hosts wedding receptions, corporate retreats, team-building events, family reunions, birthday parties, church groups, school field trips, scout groups, company picnics, and private photography sessions. Call to discuss your specific event.' },
+      { q: 'What types of private events does Diamond Springs Ranch host?', a: 'The ranch hosts corporate retreats, team-building events, family reunions, birthday parties, church groups, school field trips, scout groups, company picnics, and private photography sessions. Call to discuss your specific event.' },
       { q: 'How large of a group can Diamond Springs Ranch accommodate for a private event?', a: 'Capacity varies by event type and setup. Call (316) 303-6195 to discuss your group size and what configuration works best for your event.' },
       { q: 'Does Diamond Springs Ranch host corporate retreats near Wichita?', a: 'Yes. Corporate retreats and team-building events are a significant part of the ranch&rsquo;s calendar. Getting a team out of the office and onto a working ranch changes the dynamic &mdash; the outdoor setting and shared activities break down barriers that a conference room never does.' },
       { q: 'Can we have a bonfire or s&rsquo;mores night as part of our private event?', a: 'Yes. Bonfire and s&rsquo;mores nights are available as part of private events and overnight stays. Seasonal live music events are also offered at the ranch. Ask about availability when you call.' },
-      { q: 'Is Diamond Springs Ranch available for wedding receptions?', a: 'Yes. The ranch setting provides a backdrop for wedding receptions that is genuinely unique in the Wichita area &mdash; open land, working horses, and the character of a real Kansas ranch. Call to discuss your date and vision.' },
+
     ],
   },
   {
     slug:       'dinner-date-experience',
+    heroHeading: 'The most unforgettable <em>date night</em> in Kansas.',
+    ctaLabel:   'Book the Dinner Date',
     name:       'Dinner Date Experience',
     shortDesc:  'A curated evening at the ranch &mdash; the most unique dinner date near Wichita.',
     icon:       '&#x1F374;',
@@ -329,9 +341,9 @@ const CITIES = [
 const SERVICE_FAQS = [
   { q: 'Where is Diamond Springs Ranch located?', a: 'Diamond Springs Ranch is located at 1734 SE 96th St, Sedgwick, KS 67135 &mdash; approximately 17 miles north of downtown Wichita on US-81. The drive from most Wichita addresses takes 25&ndash;30 minutes.' },
   { q: 'Do I need a reservation to visit Diamond Springs Ranch?', a: 'Yes &mdash; all activities at Diamond Springs Ranch are by reservation. The ranch does not accommodate walk-in visitors. Call or text (316) 303-6195 to book your experience.' },
-  { q: 'What activities are available at Diamond Springs Ranch?', a: 'The ranch offers guided horseback trail rides, sunset trail rides, Highland cattle encounters, riding lessons, horse summer camps, luxury treehouse overnight stays, covered wagon stays, private events (weddings, corporate retreats, family reunions), dinner date experiences, bonfires, and live music events seasonally.' },
+  { q: 'What activities are available at Diamond Springs Ranch?', a: 'The ranch offers guided horseback trail rides, sunset trail rides, Highland cattle encounters, riding lessons, horse summer camps, luxury treehouse overnight stays, covered wagon stays, private events (corporate retreats, family reunions, group outings), dinner date experiences, bonfires, and live music events seasonally.' },
   { q: 'Is Diamond Springs Ranch suitable for corporate team-building events?', a: 'Yes &mdash; corporate retreats and team-building events are regularly hosted at the ranch. Getting a team onto a working ranch in an outdoor setting produces a completely different dynamic than a conference room. Call (316) 303-6195 to discuss your event.' },
-  { q: 'Does Diamond Springs Ranch host weddings?', a: 'Yes. The ranch hosts wedding receptions on the property. The open land, working horses, and authentic Western setting create a backdrop for weddings that can&rsquo;t be replicated at a venue property. Call to discuss your date and vision.' },
+
 ];
 
 module.exports = { CLIENT, SERVICES, CITIES, REVIEWS, DIFFERENTIATORS, SERVICE_FAQS };

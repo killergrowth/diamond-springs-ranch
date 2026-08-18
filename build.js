@@ -79,88 +79,252 @@ function loadPartial(name) {
 const BUILD_VERSION = Date.now().toString(36);
 
 function buildBaseHead() {
-  let h = loadPartial('head');
-  h = h.replace(/\{\{BUILD_VERSION\}\}/g,          BUILD_VERSION);
-  h = h.replace(/\{\{CLIENT_FONT_URL\}\}/g,        CLIENT.fontUrl);
-  h = h.replace(/\{\{CLIENT_FONT_FAMILY\}\}/g,      CLIENT.fontFamily);
-  h = h.replace(/\{\{CLIENT_PRIMARY_COLOR\}\}/g,    CLIENT.primaryColor);
-  h = h.replace(/\{\{CLIENT_PRIMARY_DARK\}\}/g,     CLIENT.primaryDark);
-  h = h.replace(/\{\{CLIENT_SECONDARY_COLOR\}\}/g,  CLIENT.secondaryColor);
-  h = h.replace(/\{\{CLIENT_ACCENT_COLOR\}\}/g,     CLIENT.accentColor || CLIENT.primaryColor);
-  return h;
+  // V2 unified head — same fonts/CSS as the v2 homepage
+  return `<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/images/logo-black.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" href="/images/logo-white.png" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
+<link rel="stylesheet" href="/v2.css?v=${BUILD_VERSION}">
+<style>
+  /* Subpage interior overrides */
+  body { background: var(--cream); }
+  /* Nav transparent on subpages — v2-hero is full-screen so same as homepage */
+  .v2-nav { background: transparent; padding: 14px 56px; }
+  .v2-nav.scrolled { background: rgba(26,21,16,0.97); }
+  @media (max-width: 900px) { .v2-nav { padding: 12px 24px; } }
+  /* Content sections */
+  .dsr-section { padding: 80px 0; }
+  .dsr-section-alt { padding: 80px 0; background: #EDE4D6; }
+  .dsr-section-dark { padding: 80px 0; background: var(--charcoal); }
+  .dsr-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+  @media (max-width: 768px) { .dsr-container { padding: 0 24px; } }
+  .dsr-two-col { display: grid; grid-template-columns: 3fr 2fr; gap: 64px; align-items: start; }
+  @media (max-width: 900px) { .dsr-two-col { grid-template-columns: 1fr; gap: 40px; } }
+  /* Section headings */
+  .dsr-section-label { display: block; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .dsr-section h2 { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 20px; color: var(--black); }
+  .dsr-section h2 em { font-style: italic; }
+  .dsr-section-alt h2 { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 20px; color: var(--black); }
+  .dsr-section-dark h2 { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 300; line-height: 1.2; margin-bottom: 20px; color: var(--white); }
+  /* Prose */
+  .dsr-prose p { font-size: 0.97rem; font-weight: 300; color: var(--gray-body); line-height: 1.8; margin-bottom: 1rem; }
+  .dsr-prose h3 { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; color: var(--charcoal); margin: 24px 0 10px; }
+  .dsr-prose ul { padding-left: 1.4rem; margin-bottom: 1rem; }
+  .dsr-prose ul li { font-size: 0.96rem; font-weight: 300; color: var(--gray-body); margin-bottom: 6px; }
+  /* Sidebar card */
+  .dsr-sidebar-card { background: var(--charcoal); border-top: 3px solid var(--gold); padding: 32px; position: sticky; top: 90px; }
+  .dsr-sidebar-card h3 { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 300; color: var(--white); margin-bottom: 12px; }
+  .dsr-sidebar-card p { font-size: 0.88rem; font-weight: 300; color: rgba(255,255,255,0.65); margin-bottom: 20px; }
+  .dsr-sidebar-card .btn { width: 100%; text-align: center; display: block; margin-bottom: 12px; }
+  .dsr-sidebar-contact li { display: flex; gap: 10px; margin-bottom: 12px; font-size: 0.88rem; color: rgba(255,255,255,0.7); }
+  .dsr-sidebar-contact a { color: var(--gold-lt); }
+  /* FAQ */
+  .dsr-faq-item { border-bottom: 1px solid rgba(0,0,0,0.1); }
+  .dsr-faq-q { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; cursor: pointer; font-size: 0.95rem; font-weight: 500; color: var(--charcoal); user-select: none; }
+  .dsr-faq-icon { flex-shrink: 0; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--gold); transition: transform 0.3s; }
+  .dsr-faq-item.open .dsr-faq-icon { transform: rotate(45deg); }
+  .dsr-faq-a { font-size: 0.9rem; font-weight: 300; color: var(--gray-body); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+  .dsr-faq-item.open .dsr-faq-a { max-height: 300px; padding-bottom: 18px; }
+  /* City/service link chips */
+  .dsr-link-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+  .dsr-link-chip { display: inline-block; padding: 9px 18px; border: 1px solid rgba(0,0,0,0.2); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--charcoal); transition: background 0.2s, color 0.2s, border-color 0.2s; }
+  .dsr-link-chip:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
+  /* CTA section */
+  .dsr-cta { position: relative; padding: 100px 0; text-align: center; overflow: hidden; }
+  .dsr-cta-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+  .dsr-cta-overlay { position: absolute; inset: 0; background: rgba(12,8,4,0.72); }
+  .dsr-cta-inner { position: relative; z-index: 2; max-width: 620px; margin: 0 auto; padding: 0 24px; }
+  .dsr-cta-inner .overline { display: block; margin-bottom: 16px; }
+  .dsr-cta-inner h2 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; color: var(--white); margin-bottom: 16px; }
+  .dsr-cta-inner p { font-size: 0.97rem; font-weight: 300; color: rgba(255,255,255,0.75); margin-bottom: 32px; }
+  .dsr-cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  /* Contact info block */
+  .dsr-contact-info li { display: flex; gap: 14px; margin-bottom: 20px; font-size: 0.95rem; }
+  .dsr-contact-info .icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+  .dsr-contact-info strong { display: block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+  .dsr-contact-info a { color: var(--charcoal); transition: color 0.2s; }
+  .dsr-contact-info a:hover { color: var(--gold); }
+  /* Area cards */
+  .dsr-area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  @media (max-width: 768px) { .dsr-area-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .dsr-area-grid { grid-template-columns: 1fr; } }
+  .dsr-area-card { background: var(--charcoal); padding: 28px 24px; transition: background 0.2s; }
+  .dsr-area-card:hover { background: #3d3830; }
+  .dsr-area-card h4 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 300; color: var(--white); margin-bottom: 4px; }
+  .dsr-area-card p { font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-lt); }
+  /* Services cards grid */
+  .dsr-svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+  @media (max-width: 900px) { .dsr-svc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .dsr-svc-grid { grid-template-columns: 1fr; } }
+  .dsr-svc-tile { position: relative; height: 300px; overflow: hidden; display: flex; align-items: flex-end; }
+  .dsr-svc-tile-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.55s ease; }
+  .dsr-svc-tile:hover .dsr-svc-tile-bg { transform: scale(1.05); }
+  .dsr-svc-tile-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 60%); }
+  .dsr-svc-tile-body { position: relative; z-index: 2; padding: 22px 24px; }
+  .dsr-svc-tile-name { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 300; color: var(--white); margin-bottom: 6px; }
+  .dsr-svc-tile-desc { font-size: 0.8rem; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: 12px; }
+  .dsr-svc-tile-cta { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-lt); border-bottom: 1px solid rgba(196,154,60,0.4); padding-bottom: 2px; transition: color 0.2s; }
+  .dsr-svc-tile-cta:hover { color: var(--gold); }
+  /* Form wrapper for dark sidebar */
+  .dsr-form-wrap input, .dsr-form-wrap select, .dsr-form-wrap textarea {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    color: var(--white); border-radius: 0;
+  }
+  .dsr-form-wrap label { color: rgba(255,255,255,0.7); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .dsr-form-wrap input::placeholder, .dsr-form-wrap textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .dsr-form-wrap select option { background: var(--charcoal); color: var(--white); }
+  /* Reviews in subpages */
+  .dsr-reviews { padding: 80px 0; background: var(--charcoal); }
+  .dsr-reviews-head { text-align: center; margin-bottom: 40px; }
+  .dsr-reviews-head .overline { display: block; margin-bottom: 12px; }
+  .dsr-reviews-head h2 { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 300; color: var(--white); }
+  .dsr-reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  @media (max-width: 900px) { .dsr-reviews-grid { grid-template-columns: 1fr; } }
+  .dsr-review { background: rgba(255,255,255,0.04); padding: 32px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .dsr-review-stars { color: var(--gold); letter-spacing: 3px; margin-bottom: 16px; font-size: 0.85rem; }
+  .dsr-review-body { font-family: var(--font-serif); font-size: 1rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.82); line-height: 1.7; margin-bottom: 18px; }
+  .dsr-review-name { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.38); }
+</style>`;
 }
 
 function buildHeader() {
-  const serviceLinks = SERVICES.map(s =>
-    `<a href="/${s.slug}/">${s.name}</a>`
-  ).join('\n          ');
-  const cityLinks = CITIES.map(c =>
-    `<a href="/${c.slug}/">${c.name}, ${CLIENT.state}</a>`
-  ).join('\n          ');
-  const serviceMobile = SERVICES.map(s =>
-    `<a href="/${s.slug}/">${s.name}</a>`
-  ).join('\n  ');
-  const cityMobile = CITIES.map(c =>
-    `<a href="/${c.slug}/">${c.name}</a>`
-  ).join('\n  ');
-
-  let h = loadPartial('header');
-  h = h.replace(/\{\{CLIENT_NAME\}\}/g,         CLIENT.name);
-  h = h.replace(/\{\{CLIENT_PHONE\}\}/g,         CLIENT.phone);
-  h = h.replace(/\{\{CLIENT_PHONE_RAW\}\}/g,     CLIENT.phoneRaw);
-  h = h.replace(/\{\{CLIENT_EMERGENCY_BAR\}\}/g, CLIENT.emergencyBar || '');
-  h = h.replace('{{SERVICE_NAV_LINKS}}',          serviceLinks);
-  h = h.replace('{{CITY_NAV_LINKS}}',             cityLinks);
-  h = h.replace('{{SERVICE_MOBILE_LINKS}}',       serviceMobile);
-  h = h.replace('{{CITY_MOBILE_LINKS}}',          cityMobile);
-  return h;
+  // V2 nav — matches homepage exactly
+  const svcDropItems = SERVICES.map(s =>
+    `<li><a href="/${s.slug}/">${s.name}</a></li>`
+  ).join('');
+  const cityDropItems = CITIES.map(c =>
+    `<li><a href="/${c.slug}/">${c.name}</a></li>`
+  ).join('');
+  return `
+<nav class="v2-nav" id="v2-nav">
+  <a href="/" class="v2-nav-logo">
+    <img src="/images/logo-white.png" alt="Diamond Springs Ranch">
+    <span class="v2-nav-logo-text">Diamond Springs Ranch</span>
+  </a>
+  <ul class="v2-nav-links">
+    <li class="v2-nav-has-drop">
+      <a href="/services/">Experiences <span class="v2-nav-caret"></span></a>
+      <ul class="v2-nav-drop">${svcDropItems}</ul>
+    </li>
+    <li class="v2-nav-has-drop">
+      <a href="/#lodging">Stay <span class="v2-nav-caret"></span></a>
+      <ul class="v2-nav-drop">
+        <li><a href="/luxury-treehouse-stay/">Sunset Reset Treehouse</a></li>
+        <li><a href="/covered-wagon-stay/">Sunset Schooner</a></li>
+      </ul>
+    </li>
+    <li><a href="/about/">Our Story</a></li>
+    <li class="v2-nav-has-drop">
+      <a href="/contact/">Visit <span class="v2-nav-caret"></span></a>
+      <ul class="v2-nav-drop">
+        <li><a href="/contact/">Contact &amp; Directions</a></li>
+        <li><a href="/service-areas/">Service Areas</a></li>
+      </ul>
+    </li>
+  </ul>
+  <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="v2-nav-book">Book a Visit</a>
+</nav>
+<script>
+  (function(){
+    const nav = document.getElementById('v2-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      // On subpages the nav is always dark; scrolled class just keeps it consistent
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  })();
+</script>`;
 }
 
 function buildFooter() {
-  const serviceFooter = SERVICES.map(s =>
+  // V2 footer — matches homepage
+  const svcLinks = SERVICES.map(s =>
     `<li><a href="/${s.slug}/">${s.name}</a></li>`
-  ).join('\n          ');
-  const cityFooter = CITIES.map(c =>
-    `<li><a href="/${c.slug}/">${c.name}, ${CLIENT.state}</a></li>`
-  ).join('\n          ');
-  const socialLinks = (CLIENT.social || []).map(s => `
-    <a href="${s.url}" target="_blank" rel="noopener" aria-label="${CLIENT.name} on ${s.platform}"
-       style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.6);font-size:0.85rem;">
-      ${s.icon} ${s.platform}
-    </a>`).join('\n  ');
-
-  let f = loadPartial('footer');
-  f = f.replace(/\{\{CLIENT_NAME\}\}/g,         CLIENT.name);
-  f = f.replace(/\{\{CLIENT_PHONE\}\}/g,         CLIENT.phone);
-  f = f.replace(/\{\{CLIENT_PHONE_RAW\}\}/g,     CLIENT.phoneRaw);
-  f = f.replace(/\{\{CLIENT_EMAIL\}\}/g,          CLIENT.email);
-  f = f.replace(/\{\{CLIENT_ADDRESS\}\}/g,        CLIENT.address);
-  f = f.replace(/\{\{CLIENT_CITY\}\}/g,           CLIENT.primaryCity);
-  f = f.replace(/\{\{CLIENT_STATE\}\}/g,          CLIENT.state);
-  f = f.replace(/\{\{CLIENT_HOURS\}\}/g,          CLIENT.hours);
-  f = f.replace(/\{\{CLIENT_YEAR_FOUNDED\}\}/g,   CLIENT.yearFounded);
-  f = f.replace(/\{\{CLIENT_DESCRIPTION\}\}/g,    CLIENT.description);
-  f = f.replace('{{CLIENT_SOCIAL_LINKS}}',         socialLinks);
-  f = f.replace('{{SERVICE_FOOTER_LINKS}}',        serviceFooter);
-  f = f.replace('{{CITY_FOOTER_LINKS}}',           cityFooter);
-  return f;
+  ).join('');
+  const cityLinks = CITIES.map(c =>
+    `<li><a href="/${c.slug}/">${c.name}</a></li>`
+  ).join('');
+  const socials = (CLIENT.social || []).map(s =>
+    `<a href="${s.url}" target="_blank" rel="noopener" aria-label="${s.platform}" title="${s.platform}">${s.icon || s.platform[0]}</a>`
+  ).join('');
+  return `
+<footer class="v2-footer">
+  <div class="dsr-container">
+    <div class="v2-footer-inner">
+      <div class="v2-footer-brand">
+        <img src="/images/logo-white.png" alt="Diamond Springs Ranch">
+        <p>${CLIENT.description}</p>
+        <div class="v2-footer-social">${socials}</div>
+      </div>
+      <div class="v2-footer-col">
+        <h4>Experiences</h4>
+        <ul>${svcLinks}</ul>
+      </div>
+      <div class="v2-footer-col">
+        <h4>Nearby Cities</h4>
+        <ul>${cityLinks}</ul>
+      </div>
+      <div class="v2-footer-col">
+        <h4>Contact</h4>
+        <div class="v2-footer-contact-item"><span>&#128205;</span><span>${CLIENT.address}</span></div>
+        <div class="v2-footer-contact-item"><span>&#128222;</span><span><a href="tel:${CLIENT.phoneRaw}">${CLIENT.phone}</a></span></div>
+        <div class="v2-footer-contact-item"><span>&#9993;</span><span><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></span></div>
+        <div class="v2-footer-contact-item"><span>&#128336;</span><span>${CLIENT.hours}</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="v2-footer-bottom">
+    <div class="dsr-container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span>&copy; <script>document.write(new Date().getFullYear())</script> ${CLIENT.name}. All Rights Reserved.</span>
+      <span>Website by <a href="https://killergrowth.com" target="_blank" rel="noopener">KillerGrowth</a></span>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer><\/script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer><\/script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // FAQ accordion
+  document.querySelectorAll('.dsr-faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.dsr-faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.dsr-faq-item.open').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+});
+<\/script>`;
 }
 
 function buildCta() {
-  let c = loadPartial('cta');
-  c = c.replace(/\{\{CLIENT_NAME\}\}/g,   CLIENT.name);
-  c = c.replace(/\{\{CLIENT_PHONE\}\}/g,   CLIENT.phone);
-  c = c.replace(/\{\{CLIENT_PHONE_RAW\}\}/g, CLIENT.phoneRaw);
-  c = c.replace('{{CTA_HEADING}}',          CLIENT.ctaHeading   || `Ready to Get Started?`);
-  c = c.replace('{{CTA_SUBTEXT}}',          CLIENT.ctaSubtext   || `Contact ${CLIENT.name} today for a free estimate.`);
-  return c;
+  // V2-style CTA section matching homepage design
+  return `
+<section class="dsr-cta">
+  <div class="dsr-cta-bg" style="background-image:url('/images/photo-trail-rides.jpg');"></div>
+  <div class="dsr-cta-overlay"></div>
+  <div class="dsr-cta-inner">
+    <span class="overline">Diamond Springs Ranch</span>
+    <h2>Ready to experience the ranch?</h2>
+    <p>All activities are by reservation. Call or book online — we\'d love to have you out.</p>
+    <div class="dsr-cta-btns">
+      <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold">Book Online</a>
+      <a href="tel:${CLIENT.phoneRaw}" class="btn btn-light">${CLIENT.phone}</a>
+    </div>
+  </div>
+</section>`;
 }
 
 function buildFaqHtml(faqs) {
+  // V2 accordion style
   return faqs.map(f => `
-    <div class="faq-item">
-      <button class="faq-question">${f.q}</button>
-      <div class="faq-answer">${f.a}</div>
+    <div class="dsr-faq-item">
+      <div class="dsr-faq-q" role="button" tabindex="0">${f.q}<span class="dsr-faq-icon">+</span></div>
+      <div class="dsr-faq-a">${f.a}</div>
     </div>`).join('');
 }
 
@@ -494,6 +658,32 @@ function buildReviews() {
   return { html: rv, aggregateRating, reviewItems: reviewData ? reviewData.reviews : null };
 }
 
+// ── V2-style reviews section for subpages ───────────────────────────────────
+function buildV2Reviews() {
+  const reviewsFile = path.join(__dirname, 'data', 'reviews.json');
+  let reviews = [];
+  try {
+    const d = JSON.parse(fs.readFileSync(reviewsFile, 'utf8'));
+    reviews = (d.reviews || []).slice(0, 3).map(r => ({ text: r.text, author: r.author }));
+  } catch(e) { reviews = (REVIEWS || []).slice(0, 3); }
+  const cards = reviews.map(r => `
+    <div class="dsr-review">
+      <div class="dsr-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="dsr-review-body">&ldquo;${r.text}&rdquo;</div>
+      <div class="dsr-review-name">${r.author}</div>
+    </div>`).join('');
+  return `
+<section class="dsr-reviews">
+  <div class="dsr-container">
+    <div class="dsr-reviews-head">
+      <span class="overline">What Guests Are Saying</span>
+      <h2>Real reviews. <em>Real experiences.</em></h2>
+    </div>
+    <div class="dsr-reviews-grid">${cards}</div>
+  </div>
+</section>`;
+}
+
 // ── Featured blog cards (published only) ─────────────────────────────────────
 
 // ── Page wrappers ─────────────────────────────────────────────────────────────
@@ -506,8 +696,9 @@ const REVIEWS_DATA = buildReviews(); // { html, aggregateRating, reviewItems }
 const REVIEWS_HTML = REVIEWS_DATA.html;
 
 function wrap(meta, bodyContent) {
+  // V2 unified template — same design language as homepage
   return `<!DOCTYPE html>
-<html lang="en-US" prefix="og: https://ogp.me/ns#">
+<html lang="en-US">
 <head>
 ${meta}
 ${BASE_HEAD}
@@ -669,117 +860,150 @@ ${CTA}`;
 function buildContactPage() {
   const meta = buildPageMeta({
     title: `Contact ${CLIENT.name} | Book a Ranch Experience | ${CLIENT.primaryCity}, ${CLIENT.state}`,
-    description: `Book your experience at ${CLIENT.name}. Call ${CLIENT.phone} or fill out our form. Horseback rides, treehouse stays, private events &mdash; all by reservation.`,
+    description: `Book your experience at ${CLIENT.name}. Call ${CLIENT.phone} or fill out our form. Horseback rides, treehouse stays, private events — all by reservation.`,
     canonical: '/contact/',
   });
   const body = `
-<div class="kg-page-header">
-  <div class="container">
-    <h1>Contact ${CLIENT.name}</h1>
-    <p>All activities are by reservation. Reach out and we'll get you booked.</p>
+<section class="v2-hero">
+  <div class="v2-hero-bg"></div>
+  <div class="v2-hero-overlay"></div>
+  <div class="v2-hero-content">
+    <div class="v2-hero-eyebrow">
+      <span class="v2-eyebrow-line"></span>
+      <span class="overline">Sedgwick, Kansas &bull; 15 Minutes from Wichita</span>
+    </div>
+    <h1>Come <em>visit</em> the ranch.</h1>
+    <p class="v2-hero-sub">All activities are by reservation. Call or book online &mdash; we'd love to have you out.</p>
+    <div class="v2-hero-btns">
+      <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold">Book a Visit</a>
+      <a href="tel:${CLIENT.phoneRaw}" class="btn btn-light">Call Us</a>
+    </div>
   </div>
-</div>
-<section>
-  <div class="container">
-    <div class="kg-two-col">
+  <div class="v2-hero-scroll-hint"><span>Scroll</span><div class="v2-scroll-line"></div></div>
+</section>
+<section class="dsr-section">
+  <div class="dsr-container">
+    <div class="dsr-two-col">
       <div>
-        <h2>Book Your Ranch Experience</h2>
-        <p style="color:var(--kg-text-light);margin-bottom:28px;">Fill out the form and we'll be in touch within one business day. Or call us directly at <a href="tel:${CLIENT.phoneRaw}">${CLIENT.phone}</a>.</p>
+        <span class="dsr-section-label">Book a Visit</span>
+        <h2 style="font-family:var(--font-serif);font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;margin-bottom:16px;">Reserve your ranch <em>experience.</em></h2>
+        <p class="dsr-prose" style="margin-bottom:28px;">Fill out the form and we'll be in touch within one business day. Or call us directly at <a href="tel:${CLIENT.phoneRaw}" style="color:var(--gold);">${CLIENT.phone}</a>.</p>
         ${formHtml('contact-form')}
       </div>
       <div>
-        <h3>Get in Touch</h3>
-        <ul style="list-style:none;padding:0;margin:20px 0 0;">
-          <li style="display:flex;gap:12px;margin-bottom:16px;"><span>📞</span><div><strong>Phone</strong><br><a href="tel:${CLIENT.phoneRaw}">${CLIENT.phone}</a></div></li>
-          <li style="display:flex;gap:12px;margin-bottom:16px;"><span>✉️</span><div><strong>Email</strong><br><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></div></li>
-          <li style="display:flex;gap:12px;margin-bottom:16px;"><span>📍</span><div><strong>Address</strong><br>${CLIENT.address}</div></li>
-          <li style="display:flex;gap:12px;"><span>🕐</span><div><strong>Hours</strong><br>${CLIENT.hours}</div></li>
-        </ul>
+        <div class="dsr-sidebar-card">
+          <h3>Get in Touch</h3>
+          <ul class="dsr-sidebar-contact" style="list-style:none;padding:0;">
+            <li><span>&#128222;</span><div><strong style="display:block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;">Phone</strong><a href="tel:${CLIENT.phoneRaw}" style="color:rgba(255,255,255,0.8);">${CLIENT.phone}</a></div></li>
+            <li><span>&#9993;</span><div><strong style="display:block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;">Email</strong><a href="mailto:${CLIENT.email}" style="color:rgba(255,255,255,0.8);">${CLIENT.email}</a></div></li>
+            <li><span>&#128205;</span><div><strong style="display:block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;">Address</strong><span style="color:rgba(255,255,255,0.8);">${CLIENT.address}</span></div></li>
+            <li><span>&#128336;</span><div><strong style="display:block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;">Hours</strong><span style="color:rgba(255,255,255,0.8);">${CLIENT.hours}</span></div></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </section>
 ${CTA}`;
   writeFile('contact/index.html', wrap(meta, body));
-  console.log('✓ contact');
+  console.log('\u2713 contact');
 }
 
 // ── About page ────────────────────────────────────────────────────────────────
 
 function buildAboutPage() {
   const meta = buildPageMeta({
-    title: `About ${CLIENT.name} | ${CLIENT.primaryCity} ${CLIENT.tradeLabel}`,
-    description: CLIENT.aboutDescription || `Learn about ${CLIENT.name}, ${CLIENT.primaryCity}'s trusted ${CLIENT.tradeLabel.toLowerCase()} since ${CLIENT.yearFounded}.`,
+    title: `About Diamond Springs Ranch | Our Story | Sedgwick, KS`,
+    description: CLIENT.aboutDescription || `Learn the story behind Diamond Springs Ranch — a family-owned working ranch 15 minutes north of Wichita, KS. Meet owner Logan Schrag.`,
     canonical: '/about/',
-    ogImage: '/images/about-team.jpg',
+    ogImage: '/images/photo-about.jpg',
   });
   const body = `
-<div class="kg-page-header">
-  <div class="container">
-    <h1>About ${CLIENT.name}</h1>
-    <p>${CLIENT.aboutTagline || 'Owner-operated. Community-focused. Results-driven.'}</p>
+<section class="v2-hero">
+  <div class="v2-hero-bg"></div>
+  <div class="v2-hero-overlay"></div>
+  <div class="v2-hero-content">
+    <div class="v2-hero-eyebrow">
+      <span class="v2-eyebrow-line"></span>
+      <span class="overline">Sedgwick, Kansas &bull; 15 Minutes from Wichita</span>
+    </div>
+    <h1>A ranch built on <em>faith, family,</em> and legacy.</h1>
+    <p class="v2-hero-sub">${CLIENT.aboutTagline || 'A real working ranch. An authentic Western experience. 15 minutes north of Wichita.'}</p>
+    <div class="v2-hero-btns">
+      <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold">Book a Visit</a>
+      <a href="/contact/" class="btn btn-light">Contact Us</a>
+    </div>
   </div>
-</div>
-<section>
-  <div class="container">
-    <div class="kg-two-col">
-      <div class="prose">
+  <div class="v2-hero-scroll-hint"><span>Scroll</span><div class="v2-scroll-line"></div></div>
+</section>
+<section class="dsr-section">
+  <div class="dsr-container">
+    <div class="dsr-two-col">
+      <div class="dsr-prose">
         ${CLIENT.aboutBody || '<p>' + CLIENT.description + '</p>'}
       </div>
-      <div class="kg-img-round">
-        <img src="/images/about-team.jpg" alt="${CLIENT.name} team">
+      <div>
+        <img src="/images/photo-about.jpg" alt="Diamond Springs Ranch" style="width:100%;object-fit:cover;height:480px;">
       </div>
     </div>
   </div>
 </section>
-${REVIEWS_HTML}
+${buildV2Reviews()}
 ${CTA}`;
   writeFile('about/index.html', wrap(meta, body));
-  console.log('✓ about');
+  console.log('\u2713 about');
 }
 
 // ── Services overview ─────────────────────────────────────────────────────────
 
 function buildServicesPage() {
   const meta = buildPageMeta({
-    title: `${CLIENT.tradeLabel} Services | ${CLIENT.name} — ${CLIENT.primaryCity}, ${CLIENT.state}`,
-    description: `${CLIENT.name} offers ${SERVICES.map(s => s.name).join(', ')} in ${CLIENT.primaryCity} and surrounding ${CLIENT.state} communities.`,
+    title: 'Ranch Experiences | Diamond Springs Ranch | Sedgwick, KS',
+    description: `Explore all experiences at Diamond Springs Ranch: ${SERVICES.map(s => s.name).join(', ')}. 15 minutes north of Wichita, KS.`,
     canonical: '/services/',
   });
-  const cards = SERVICES.map(s => `
-    <a href="/${s.slug}/" class="kg-card-link dsr-svc-card-link">
-      <div class="kg-card dsr-svc-card">
-        ${s.cardPhoto
-          ? `<div class="dsr-card-photo"><img src="/images/client-photos/${s.cardPhoto}" alt="${s.name}" loading="lazy"></div>`
-          : `<div class="kg-card-icon">${s.icon || '🔧'}</div>`
-        }
-        <div class="dsr-card-body">
-          <h3>${s.name}</h3>
-          <p>${s.shortDesc}</p>
-          <span>Learn more &rarr;</span>
-        </div>
+  const tiles = SERVICES.map(s => {
+    const bg = `/images/photo-${s.slug}.jpg`;
+    return `
+    <a href="/${s.slug}/" class="dsr-svc-tile">
+      <div class="dsr-svc-tile-bg" style="background-image:url('${bg}');"></div>
+      <div class="dsr-svc-tile-overlay"></div>
+      <div class="dsr-svc-tile-body">
+        <div class="dsr-svc-tile-name">${s.name}</div>
+        <div class="dsr-svc-tile-desc">${s.shortDesc}</div>
+        <span class="dsr-svc-tile-cta">Learn More &rarr;</span>
       </div>
-    </a>`).join('');
+    </a>`;
+  }).join('');
   const body = `
-<div class="kg-page-header">
-  <div class="container">
-    <h1>${CLIENT.tradeLabel} Services in ${CLIENT.primaryCity}, ${CLIENT.state}</h1>
-    <p>${CLIENT.name} provides professional ${CLIENT.tradeLabel.toLowerCase()} services across ${CLIENT.primaryCity} and the surrounding area.</p>
+<section class="v2-hero">
+  <div class="v2-hero-bg"></div>
+  <div class="v2-hero-overlay"></div>
+  <div class="v2-hero-content">
+    <div class="v2-hero-eyebrow">
+      <span class="v2-eyebrow-line"></span>
+      <span class="overline">Sedgwick, Kansas &bull; 15 Minutes from Wichita</span>
+    </div>
+    <h1>Choose your <em>adventure.</em></h1>
+    <p class="v2-hero-sub">From trail rides to overnight stays, there is something for every kind of guest at Diamond Springs Ranch.</p>
+    <div class="v2-hero-btns">
+      <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold">Book a Visit</a>
+      <a href="/contact/" class="btn btn-light">Get in Touch</a>
+    </div>
   </div>
-</div>
-<section>
-  <div class="container">
-    <div class="kg-grid ${gridClass(SERVICES.length)}">
-      ${cards}
+  <div class="v2-hero-scroll-hint"><span>Scroll</span><div class="v2-scroll-line"></div></div>
+</section>
+<section class="dsr-section-alt">
+  <div class="dsr-container">
+    <div class="dsr-svc-grid">
+      ${tiles}
     </div>
   </div>
 </section>
 ${CTA}`;
   writeFile('services/index.html', wrap(meta, body));
-  console.log('✓ services overview');
+  console.log('\u2713 services overview');
 }
-
-// ── Service pages (1 per service) ────────────────────────────────────────────
 
 function buildPhotoGallery(photos) {
   if (!photos || !photos.length) return '';
@@ -828,96 +1052,79 @@ function buildPhotoGallery(photos) {
 }
 
 function buildServicePage(svc) {
-  const heroBg = svc.heroBg || `/images/client-photos/${svc.heroPhoto || ''}`;
-  const heroStyle = svc.heroPhoto
-    ? `style="background-image:url('${heroBg}');background-size:cover;background-position:center;"`
-    : '';
+  const heroBg = svc.heroBg || (svc.heroPhoto ? `/images/client-photos/${svc.heroPhoto}` : `/images/photo-${svc.slug}.jpg`);
   const meta = buildPageMeta({
     title: `${svc.name} in ${CLIENT.primaryCity}, ${CLIENT.state} | ${CLIENT.name}`,
-    description: svc.metaDescription || `${CLIENT.name} provides professional ${svc.name.toLowerCase()} in ${CLIENT.primaryCity} and surrounding ${CLIENT.state} communities. ${svc.shortDesc}`,
+    description: svc.metaDescription || `${svc.shortDesc} — ${CLIENT.name} in ${CLIENT.primaryCity}, ${CLIENT.state}.`,
     canonical: `/${svc.slug}/`,
-    ogImage: svc.heroPhoto ? `/images/client-photos/${svc.heroPhoto}` : `/images/svc-${svc.slug}.jpg`,
+    ogImage: svc.heroPhoto ? `/images/client-photos/${svc.heroPhoto}` : `/images/photo-${svc.slug}.jpg`,
   });
   const faqs = svc.faqs || SERVICE_FAQS[svc.slug] || [];
   const svcSchema = buildServiceSchema(svc, faqs);
   const cityLinks = CITIES.map(c =>
-    `<a href="/${c.slug}/" class="link-btn">${c.name}</a>`
-  ).join('\n      ');
+    `<a href="/${c.slug}/" class="dsr-link-chip">${c.name}</a>`
+  ).join('');
 
-  // Inset photo — show a prominent feature photo mid-page if defined
-  const insetPhotoHtml = svc.insetPhoto ? `
-    <div style="margin:32px 0;border-radius:10px;overflow:hidden;max-height:420px;">
-      <img src="/images/client-photos/${svc.insetPhoto}" alt="${svc.insetAlt || svc.name}" style="width:100%;height:420px;object-fit:cover;display:block;">
-    </div>` : '';
-
-  const galleryHtml = buildPhotoGallery(svc.photos);
+  const bookingSidebar = svc.lodging ? `
+    <h3>Reserve Your Stay</h3>
+    <p>Check availability and book your overnight at Diamond Springs Ranch.</p>
+    <a href="${svc.lodgifyUrl}" target="_blank" rel="noopener" class="btn btn-gold" style="display:block;text-align:center;margin-bottom:12px;">Check Availability &rarr;</a>
+    <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);text-align:center;">Secure booking powered by FareHarbor.</p>` : `
+    <h3>Book This Experience</h3>
+    <p>Questions about ${svc.name.toLowerCase()}? We'll get you scheduled.</p>
+    <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold" style="display:block;text-align:center;margin-bottom:16px;">Book Online &rarr;</a>
+    <a href="tel:${CLIENT.phoneRaw}" class="btn btn-light" style="display:block;text-align:center;margin-bottom:16px;">${CLIENT.phone}</a>
+    <a href="mailto:${CLIENT.email}" style="display:block;text-align:center;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.45);">${CLIENT.email}</a>`;
 
   const body = `
 ${svcSchema}
-<div class="kg-page-header" ${heroStyle}>
-  <div style="position:absolute;inset:0;background:rgba(30,20,10,0.58);"></div>
-  <div class="container" style="position:relative;z-index:1;">
-    <nav class="kg-breadcrumb" style="color:rgba(255,255,255,0.6);margin-bottom:10px;">
-      <a href="/" style="color:rgba(255,255,255,0.7);">Home</a> &rsaquo;
-      <a href="/services/" style="color:rgba(255,255,255,0.7);">Services</a> &rsaquo;
-      <span style="color:#fff;">${svc.name}</span>
-    </nav>
-    <h1>${svc.name} in ${CLIENT.primaryCity}, ${CLIENT.state}</h1>
-    <p>${svc.shortDesc}</p>
-    ${svc.costRange ? `<p style="margin-top:12px;font-size:1.05rem;color:var(--kg-primary);font-weight:700;">${svc.costRange}</p>` : ''}
+<section class="v2-hero">
+  <div class="v2-hero-bg"></div>
+  <div class="v2-hero-overlay"></div>
+  <div class="v2-hero-content">
+    <div class="v2-hero-eyebrow">
+      <span class="v2-eyebrow-line"></span>
+      <span class="overline">Diamond Springs Ranch &bull; Sedgwick, Kansas</span>
+    </div>
+    <h1>${svc.heroHeading || svc.name}</h1>
+    <p class="v2-hero-sub">${svc.shortDesc}</p>
+    <div class="v2-hero-btns">
+      <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold">${svc.ctaLabel || 'Book Now'}</a>
+      <a href="/contact/" class="btn btn-light">Ask a Question</a>
+    </div>
   </div>
-</div>
-<section>
-  <div class="container">
-    <div class="kg-two-col">
-      <article class="prose">
+  <div class="v2-hero-scroll-hint"><span>Scroll</span><div class="v2-scroll-line"></div></div>
+</section>
+<section class="dsr-section">
+  <div class="dsr-container">
+    <div class="dsr-two-col">
+      <div class="dsr-prose">
         ${svc.body || '<p>' + svc.shortDesc + '</p>'}
-        ${insetPhotoHtml}
-      </article>
+      </div>
       <div>
-        <div style="background:var(--kg-bg-alt);border-radius:8px;padding:28px;position:sticky;top:100px;">
-          ${svc.lodging ? `
-          <h3>Reserve Your Stay</h3>
-          <p style="color:var(--kg-text-light);margin-bottom:20px;">Check availability and book your night at Diamond Springs Ranch.</p>
-          <a
-            href="${svc.lodgifyUrl}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-            style="display:block;text-align:center;font-size:1.1rem;padding:16px 24px;margin-bottom:16px;"
-          >Check Availability &amp; Book &rarr;</a>
-          <p style="color:var(--kg-text-light);font-size:0.85rem;text-align:center;">You'll be taken to our secure booking page powered by Lodgify.</p>
-          ` : `
-          <h3>Book This Experience</h3>
-          <p style="color:var(--kg-text-light);margin-bottom:20px;">Questions about ${svc.name.toLowerCase()}? Reach out and we'll get you scheduled.</p>
-          ${formHtml(`svc-form-${svc.slug}`, svc.slug)}
-          `}
+        <div class="dsr-sidebar-card">
+          ${bookingSidebar}
         </div>
       </div>
     </div>
   </div>
 </section>
-${galleryHtml}
+${buildV2Reviews()}
 ${faqs.length ? `
-<section class="section-alt">
-  <div class="container">
-    <div class="section-title gsap-fade">
-      <h2>What Are Common Questions About ${svc.name}?</h2>
-    </div>
-    <div class="faq-list">
+<section class="dsr-section-alt">
+  <div class="dsr-container">
+    <span class="dsr-section-label">Common Questions</span>
+    <h2 style="font-family:var(--font-serif);font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;margin-bottom:28px;">Frequently asked <em>questions.</em></h2>
+    <div style="border-top:1px solid rgba(0,0,0,0.1);">
       ${buildFaqHtml(faqs)}
     </div>
   </div>
 </section>` : ''}
-<section>
-  <div class="container">
-    <div class="section-title gsap-fade">
-      <h2>Which ${CLIENT.primaryCity}-Area Communities Does ${CLIENT.name} Serve?</h2>
-      <p>We provide ${svc.name.toLowerCase()} in ${CLIENT.primaryCity} and the surrounding area.</p>
-    </div>
-    <div class="link-grid">
-      ${cityLinks}
-    </div>
+<section class="dsr-section">
+  <div class="dsr-container">
+    <span class="dsr-section-label">We Serve</span>
+    <h2 style="font-family:var(--font-serif);font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;margin-bottom:24px;">Guests from across <em>the region.</em></h2>
+    <div class="dsr-link-grid">${cityLinks}</div>
   </div>
 </section>
 ${CTA}`;
@@ -932,57 +1139,61 @@ function buildServicePages() {
 // ── City pages (1 per city) ──────────────────────
 function buildCityPage(city) {
   const meta = buildPageMeta({
-    title: `${CLIENT.tradeLabel} in ${city.name}, ${CLIENT.state} | ${CLIENT.name}`,
-    description: city.metaDescription || `${CLIENT.name} provides professional ${CLIENT.tradeLabel.toLowerCase()} in ${city.name}, ${CLIENT.state}. ${city.intro}`,
+    title: `Ranch Experiences near ${city.name}, ${CLIENT.state} | ${CLIENT.name}`,
+    description: city.metaDescription || `Diamond Springs Ranch welcomes guests from ${city.name}, ${CLIENT.state}. ${city.intro}`,
     canonical: `/${city.slug}/`,
   });
   const cityFaqs = city.faqs || [];
   const citySchema = buildCitySchema(city, cityFaqs);
-  // PKG001: link to service pillar pages, not SxC pages
   const serviceLinks = SERVICES.map(s =>
-    `<a href="/${s.slug}/" class="link-btn">${s.name}</a>`
-  ).join('\n      ');
-
+    `<a href="/${s.slug}/" class="dsr-link-chip">${s.name}</a>`
+  ).join('');
+  const cityHeroPhoto = `/images/photo-${city.slug}.jpg`;
   const body = `
 ${citySchema}
-<div class="kg-page-header">
-  <div class="container">
-    <nav class="kg-breadcrumb" style="color:rgba(255,255,255,0.6);margin-bottom:10px;">
-      <a href="/" style="color:rgba(255,255,255,0.7);">Home</a> &rsaquo;
-      <a href="/service-areas/" style="color:rgba(255,255,255,0.7);">Service Areas</a> &rsaquo;
-      <span style="color:#fff;">${city.name}, ${CLIENT.state}</span>
-    </nav>
-    <h1>${CLIENT.tradeLabel} in ${city.name}, ${CLIENT.state}</h1>
-    <p>${city.intro}</p>
+<section class="v2-hero">
+  <div class="v2-hero-bg"></div>
+  <div class="v2-hero-overlay"></div>
+  <div class="v2-hero-content">
+    <div class="v2-hero-eyebrow">
+      <span class="v2-eyebrow-line"></span>
+      <span class="overline">Serving ${city.name}, ${CLIENT.state}</span>
+    </div>
+    <h1>Ranch Experiences near <em>${city.name}.</em></h1>
+    <p class="v2-hero-sub">${city.intro}</p>
+    <div class="v2-hero-btns">
+      <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold">Book a Trail Ride</a>
+      <a href="/contact/" class="btn btn-light">Get Directions</a>
+    </div>
   </div>
-</div>
-<section>
-  <div class="container">
-    <div class="kg-two-col">
-      <article class="prose">
+  <div class="v2-hero-scroll-hint"><span>Scroll</span><div class="v2-scroll-line"></div></div>
+</section>
+<section class="dsr-section">
+  <div class="dsr-container">
+    <div class="dsr-two-col">
+      <div class="dsr-prose">
         ${city.body || '<p>' + city.intro + '</p>'}
-        ${city.localContext ? `<div class="kg-highlight"><p>${city.localContext}</p></div>` : ''}
-      </article>
+        ${city.localContext ? `<blockquote style="border-left:3px solid var(--gold);padding:14px 0 14px 22px;font-family:var(--font-serif);font-size:1.1rem;font-style:italic;color:var(--charcoal);margin:24px 0;">${city.localContext}</blockquote>` : ''}
+      </div>
       <div>
-        <div style="background:var(--kg-bg-alt);border-radius:8px;padding:28px;">
+        <div class="dsr-sidebar-card">
           <h3>Book a Ranch Experience</h3>
-          ${formHtml(`city-form-${city.slug}`)}
+          <p>All activities by reservation. Call or book online.</p>
+          <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold" style="display:block;text-align:center;margin-bottom:16px;">Book Online &rarr;</a>
+          <a href="tel:${CLIENT.phoneRaw}" class="btn btn-light" style="display:block;text-align:center;">${CLIENT.phone}</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="section-alt">
-  <div class="container">
-    <div class="section-title gsap-fade">
-      <h2>Which Services Does ${CLIENT.name} Offer in ${city.name}?</h2>
-    </div>
-    <div class="link-grid">
-      ${serviceLinks}
-    </div>
+<section class="dsr-section-dark">
+  <div class="dsr-container">
+    <span class="dsr-section-label">Our Experiences</span>
+    <h2 style="font-family:var(--font-serif);font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;color:var(--white);margin-bottom:24px;">What ${city.name} guests <em>love most.</em></h2>
+    <div class="dsr-link-grid">${serviceLinks}</div>
   </div>
 </section>
-${REVIEWS_HTML}
+${buildV2Reviews()}
 ${CTA}`;
   writeFile(`${city.slug}/index.html`, wrap(meta, body));
 }
@@ -996,39 +1207,44 @@ function buildCityPages() {
 
 function buildServiceAreasPage() {
   const meta = buildPageMeta({
-    title: `Service Areas | ${CLIENT.name} � ${CLIENT.primaryCity} ${CLIENT.tradeLabel}`,
-    description: `${CLIENT.name} serves ${CITIES.map(c => c.name).join(', ')} and surrounding communities in ${CLIENT.state}.`,
+    title: `Service Areas | ${CLIENT.name} — Ranch Experiences Near Wichita, KS`,
+    description: `Diamond Springs Ranch serves guests from ${CITIES.map(c => c.name).join(', ')} and surrounding communities.`,
     canonical: '/service-areas/',
   });
   const areaCards = CITIES.map(c => `
-    <a href="/${c.slug}/" style="text-decoration:none;">
-      <div class="kg-area-item">
-        <h4>${c.name}</h4>
-        <p>${c.county ? c.county + ' County' : CLIENT.state}</p>
-      </div>
+    <a href="/${c.slug}/" class="dsr-area-card">
+      <h4>${c.name}</h4>
+      <p>${c.county ? c.county + ' County' : CLIENT.state}</p>
     </a>`).join('');
   const body = `
-<div class="kg-page-header">
-  <div class="container">
-    <h1>Service Areas</h1>
-    <p>${CLIENT.name} provides ${CLIENT.tradeLabel.toLowerCase()} services throughout ${CLIENT.primaryCity} and surrounding ${CLIENT.state} communities.</p>
+<section class="v2-hero">
+  <div class="v2-hero-bg"></div>
+  <div class="v2-hero-overlay"></div>
+  <div class="v2-hero-content">
+    <div class="v2-hero-eyebrow">
+      <span class="v2-eyebrow-line"></span>
+      <span class="overline">Sedgwick, Kansas &bull; 15 Minutes from Wichita</span>
+    </div>
+    <h1>Close enough to <em>get away.</em></h1>
+    <p class="v2-hero-sub">Diamond Springs Ranch welcomes guests from across the Wichita metro and beyond. Just 15 minutes north of downtown.</p>
+    <div class="v2-hero-btns">
+      <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold">Book a Visit</a>
+      <a href="/contact/" class="btn btn-light">Get Directions</a>
+    </div>
   </div>
-</div>
-<section>
-  <div class="container">
-    <div class="kg-areas-grid">
+  <div class="v2-hero-scroll-hint"><span>Scroll</span><div class="v2-scroll-line"></div></div>
+</section>
+<section class="dsr-section-dark">
+  <div class="dsr-container">
+    <div class="dsr-area-grid">
       ${areaCards}
     </div>
   </div>
 </section>
 ${CTA}`;
   writeFile('service-areas/index.html', wrap(meta, body));
-  console.log('? service-areas overview');
+  console.log('\u2713 service-areas overview');
 }
-
-// -- SxC pages (service � city) -----------------------------------------------
-
-// -- Static files --------------------------------------------------------------
 
 function buildRobots() {
   writeFile('robots.txt', `User-agent: *\nAllow: /\nSitemap: https://${CLIENT.domain}/sitemap.xml\n`);
