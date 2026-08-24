@@ -1,0 +1,91 @@
+{
+  "total_score": 78,
+  "status": "CONDITIONAL",
+  "category_scores": {
+    "cat1_local_uniqueness": {
+      "score": 25,
+      "max": 30,
+      "breakdown": {
+        "local_intro": 8,
+        "market_specific_why": 8,
+        "hyperlocal_proof": 7,
+        "neighborhood_refs": 2
+      }
+    },
+    "cat2_content_depth": {
+      "score": 19,
+      "max": 25,
+      "breakdown": {
+        "word_count": 5,
+        "search_intent": 6,
+        "faq_quality": 6,
+        "original_insight": 2
+      }
+    },
+    "cat3_seo_structure": {
+      "score": 16,
+      "max": 20,
+      "breakdown": {
+        "h1": 4,
+        "h2s": 4,
+        "keyword_first_100": 3,
+        "title_tag": 2,
+        "meta_desc": 2,
+        "url": 1
+      }
+    },
+    "cat4_trust_eeat": {
+      "score": 11,
+      "max": 15,
+      "breakdown": {
+        "customer_review": 5,
+        "certifications": 4,
+        "real_photo": 0,
+        "nap": 2
+      }
+    },
+    "cat5_technical": {
+      "score": 7,
+      "max": 10,
+      "breakdown": {
+        "schema": 4,
+        "internal_links": 0,
+        "core_web_vitals": 3
+      }
+    }
+  },
+  "auto_fail_triggered": false,
+  "auto_fail_reason": null,
+  "cat1_passes_minimum": true,
+  "flags": [
+    "Title tag exceeds 60 characters (currently 61 chars)",
+    "Meta description exceeds 155 characters (currently 156 chars)",
+    "No real photos with alt text present - only stock/placeholder images",
+    "Internal links present but fewer than 3 outbound links in main content (only 2 visible: /services/ and service-specific links)",
+    "Neighborhood references limited - only mentions subdivisions in passing (Auburn Hills, Rolling Meadows, Tallgrass Estates, Rock Hills, Windmill Creek) but could be more specific",
+    "Content lacks original insight - mostly generic ranch description without unique data or angles",
+    "Search intent partially met but lacks depth on specific experiences available"
+  ],
+  "strengths": [
+    "Strong local context with specific drive time, route (US-54, K-15), and distance from Andover",
+    "Excellent market-specific 'why' section explaining lack of ranches within Andover city limits",
+    "Hyperlocal proof includes specific address, verifiable Google rating (4.9 stars, 281 reviews), and mentions Andover-specific neighborhoods",
+    "H1 contains primary keyword + city name",
+    "Primary keyword appears in first 100 words",
+    "5+ relevant FAQ questions in FAQPage schema matching local search intent",
+    "Business credentials mentioned (certifications, insurance, Kansas agritourism registration)",
+    "NAP visible and consistent",
+    "Valid LocalBusiness and FAQPage schema present",
+    "Word count exceeds 800 (2634 words)",
+    "Cat1 passes minimum threshold (25/30, needs 20)"
+  ],
+  "recommended_fixes": [
+    "Add 1-2 more internal links in main content to reach 3+ (link to /about/, /contact/, or /areas-served/ pages)",
+    "Shorten title tag to under 60 characters (remove 'Diamond Springs Ranch' or abbreviate)",
+    "Trim meta description to under 155 characters (currently 156)",
+    "Add at least one real photo with descriptive, geo-tagged alt text (ranch property, horses, or cattle)",
+    "Include more specific neighborhood/street references within Andover in article body (e.g., '21st Street corridor', 'Central Avenue area', 'Andover Central High School district')",
+    "Add original insight or data point not found on competitor pages (e.g., percentage of bookings from Andover, specific testimonial quote, unique seasonal offering)",
+    "Expand content depth on specific experiences to fully answer search intent (what to expect, pricing hints, duration, age requirements)"
+  ]
+}

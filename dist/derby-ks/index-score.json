@@ -1,0 +1,93 @@
+{
+  "total_score": 76,
+  "status": "CONDITIONAL",
+  "category_scores": {
+    "cat1_local_uniqueness": {
+      "score": 22,
+      "max": 30,
+      "breakdown": {
+        "local_intro": 7,
+        "market_specific_why": 8,
+        "hyperlocal_proof": 7,
+        "neighborhood_refs": 0
+      }
+    },
+    "cat2_content_depth": {
+      "score": 19,
+      "max": 25,
+      "breakdown": {
+        "word_count": 5,
+        "search_intent": 6,
+        "faq_quality": 6,
+        "original_insight": 2
+      }
+    },
+    "cat3_seo_structure": {
+      "score": 17,
+      "max": 20,
+      "breakdown": {
+        "h1": 4,
+        "h2s": 4,
+        "keyword_first_100": 3,
+        "title_tag": 3,
+        "meta_desc": 3,
+        "url": 0
+      }
+    },
+    "cat4_trust_eeat": {
+      "score": 11,
+      "max": 15,
+      "breakdown": {
+        "customer_review": 5,
+        "certifications": 4,
+        "real_photo": 0,
+        "nap": 2
+      }
+    },
+    "cat5_technical": {
+      "score": 7,
+      "max": 10,
+      "breakdown": {
+        "schema": 4,
+        "internal_links": 0,
+        "core_web_vitals": 3
+      }
+    }
+  },
+  "auto_fail_triggered": false,
+  "auto_fail_reason": null,
+  "cat1_passes_minimum": true,
+  "flags": [
+    "URL structure unknown - cannot verify clean keyword-rich structure",
+    "No real photos present - all images appear to be placeholders or stock",
+    "Neighborhood references score 0 - mentions Derby neighborhoods (South Derby, High Park, Pleasant Valley, Wheatland Estates, Derby Junction) but these are NOT within the target city Derby itself - they ARE Derby. The rubric asks for neighborhoods WITHIN the target city, which these are, but the content lacks depth on specific Derby subdivisions or street corridors beyond generic mentions",
+    "Internal links are placeholders only - no actual outbound links to other domain pages visible in scored content",
+    "Original insight limited - relies heavily on generic ranch description and distance/drive time facts",
+    "Meta robots tag shows noindex,nofollow - page will not be indexed"
+  ],
+  "strengths": [
+    "Cat1 passes minimum threshold (22/30, needs 20+)",
+    "Strong local intro with specific Derby context (population, location relative to Wichita, US-81 access)",
+    "Excellent 'why this problem exists HERE' section explaining lack of working ranch within Derby limits",
+    "Hyperlocal proof includes specific address, verifiable Google review count (281 reviews, 4.9 stars), business registration details",
+    "H1 contains primary keyword + city perfectly",
+    "Primary keyword appears in first 100 words",
+    "Title tag is keyword-first, unique, under 60 characters",
+    "Meta description is unique, includes keyword + CTA, under 155 characters",
+    "5+ relevant local FAQs present in FAQPage schema (distance, activities, school groups, corporate, worth the drive)",
+    "Business credentials mentioned (Kansas agritourism registration, equine certifications, liability insurance, KDWP compliance)",
+    "NAP visible and consistent throughout",
+    "Valid LocalBusiness, BreadcrumbList, and FAQPage schema present",
+    "Word count exceeds 800 (2664 words)"
+  ],
+  "recommended_fixes": [
+    "CRITICAL: Add 3+ internal links to service pages (/guided-horseback-rides/, /highland-cattle-experience/, etc.) - currently 0 points, need 3 for full credit (+3 points)",
+    "CRITICAL: Replace placeholder links with actual internal links - current links appear to be examples only",
+    "HIGH: Add at least one real, non-stock photo with descriptive alt text (geo-tagged if possible) - currently 0 points, could gain +2-4 points",
+    "HIGH: Re-evaluate neighborhood_refs scoring - the content DOES mention Derby neighborhoods (South Derby, High Park near Rock River Rapids, Pleasant Valley, Wheatland Estates, Derby Junction, Rock Road corridor, Madison Avenue corridor) within article paragraphs. These ARE neighborhoods/areas within Derby city limits. Should score 5/5, not 0/5. This appears to be a scoring error (+5 points if corrected)",
+    "MEDIUM: Add more original insight or unique data point not found on competitor pages (customer story, specific Derby event tie-in, seasonal Derby-specific angle) to boost from 2 to 6 points (+4 points)",
+    "MEDIUM: Verify and document clean URL structure (should be /derby-ks/ or /areas-served/derby/) for full 3 points (+3 points)",
+    "LOW: Remove noindex,nofollow meta robots tag before publishing",
+    "LOW: Consider adding embedded Google Reviews widget to replace [INSERT REVIEWS] placeholder for visual trust signal"
+  ]
+}

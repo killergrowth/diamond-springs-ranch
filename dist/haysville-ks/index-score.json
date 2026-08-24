@@ -1,0 +1,88 @@
+{
+  "total_score": 78,
+  "status": "CONDITIONAL",
+  "category_scores": {
+    "cat1_local_uniqueness": {
+      "score": 25,
+      "max": 30,
+      "breakdown": {
+        "local_intro": 8,
+        "market_specific_why": 8,
+        "hyperlocal_proof": 4,
+        "neighborhood_refs": 5
+      }
+    },
+    "cat2_content_depth": {
+      "score": 19,
+      "max": 25,
+      "breakdown": {
+        "word_count": 5,
+        "search_intent": 6,
+        "faq_quality": 6,
+        "original_insight": 2
+      }
+    },
+    "cat3_seo_structure": {
+      "score": 16,
+      "max": 20,
+      "breakdown": {
+        "h1": 4,
+        "h2s": 4,
+        "keyword_first_100": 3,
+        "title_tag": 3,
+        "meta_desc": 1,
+        "url": 1
+      }
+    },
+    "cat4_trust_eeat": {
+      "score": 11,
+      "max": 15,
+      "breakdown": {
+        "customer_review": 5,
+        "certifications": 4,
+        "real_photo": 0,
+        "nap": 2
+      }
+    },
+    "cat5_technical": {
+      "score": 7,
+      "max": 10,
+      "breakdown": {
+        "schema": 4,
+        "internal_links": 0,
+        "core_web_vitals": 3
+      }
+    }
+  },
+  "auto_fail_triggered": false,
+  "auto_fail_reason": null,
+  "cat1_passes_minimum": true,
+  "flags": [
+    "Meta description exceeds 155 characters (currently 157 chars)",
+    "No real photos with alt text present - only stock/placeholder images",
+    "Internal links present but fewer than 3 outbound links in main content body",
+    "Content lacks original insight - mostly generic ranch description applicable to any location",
+    "No verifiable hyperlocal proof (no specific customer testimonial from Haysville, no geo-tagged photo)"
+  ],
+  "strengths": [
+    "Strong neighborhood references: South Haysville, Lake Afton Community, Clearwater Road Corridor, South Grove Road, Red Rock neighborhood, Haysville Middle School area",
+    "Excellent local intro with specific population (11,500), geographic context (south side of Wichita), and driving directions (US-81 North, 35 minutes)",
+    "Market-specific 'why' section clearly explains lack of ranch experiences within Haysville city limits",
+    "5+ relevant FAQs with local context (distance, church groups, school field trips, directions, family-friendly)",
+    "Valid FAQPage schema with all 5 questions properly structured",
+    "H1 contains primary keyword + city name",
+    "Primary keyword appears in first 100 words",
+    "Business credentials mentioned (certifications, insurance, KS Dept of Agriculture registration)",
+    "NAP visible and consistent throughout",
+    "Title tag under 60 chars and keyword-first",
+    "Word count exceeds 800 (2639 words)"
+  ],
+  "recommended_fixes": [
+    "PRIORITY 1: Add 2+ more internal links in main content body to reach 3+ (link to /service-areas/, /about/, or other relevant pages)",
+    "PRIORITY 2: Shorten meta description to under 155 characters (remove 2+ chars)",
+    "PRIORITY 3: Add at least one real, non-stock photo with descriptive alt text (ideally geo-tagged ranch photo)",
+    "PRIORITY 4: Add specific hyperlocal proof - name a Haysville customer, reference a specific Haysville school group visit with details, or include verifiable local data",
+    "PRIORITY 5: Inject original insight not found on competitor pages - unique angle about Haysville demographics, specific event example, or proprietary data about Haysville visitor patterns",
+    "Consider adding more specific street names or landmarks within Haysville for even stronger neighborhood context"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "total_score": 81,
+  "status": "CONDITIONAL",
+  "category_scores": {
+    "cat1_local_uniqueness": {
+      "score": 25,
+      "max": 30,
+      "breakdown": {
+        "local_intro": 8,
+        "market_specific_why": 6,
+        "hyperlocal_proof": 6,
+        "neighborhood_refs": 5
+      }
+    },
+    "cat2_content_depth": {
+      "score": 19,
+      "max": 25,
+      "breakdown": {
+        "word_count": 5,
+        "search_intent": 8,
+        "faq_quality": 6,
+        "original_insight": 0
+      }
+    },
+    "cat3_seo_structure": {
+      "score": 17,
+      "max": 20,
+      "breakdown": {
+        "h1": 4,
+        "h2s": 4,
+        "keyword_first_100": 3,
+        "title_tag": 3,
+        "meta_desc": 2,
+        "url": 1
+      }
+    },
+    "cat4_trust_eeat": {
+      "score": 13,
+      "max": 15,
+      "breakdown": {
+        "customer_review": 5,
+        "certifications": 4,
+        "real_photo": 2,
+        "nap": 2
+      }
+    },
+    "cat5_technical": {
+      "score": 7,
+      "max": 10,
+      "breakdown": {
+        "schema": 4,
+        "internal_links": 0,
+        "core_web_vitals": 3
+      }
+    }
+  },
+  "auto_fail_triggered": false,
+  "auto_fail_reason": null,
+  "cat1_passes_minimum": true,
+  "flags": [
+    "Meta description exceeds 155 characters (currently 137 chars but close to limit)",
+    "No original insight or unique data - relies on generic ranch experience descriptions",
+    "No visible internal links in article body - only placeholder links at end",
+    "Real photo status unclear - may be stock image",
+    "URL structure unknown - scored conservatively"
+  ],
+  "strengths": [
+    "Strong local neighborhood references: College Hill, Riverside, Delano, Crown Heights, Eastborough, Main Street district, Hillside Drive, SE Prairie View, Oak Ridge subdivision",
+    "Excellent hyperlocal proof: specific address (1734 SE 96th St), 4.9-star Google rating with 281+ reviews, 15 years operation since 2010",
+    "Comprehensive FAQ schema with 5 relevant questions",
+    "Strong credentials: Kansas Department of Agriculture registration, equine handling certifications, liability insurance, KS Dept of Wildlife compliance",
+    "Primary keyword in first 100 words and H1",
+    "Valid LocalBusiness, FAQPage, and HowTo schema markup",
+    "NAP clearly visible and consistent",
+    "Word count exceeds 800 (2629 words)",
+    "Market-specific explanation of why Wichita residents seek this experience"
+  ],
+  "recommended_fixes": [
+    "Add original insight: include specific data like 'average ride duration', 'number of horses in rotation', 'most popular trail route name', or unique seasonal observations not found on competitor pages",
+    "Add 3+ functional internal links within article body paragraphs (not just at end) - link to related services, about page, or location pages naturally within content flow",
+    "Confirm and add real geo-tagged photo with descriptive alt text showing actual ranch horses/trails",
+    "Verify URL structure follows best practices (should be /guided-horseback-rides-sedgwick-ks/ or similar)",
+    "Add one unique angle: interview quote from owner Susan Schrag, specific horse names/personalities, or data on trail difficulty levels",
+    "Consider adding embedded Google Reviews widget in review section for additional social proof visibility"
+  ]
+}

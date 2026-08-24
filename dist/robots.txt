@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://diamond-springs-ranch.com/sitemap.xml

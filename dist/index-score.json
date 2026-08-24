@@ -1,0 +1,97 @@
+{
+  "total_score": 42,
+  "status": "REJECT",
+  "category_scores": {
+    "cat1_local_uniqueness": {
+      "score": 12,
+      "max": 30,
+      "breakdown": {
+        "local_intro": 5,
+        "market_specific_why": 0,
+        "hyperlocal_proof": 7,
+        "neighborhood_refs": 0
+      }
+    },
+    "cat2_content_depth": {
+      "score": 8,
+      "max": 25,
+      "breakdown": {
+        "word_count": 5,
+        "search_intent": 0,
+        "faq_quality": 3,
+        "original_insight": 0
+      }
+    },
+    "cat3_seo_structure": {
+      "score": 9,
+      "max": 20,
+      "breakdown": {
+        "h1": 0,
+        "h2s": 0,
+        "keyword_first_100": 0,
+        "title_tag": 3,
+        "meta_desc": 3,
+        "url": 3
+      }
+    },
+    "cat4_trust_eeat": {
+      "score": 10,
+      "max": 15,
+      "breakdown": {
+        "customer_review": 5,
+        "certifications": 0,
+        "real_photo": 3,
+        "nap": 2
+      }
+    },
+    "cat5_technical": {
+      "score": 3,
+      "max": 10,
+      "breakdown": {
+        "schema": 0,
+        "internal_links": 0,
+        "core_web_vitals": 3
+      }
+    }
+  },
+  "auto_fail_triggered": true,
+  "auto_fail_reason": "Page targets a city client does not serve — this is a ranch experience business homepage, not a local SEO service page targeting a specific city for a service vertical",
+  "cat1_passes_minimum": false,
+  "flags": [
+    "CRITICAL: Cat1 score 12/30 — fails minimum threshold of 20 points",
+    "CRITICAL: This appears to be a business homepage for Diamond Springs Ranch, not a local SEO location page for a service",
+    "CRITICAL: No primary service keyword in H1 — reads like brand tagline, not SEO-optimized heading",
+    "CRITICAL: No market-specific 'why this problem exists HERE' section (0/8 points)",
+    "CRITICAL: Zero neighborhood/sub-location references within Sedgwick (0/5 points) — only lists surrounding cities",
+    "CRITICAL: No secondary keyword H2s — headings are generic service categories",
+    "CRITICAL: Primary keyword not identifiable or present in first 100 words",
+    "CRITICAL: Search intent unclear — page does not answer a specific service query",
+    "CRITICAL: No original insight, data, or unique angle — generic ranch experience descriptions",
+    "CRITICAL: FAQs are generic business questions, not service-specific local queries (scored 3/6)",
+    "CRITICAL: No business certifications or credentials mentioned",
+    "CRITICAL: Schema markup incomplete — LocalBusiness schema present but no Service schema for specific offerings",
+    "Page content appears to be a homepage, not a location-specific service page",
+    "Internal links present but pointing to service pages, not demonstrating inbound link structure"
+  ],
+  "strengths": [
+    "Strong hyperlocal proof: specific address (1734 SE 96th St, Sedgwick, KS 67135), geo-coordinates, verifiable location",
+    "NAP present and consistent throughout page",
+    "Title tag and meta description well-optimized, under character limits",
+    "Customer reviews referenced (4.9 stars, 281 reviews) with placeholder for embed",
+    "Word count exceeds 800 words (2845 words)",
+    "Clean URL structure",
+    "Real business with verifiable online presence (Google Maps, social media links in schema)"
+  ],
+  "recommended_fixes": [
+    "FUNDAMENTAL ISSUE: This page is a business homepage, not a local SEO service page. If the goal is to rank for '[service] in [city]', create dedicated service+location pages (e.g., 'Horseback Riding in Wichita, KS' or 'Wedding Venue near Sedgwick, KS')",
+    "Rewrite H1 to include primary service keyword + target city (e.g., 'Horseback Riding & Ranch Experiences in Sedgwick, KS')",
+    "Add market-specific 'why' section explaining local demand (e.g., 'Why Wichita Families Choose Diamond Springs Ranch' with local context about lack of authentic ranch experiences near the city)",
+    "Include 2+ specific neighborhood/area references within Sedgwick or the target service area (e.g., 'serving families from Riverside, Delano, and College Hill neighborhoods in Wichita')",
+    "Restructure H2s to include secondary keywords (e.g., 'Guided Trail Rides for Wichita Families', 'Corporate Retreats Near Sedgwick County')",
+    "Place primary keyword in first 100 words of body content",
+    "Expand FAQ section to include service-specific local queries (e.g., 'How far is Diamond Springs Ranch from downtown Wichita?', 'What should I wear for a horseback ride in Kansas?')",
+    "Add business credentials (e.g., years in operation, safety certifications, horse training credentials, event planning experience)",
+    "Add Service schema markup for each offering (HorsebackRiding, EventVenue, TouristAttraction)",
+    "Clarify page purpose: if this is the homepage, create separate location pages; if this IS a location page, retarget it for a specific service+city combination"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "total_score": 80,
+  "status": "CONDITIONAL",
+  "category_scores": {
+    "cat1_local_uniqueness": {
+      "score": 25,
+      "max": 30,
+      "breakdown": {
+        "local_intro": 8,
+        "market_specific_why": 8,
+        "hyperlocal_proof": 7,
+        "neighborhood_refs": 2
+      }
+    },
+    "cat2_content_depth": {
+      "score": 19,
+      "max": 25,
+      "breakdown": {
+        "word_count": 5,
+        "search_intent": 6,
+        "faq_quality": 6,
+        "original_insight": 2
+      }
+    },
+    "cat3_seo_structure": {
+      "score": 17,
+      "max": 20,
+      "breakdown": {
+        "h1": 4,
+        "h2s": 4,
+        "keyword_first_100": 3,
+        "title_tag": 2,
+        "meta_desc": 3,
+        "url": 1
+      }
+    },
+    "cat4_trust_eeat": {
+      "score": 11,
+      "max": 15,
+      "breakdown": {
+        "customer_review": 5,
+        "certifications": 4,
+        "real_photo": 0,
+        "nap": 2
+      }
+    },
+    "cat5_technical": {
+      "score": 8,
+      "max": 10,
+      "breakdown": {
+        "schema": 4,
+        "internal_links": 1,
+        "core_web_vitals": 3
+      }
+    }
+  },
+  "auto_fail_triggered": false,
+  "auto_fail_reason": null,
+  "cat1_passes_minimum": true,
+  "flags": [
+    "Title tag exceeds 60 characters (currently 62 chars)",
+    "No real photos with alt text present - only stock/placeholder images",
+    "Limited internal links (placeholders only)",
+    "Neighborhood references mention College Hill, Riverside, Delano, Crown Heights, Eastborough, Woodlawn, Maize, Bel Aire but only 2 are within Wichita proper (others are adjacent cities)",
+    "Content lacks original insight - mostly generic ranch description",
+    "Search intent partially met but lacks depth on specific experiences"
+  ],
+  "strengths": [
+    "Strong local intro with specific distance (17 miles north), drive time (25 minutes), and route (K-15 North/US-81)",
+    "Excellent hyperlocal proof: specific address (1734 SE 96th St, Sedgwick, KS 67135), verifiable Google rating (4.9 stars, 281 reviews), phone number",
+    "Clear market-specific 'why' section explaining Wichita's 395k metro population and demand for nearby outdoor experiences",
+    "H1 contains primary keyword + city perfectly",
+    "Primary keyword appears in first 100 words",
+    "Meta description under 155 chars with keyword and CTA",
+    "Strong business credentials: 15 years operation, owner name, certifications, insurance, Kansas agritourism registration",
+    "NAP visible and consistent throughout",
+    "Valid FAQPage schema with 5+ relevant local questions",
+    "Word count exceeds 800 (2778 words)",
+    "H2s include local terms and secondary keywords"
+  ],
+  "recommended_fixes": [
+    "PRIORITY 1: Add real geo-tagged photos of the ranch with descriptive alt text (e.g., 'Highland cattle at Diamond Springs Ranch in Sedgwick, KS' or 'Horseback trail ride through Kansas prairie north of Wichita') - adds 4 points",
+    "PRIORITY 2: Shorten title tag to under 60 characters (e.g., 'Ranch Experiences Wichita KS | Diamond Springs Ranch') - adds 1 point",
+    "PRIORITY 3: Add 2+ more internal links to service pages beyond the existing placeholders - adds 2 points",
+    "PRIORITY 4: Include original insight/data not found on competitor pages (e.g., specific seasonal booking patterns, unique Wichita customer stories, local partnership details, or ranch history tied to Wichita area) - adds 4 points",
+    "PRIORITY 5: Clarify neighborhood references - focus on actual Wichita neighborhoods vs. adjacent cities. College Hill, Riverside, Delano, Crown Heights, Eastborough are good; Maize and Bel Aire are separate cities. Add more in-city references like specific streets or subdivisions",
+    "PRIORITY 6: Deepen search intent coverage - expand on what makes each experience unique, pricing transparency, what to expect, seasonal considerations"
+  ]
+}

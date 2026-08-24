@@ -1,0 +1,90 @@
+{
+  "total_score": 82,
+  "status": "CONDITIONAL",
+  "category_scores": {
+    "cat1_local_uniqueness": {
+      "score": 22,
+      "max": 30,
+      "breakdown": {
+        "local_intro": 7,
+        "market_specific_why": 6,
+        "hyperlocal_proof": 7,
+        "neighborhood_refs": 2
+      }
+    },
+    "cat2_content_depth": {
+      "score": 22,
+      "max": 25,
+      "breakdown": {
+        "word_count": 5,
+        "search_intent": 8,
+        "faq_quality": 6,
+        "original_insight": 3
+      }
+    },
+    "cat3_seo_structure": {
+      "score": 17,
+      "max": 20,
+      "breakdown": {
+        "h1": 4,
+        "h2s": 4,
+        "keyword_first_100": 3,
+        "title_tag": 3,
+        "meta_desc": 2,
+        "url": 1
+      }
+    },
+    "cat4_trust_eeat": {
+      "score": 13,
+      "max": 15,
+      "breakdown": {
+        "customer_review": 5,
+        "certifications": 4,
+        "real_photo": 2,
+        "nap": 2
+      }
+    },
+    "cat5_technical": {
+      "score": 8,
+      "max": 10,
+      "breakdown": {
+        "schema": 4,
+        "internal_links": 1,
+        "core_web_vitals": 3
+      }
+    }
+  },
+  "auto_fail_triggered": false,
+  "auto_fail_reason": null,
+  "cat1_passes_minimum": true,
+  "flags": [
+    "Meta description at 121 chars is good but could add more compelling CTA language to approach 155 char limit",
+    "Neighborhood references score only 2/5 - mentions Main Street district, Sedgwick Elementary, Community Center, Hillside Drive, SE Prairie View, Oak Ridge subdivision, but these are minimal and could be expanded",
+    "Original insight score 3/6 - includes specific data (30+ weddings, 100+ corporate events, 281+ reviews, 15 years operation) but lacks truly unique angle not found on competitor ranch venue pages",
+    "Internal links score 1/3 - only placeholder links visible, needs actual implementation",
+    "Real photo score 2/4 - no indication of geo-tagging or descriptive alt text in provided content",
+    "URL structure unknown - scored conservatively at 1/3"
+  ],
+  "strengths": [
+    "Cat1 passes minimum threshold with 22/30 points",
+    "Strong word count at 2,649 words - well above 800 minimum",
+    "Excellent hyperlocal proof with specific address (1734 SE 96th St), verifiable business data, and concrete metrics",
+    "H1 contains primary keyword + city perfectly: 'Private Events & Rentals in Sedgwick, KS'",
+    "Primary keyword appears in first 100 words naturally",
+    "FAQ section with 5 relevant questions in FAQPage schema",
+    "Strong certifications mentioned: Kansas Department of Agriculture registration, equine handling certifications, Kansas Department of Wildlife and Parks compliance",
+    "NAP clearly visible and consistent throughout",
+    "Comprehensive schema implementation including LocalBusiness, FAQPage, HowTo, and BreadcrumbList",
+    "Search intent fully addressed with multiple event types covered",
+    "Title tag is keyword-first, unique, and under 60 characters"
+  ],
+  "recommended_fixes": [
+    "PRIORITY 1: Implement actual internal links (currently placeholders) - add 2+ more internal links to reach 3/3 points (+2 points)",
+    "PRIORITY 2: Expand neighborhood/subdivision references within Sedgwick city limits in article body - add 2-3 more specific street names, subdivisions, or landmarks to reach 5/5 points (+3 points)",
+    "PRIORITY 3: Add unique data point or angle not found on competitor ranch venue pages - consider adding seasonal booking data, specific corporate client testimonial quote, or unique event customization options (+3 points)",
+    "PRIORITY 4: Confirm real photos have geo-tagging and add descriptive alt text mentioning location (+2 points)",
+    "PRIORITY 5: Extend meta description closer to 155 chars with stronger CTA language (+1 point)",
+    "PRIORITY 6: Verify and optimize URL structure for clean, keyword-rich format (+2 points)",
+    "These fixes would bring score from 68 to 81+, approaching the 85+ target"
+  ]
+}

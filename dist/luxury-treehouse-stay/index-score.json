@@ -1,0 +1,86 @@
+{
+  "total_score": 87,
+  "status": "CONDITIONAL",
+  "category_scores": {
+    "cat1_local_uniqueness": {
+      "score": 25,
+      "max": 30,
+      "breakdown": {
+        "local_intro": 8,
+        "market_specific_why": 7,
+        "hyperlocal_proof": 5,
+        "neighborhood_refs": 5
+      }
+    },
+    "cat2_content_depth": {
+      "score": 22,
+      "max": 25,
+      "breakdown": {
+        "word_count": 5,
+        "search_intent": 8,
+        "faq_quality": 6,
+        "original_insight": 3
+      }
+    },
+    "cat3_seo_structure": {
+      "score": 17,
+      "max": 20,
+      "breakdown": {
+        "h1": 4,
+        "h2s": 4,
+        "keyword_first_100": 3,
+        "title_tag": 3,
+        "meta_desc": 2,
+        "url": 1
+      }
+    },
+    "cat4_trust_eeat": {
+      "score": 15,
+      "max": 15,
+      "breakdown": {
+        "customer_review": 5,
+        "certifications": 4,
+        "real_photo": 4,
+        "nap": 2
+      }
+    },
+    "cat5_technical": {
+      "score": 8,
+      "max": 10,
+      "breakdown": {
+        "schema": 4,
+        "internal_links": 1,
+        "core_web_vitals": 3
+      }
+    }
+  },
+  "auto_fail_triggered": false,
+  "auto_fail_reason": null,
+  "cat1_passes_minimum": true,
+  "flags": [
+    "Meta description is 156 characters (1 character over 155 limit)",
+    "Internal links are placeholder format - need real implementation",
+    "URL structure unknown - verify clean structure on live site",
+    "Original insight score moderate - content is well-written but lacks unique data points not found elsewhere"
+  ],
+  "strengths": [
+    "Excellent local neighborhood references: Main Street district, Sedgwick Elementary School, Sedgwick Community Center, Chisholm Drive corridor, Hillside Drive neighborhood, SE Prairie View area, Oak Ridge subdivision",
+    "Strong hyperlocal proof: specific address (1734 SE 96th St), 4.9-star Google rating with 281+ reviews, 15 years operation since 2010, owner name (Susan Schrag), specific certifications mentioned",
+    "Compelling market-specific 'why here' explanation: one of fewer than five overnight treehouse experiences in Kansas, only one on working cattle ranch within Wichita metro",
+    "Excellent E-E-A-T signals: Kansas Department of Agriculture registration, equine handling certifications, Kansas Department of Wildlife and Parks compliance, general liability insurance",
+    "Strong word count at 2,570 words",
+    "Complete FAQ schema with 5+ relevant questions",
+    "H1 contains primary keyword + city perfectly",
+    "Primary keyword appears in first 100 words",
+    "NAP clearly visible and consistent",
+    "Valid comprehensive schema markup (LocalBusiness, FAQPage, HowTo, BreadcrumbList)"
+  ],
+  "recommended_fixes": [
+    "Trim meta description by 1 character to meet 155-character limit (currently 156)",
+    "Implement real internal links - replace placeholder links with actual site URLs",
+    "Add 1-2 unique data points: exact treehouse height/dimensions, specific amenity details, booking lead time statistics, or guest demographic data",
+    "Verify URL structure follows /luxury-treehouse-stay-sedgwick-ks/ or similar keyword-rich format",
+    "Add 2+ more internal links to reach the 3+ threshold for full points",
+    "Consider adding geo-tagged photo metadata if not already present to maximize real_photo score"
+  ]
+}

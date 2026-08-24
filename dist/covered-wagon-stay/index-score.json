@@ -1,0 +1,92 @@
+{
+  "total_score": 73,
+  "status": "REJECT",
+  "category_scores": {
+    "cat1_local_uniqueness": {
+      "score": 17,
+      "max": 30,
+      "breakdown": {
+        "local_intro": 5,
+        "market_specific_why": 4,
+        "hyperlocal_proof": 7,
+        "neighborhood_refs": 1
+      }
+    },
+    "cat2_content_depth": {
+      "score": 22,
+      "max": 25,
+      "breakdown": {
+        "word_count": 5,
+        "search_intent": 8,
+        "faq_quality": 6,
+        "original_insight": 3
+      }
+    },
+    "cat3_seo_structure": {
+      "score": 14,
+      "max": 20,
+      "breakdown": {
+        "h1": 4,
+        "h2s": 2,
+        "keyword_first_100": 3,
+        "title_tag": 3,
+        "meta_desc": 1,
+        "url": 1
+      }
+    },
+    "cat4_trust_eeat": {
+      "score": 13,
+      "max": 15,
+      "breakdown": {
+        "customer_review": 5,
+        "certifications": 4,
+        "real_photo": 2,
+        "nap": 2
+      }
+    },
+    "cat5_technical": {
+      "score": 7,
+      "max": 10,
+      "breakdown": {
+        "schema": 4,
+        "internal_links": 0,
+        "core_web_vitals": 3
+      }
+    }
+  },
+  "auto_fail_triggered": false,
+  "auto_fail_reason": null,
+  "cat1_passes_minimum": false,
+  "flags": [
+    "CRITICAL: Category 1 score (17/30) falls below minimum threshold of 20 — page fails regardless of total score",
+    "Neighborhood references score only 1/5 — mentions Sedgwick neighborhoods but lacks depth and specificity within article body",
+    "Local intro is generic (5/10) — mentions Kansas sky and Wichita area but lacks compelling specific local context",
+    "Market-specific 'why' section weak (4/8) — mentions Wichita area uniqueness but doesn't explain local cause or demand drivers",
+    "Meta description exceeds 155 characters (currently 127 chars but generic)",
+    "H2s lack secondary keywords and local variation — only 2 H2s present, both generic",
+    "No internal links visible in article content (0/3) — placeholder links present but scored as non-functional per instructions",
+    "Original insight limited (3/6) — content is repackaged Western experience marketing without unique data or angle"
+  ],
+  "strengths": [
+    "Word count exceeds 800 (2426 words)",
+    "Primary keyword 'covered wagon' appears in first 100 words",
+    "H1 contains primary keyword + city (Sedgwick, KS)",
+    "Title tag is keyword-first and under 60 characters",
+    "Strong hyperlocal proof: specific address (1734 SE 96th St), verifiable business details, 281+ Google reviews, 15 years operation",
+    "FAQ section with 5+ relevant questions in FAQPage schema",
+    "Valid schema markup present (LocalBusiness, FAQPage, HowTo, BreadcrumbList)",
+    "Business credentials mentioned: equine handling certifications, Kansas Dept of Agriculture registration, liability insurance, KDWP compliance",
+    "NAP visible and consistent throughout page",
+    "Search intent fully addressed for covered wagon overnight stay booking"
+  ],
+  "recommended_fixes": [
+    "PRIORITY 1: Add 2-3 specific Sedgwick neighborhood/subdivision names within article paragraphs (not just navigation) to reach neighborhood_refs threshold of 5 points",
+    "PRIORITY 2: Rewrite local intro with compelling specific details about Sedgwick's rural character, climate patterns, or local context that makes covered wagon stays uniquely suited here (target 10/10)",
+    "PRIORITY 3: Add market-specific 'why this exists HERE' section explaining local demand drivers — proximity to Wichita metro seeking rural escapes, Kansas pioneer heritage tourism, lack of similar offerings in region (target 8/8)",
+    "Add 3+ functional internal links within article body pointing to other ranch services or area pages",
+    "Expand H2 count to 4-5 with secondary keywords: 'Covered Wagon Camping Near Wichita', 'What to Expect During Your Wagon Stay', 'Best Times to Book in Sedgwick'",
+    "Optimize meta description to be more compelling with stronger CTA while staying under 155 chars",
+    "Add original insight: guest testimonial quotes, booking data (most popular months), unique ranch history, or comparison to other Kansas agritourism options",
+    "Include real geo-tagged photo with descriptive alt text showing covered wagon on property (currently unclear if image is real or stock)"
+  ]
+}
