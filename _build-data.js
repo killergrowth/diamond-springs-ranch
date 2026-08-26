@@ -1,4 +1,4 @@
-﻿'use strict';
+﻿﻿'use strict';
 /**
  * _build-data.js â€” Diamond Springs Ranch
  * Built by Norris Jr | 2026-07-15
@@ -226,7 +226,66 @@ const SERVICES = [
       { q: 'Is it available year-round?', a: 'It varies by season. Call (316) 303-6195 to check what&rsquo;s available for your time of year.' },
     ],
   },
-];
+
+  {
+    slug:       'riding-lessons',
+    heroHeading: 'Learn to ride the <em>right way.</em>',
+    ctaLabel:   'Book a Lesson',
+    name:       'Horseback Riding Lessons',
+    shortDesc:  'Private and group lessons for all ages. Clinton Anderson Down Under Horsemanship method.',
+    icon:       '&#x1F40E;',
+    costRange:  'Call for current pricing &mdash; (316) 303-6195',
+    photo:      '/images/photo-riding-lessons.jpg',
+    intro:      'Learning to ride the right way means learning with a horse that respects you and a method that sticks. We use Clinton Anderson&rsquo;s Down Under Horsemanship approach &mdash; built on clear communication, partnership, and mutual respect between horse and rider.',
+    body:       '<p>There&rsquo;s a right way and a wrong way to learn to ride. The wrong way is getting thrown on a horse and hoping for the best. The right way is what we do here: Clinton Anderson&rsquo;s Down Under Horsemanship method, which teaches you how to communicate with a horse before you ever get in the saddle.</p><p>It&rsquo;s not just about staying on. It&rsquo;s about understanding what the horse is telling you, and knowing how to respond. That foundation changes everything &mdash; your safety, your confidence, your relationship with the horse, and how far you can go as a rider.</p><p>We offer private and group lessons for all ages and experience levels. First-timers are welcome. Returning riders who want to fix bad habits are welcome. Kids who&rsquo;ve been asking their parents for lessons since they could talk are especially welcome.</p><h2>Who Are Lessons For?</h2><p>Anyone who wants to ride well, not just ride. We&rsquo;ve worked with complete beginners who&rsquo;d never touched a horse, intermediate riders who picked up bad habits somewhere along the way, and young riders whose parents want them to learn properly from the start. The method works at every level.</p><h2>What to Expect</h2><p>You&rsquo;ll work on ground exercises first &mdash; desensitizing, yielding, building respect and communication. Then we move to mounted work at whatever pace fits where you are. By the end of your first lesson, you&rsquo;ll feel a difference. By the end of a series, you&rsquo;ll be a different rider.</p><h2>Booking</h2><p>Private and group slots available. By reservation only &mdash; call or text (316) 303-6195. We&rsquo;ll match you with the right horse and the right instructor based on your goals and experience level.</p><h2>Where Are We?</h2><p>Diamond Springs Ranch, 1734 SE 96th St, Sedgwick, KS 67135. About 15 minutes north of Wichita, 2 miles off I-135. Fully insured, reservation-only.</p><p>More to explore: <a href="/guided-horseback-rides/">Trail Rides</a>, <a href="/horse-day-camp/">Horse Day Camp</a>, <a href="/highland-cattle-experience/">Ranch Corral Experience</a>, <a href="/private-events/">Private Events</a>. See all <a href="/services/">ranch experiences</a>.</p>',
+    metaDescription: 'Horseback riding lessons near Wichita, KS at Diamond Springs Ranch. Private and group lessons for all ages using Clinton Anderson Down Under Horsemanship. Call (316) 303-6195.',
+    faqs: [
+      { q: 'What riding method do you use?', a: 'Clinton Anderson&rsquo;s Down Under Horsemanship &mdash; a ground-up approach focused on respect, communication, and partnership between horse and rider.' },
+      { q: 'Do you offer lessons for kids?', a: 'Yes &mdash; we work with riders of all ages. Kids are some of our best students. We match them with the right horse for their size and confidence level.' },
+      { q: 'Do I need any experience?', a: 'None at all. We start from the ground up regardless of experience level. Complete beginners are welcome and common.' },
+      { q: 'How long are lessons?', a: 'Session length and structure depend on your goals. Call (316) 303-6195 and we&rsquo;ll talk through what makes sense for you.' },
+      { q: 'How do I book?', a: 'By reservation only &mdash; call or text (316) 303-6195. Walk-ins are not available.' },
+    ],
+  },
+  {
+    slug:       'horse-day-camp',
+    heroHeading: 'A full week on the ranch. <em>Memories for a lifetime.</em>',
+    ctaLabel:   'Inquire About Camp',
+    name:       'Horse Day Camp',
+    shortDesc:  'Week-long hands-on horse camp for kids. Grooming, riding, ranch chores, and real ranch life.',
+    icon:       '&#x1F3D5;',
+    costRange:  'Call for current session dates &mdash; (316) 303-6195',
+    photo:      '/images/photo-horse-day-camp.jpg',
+    intro:      'A week on the ranch for kids who love horses. Not a theme park experience &mdash; real ranch work, real riding, real animals. Limited spots each session. Kids who come through camp leave different than when they arrived.',
+    body:       '<p>Horse Day Camp isn&rsquo;t a drop-and-go activity. It&rsquo;s a full week on a working Kansas ranch where kids earn their way with the horses. Grooming, feeding, cleaning stalls, ground work, mounted riding &mdash; they do it all, every day, with horses that become familiar and comfortable by mid-week.</p><p>We modeled camp on the way ranch kids actually learn. Not from a PowerPoint or a demonstration from the fence. From doing. From getting in there and figuring it out alongside the animals. The kids who&rsquo;ve come through camp talk about it for years. Parents tell us it&rsquo;s the best week their kid had all summer. We believe them &mdash; because we see it happen every session.</p><p>Spots are limited intentionally. Small groups mean every camper gets real time with the horses and real attention from the instructors. This isn&rsquo;t a factory. It&rsquo;s the ranch &mdash; and the ranch has a way of getting in a kid&rsquo;s blood.</p><h2>What Campers Do</h2><p>Morning feeding and grooming. Ground work and desensitizing exercises. Mounted riding and trail work. Ranch chores alongside the working crew. Cattle encounters. Evening activities depending on the session. By the end of the week, campers aren&rsquo;t guests anymore &mdash; they&rsquo;re part of how the ranch runs each morning.</p><h2>Who Camp Is For</h2><p>Kids who love horses, kids who are curious about ranch life, and kids who need a week away from screens and in the open air. Prior riding experience is helpful but not required. We meet every camper where they are.</p><h2>Booking</h2><p>Sessions are limited and fill up early. Call (316) 303-6195 to get on the list or check upcoming session dates. Do not wait if summer camp is on your list &mdash; spots go fast once dates are announced.</p><h2>Where Are We?</h2><p>Diamond Springs Ranch, 1734 SE 96th St, Sedgwick, KS 67135. About 15 minutes north of Wichita, 2 miles off I-135.</p><p>More to explore: <a href="/riding-lessons/">Riding Lessons</a>, <a href="/guided-horseback-rides/">Trail Rides</a>, <a href="/highland-cattle-experience/">Ranch Corral Experience</a>, <a href="/private-events/">Private Events</a>. See all <a href="/services/">ranch experiences</a>.</p>',
+    metaDescription: 'Horse Day Camp near Wichita, KS at Diamond Springs Ranch. Week-long hands-on horse camp for kids &mdash; grooming, riding, ranch chores, real ranch life. Call (316) 303-6195.',
+    faqs: [
+      { q: 'What age range is camp for?', a: 'Camp is designed for school-age kids. Call (316) 303-6195 and we&rsquo;ll let you know if your child&rsquo;s age is a good fit for the current session structure.' },
+      { q: 'Does my child need riding experience?', a: 'Not required &mdash; we meet every camper where they are. Kids with zero experience and kids who&rsquo;ve ridden for years both get value from the week.' },
+      { q: 'How many spots are available per session?', a: 'Spots are limited intentionally to keep the ratio of kids to instructors and horses real. Call early &mdash; (316) 303-6195.' },
+      { q: 'What does a typical camp day look like?', a: 'Morning feeding and grooming, ground work, mounted riding, ranch chores, cattle encounters, and more depending on the session. Every day on the ranch is a little different.' },
+      { q: 'When do sessions run?', a: 'Primarily summer. Call (316) 303-6195 for current session dates and availability.' },
+    ],
+  },
+  {
+    slug:       'rusty-saddle-bar',
+    heroHeading: 'Cold drinks. Warm fire. <em>The Rusty Saddle Bar.</em>',
+    ctaLabel:   'Contact Us',
+    name:       'Rusty Saddle Bar',
+    shortDesc:  'On-site bar for private events, group bookings, and special experiences at Diamond Springs Ranch.',
+    icon:       '&#x1F37A;',
+    costRange:  'Available with private events &mdash; call (316) 303-6195',
+    photo:      '/images/photo-rusty-saddle-bar.jpg',
+    intro:      'The Rusty Saddle Bar is the on-site bar at Diamond Springs Ranch &mdash; available for private events, group bookings, and special experiences. It&rsquo;s part of what makes the ranch the right venue for events that need something more than a ballroom.',
+    body:       '<p>The Rusty Saddle Bar is built into the fabric of the ranch. Not a pop-up. Not a rental tent with a bar table. A real on-site bar that brings the ranch atmosphere into every private event, corporate retreat, and group gathering we host.</p><p>Cold drinks, warm fires, open land &mdash; there&rsquo;s nothing like it near Wichita. If you&rsquo;re planning a corporate event, a private party, a wedding reception, or any group gathering and you want the full ranch experience, the Rusty Saddle is part of it.</p><p>The bar is available exclusively through private event booking &mdash; not as a standalone walk-in service. Everything at Diamond Springs Ranch is by reservation, and the Rusty Saddle Bar is no different.</p><h2>Private Events at the Ranch</h2><p>The Rusty Saddle Bar pairs with our full private event offering: the 6,000-square-foot lodge (up to 300 outdoor, 150 indoor), the trail string, the Highland cattle, and forty acres of open Kansas ranch land. If you&rsquo;re looking for a venue that gets people off their phones and into the moment, this is it.</p><p>Corporate retreats, birthday parties, family reunions, church events, wedding receptions &mdash; we&rsquo;ve hosted all of it. Call (316) 303-6195 and talk to us about what you have in mind. We&rsquo;ll build the event around you.</p><h2>Where Are We?</h2><p>Diamond Springs Ranch, 1734 SE 96th St, Sedgwick, KS 67135. About 15 minutes north of Wichita, 2 miles off I-135.</p><p>More to explore: <a href="/private-events/">Private Events</a>, <a href="/guided-horseback-rides/">Trail Rides</a>, <a href="/highland-cattle-experience/">Ranch Corral Experience</a>, <a href="/dinner-date-experience/">Dinner Date Experience</a>. See all <a href="/services/">ranch experiences</a>.</p>',
+    metaDescription: 'The Rusty Saddle Bar at Diamond Springs Ranch near Wichita, KS. On-site bar available for private events, corporate retreats, and group bookings. Call (316) 303-6195.',
+    faqs: [
+      { q: 'Is the Rusty Saddle Bar open to the public?', a: 'The bar is available through private event bookings &mdash; not as a standalone walk-in bar. Call (316) 303-6195 to discuss your event.' },
+      { q: 'Can I book the Rusty Saddle Bar for a corporate event?', a: 'Yes &mdash; it&rsquo;s part of our private event offering. The full ranch is available including the lodge, the trail string, and the bar. Call (316) 303-6195.' },
+      { q: 'Is it available for weddings?', a: 'Yes. Wedding receptions and ceremonies are among the events we host at the ranch. Call (316) 303-6195 to talk through what you have in mind.' },
+      { q: 'How do I add the Rusty Saddle Bar to my event?', a: 'It&rsquo;s part of private event booking. Call (316) 303-6195 and we&rsquo;ll build the event package around your needs.' },
+    ],
+  },];
 
 // â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 // CITIES â€” Wichita metro and surrounding areas that send guests
