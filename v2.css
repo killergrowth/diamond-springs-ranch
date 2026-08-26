@@ -505,7 +505,7 @@ p { line-height: 1.75; }
 .v2-cta { position: relative; overflow: hidden; padding: 120px 0; text-align: center; }
 .v2-cta-bg {
   position: absolute; inset: 0;
-  background-image: url('/images/IMG_3977-scaled.jpg');
+  background-image: url('/images/DiamondSpringsBackgroundphoto.jpg');
   background-size: cover; background-position: center;
 }
 .v2-cta-overlay { position: absolute; inset: 0; background: rgba(12,8,4,0.72); }

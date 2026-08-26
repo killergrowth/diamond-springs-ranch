@@ -131,8 +131,10 @@ function buildBaseHead() {
   .dsr-faq-item.open .dsr-faq-a { max-height: 300px; padding-bottom: 18px; }
   /* City/service link chips */
   .dsr-link-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-  .dsr-link-chip { display: inline-block; padding: 9px 18px; border: 1px solid rgba(255,255,255,0.5); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); transition: background 0.2s, color 0.2s, border-color 0.2s; }
+  .dsr-link-chip { display: inline-block; padding: 9px 18px; border: 1px solid rgba(0,0,0,0.7); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--charcoal); transition: background 0.2s, color 0.2s, border-color 0.2s; }
   .dsr-link-chip:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
+  .dsr-section-dark .dsr-link-chip { border-color: rgba(255,255,255,0.5); color: var(--white); }
+  .dsr-section-dark .dsr-link-chip:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
   /* CTA section */
   .dsr-cta { position: relative; padding: 100px 0; text-align: center; overflow: hidden; }
   .dsr-cta-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
@@ -152,9 +154,9 @@ function buildBaseHead() {
   .dsr-area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
   @media (max-width: 768px) { .dsr-area-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 480px) { .dsr-area-grid { grid-template-columns: 1fr; } }
-  .dsr-area-card { background: var(--charcoal); padding: 28px 24px; transition: background 0.2s; }
+  .dsr-area-card { background: var(--charcoal); padding: 32px 24px; text-align: center; transition: background 0.2s; }
   .dsr-area-card:hover { background: #3d3830; }
-  .dsr-area-card h4 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 300; color: var(--white); margin-bottom: 4px; }
+  .dsr-area-card h4 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 300; color: var(--white); margin-bottom: 4px; }
   .dsr-area-card p { font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-lt); }
   /* Services cards grid */
   .dsr-svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
@@ -222,7 +224,6 @@ function buildHeader() {
       <a href="/contact/">Visit <span class="v2-nav-caret"></span></a>
       <ul class="v2-nav-drop">
         <li><a href="/contact/">Contact &amp; Directions</a></li>
-        <li><a href="/service-areas/">Service Areas</a></li>
       </ul>
     </li>
   </ul>
@@ -305,7 +306,7 @@ function buildCta() {
   // V2-style CTA section matching homepage design
   return `
 <section class="dsr-cta">
-  <div class="dsr-cta-bg" style="background-image:url('/images/photo-trail-rides.jpg');"></div>
+  <div class="dsr-cta-bg" style="background-image:url('/images/DiamondSpringsBackgroundphoto.jpg');"></div>
   <div class="dsr-cta-overlay"></div>
   <div class="dsr-cta-inner">
     <span class="overline">Diamond Springs Ranch</span>
@@ -349,60 +350,140 @@ function formHtml(formId, serviceSlug) {
   const serviceOptions = SERVICES.map(s =>
     `<option value="${s.name}"${serviceSlug === s.slug ? ' selected' : ''}>${s.name}</option>`
   ).join('\n              ');
-  const cityOptions = CITIES.map(c =>
-    `<option value="${c.name}">${c.name}</option>`
-  ).join('\n              ');
 
-  return `<div class="kg-form-wrapper">
-  <form id="${formId}" class="kg-form" method="POST" action="/submit" novalidate>
-    <div class="kg-form-row">
-      <div class="kg-form-group">
-        <label for="${formId}-name">Name</label>
+  return `<div class="dsr-form-card">
+  <div class="dsr-form-header">
+    <h3 class="dsr-form-title">Reserve Your Experience</h3>
+    <p class="dsr-form-subtitle">We'll be in touch within one business day.</p>
+  </div>
+  <form id="${formId}" class="dsr-form" method="POST" action="/submit" novalidate>
+    <div class="dsr-form-row">
+      <div class="dsr-form-group">
+        <label for="${formId}-name">Name <span class="dsr-required">*</span></label>
         <input type="text" id="${formId}-name" name="name" placeholder="Your full name" required autocomplete="name">
       </div>
-      <div class="kg-form-group">
-        <label for="${formId}-phone">Phone</label>
-        <input type="tel" id="${formId}-phone" name="phone" placeholder="(555) 555-5555" required autocomplete="tel">
+      <div class="dsr-form-group">
+        <label for="${formId}-phone">Phone Number <span class="dsr-required">*</span></label>
+        <input type="tel" id="${formId}-phone" name="phone" placeholder="(316) 555-5555" required autocomplete="tel">
       </div>
     </div>
-    <div class="kg-form-row">
-      <div class="kg-form-group">
-        <label for="${formId}-email">Email</label>
-        <input type="email" id="${formId}-email" name="email" placeholder="your@email.com" autocomplete="email">
-      </div>
-      <div class="kg-form-group">
-        <label for="${formId}-city">Your City</label>
-        <select id="${formId}-city" name="city">
-          <option value="">Select your city</option>
-              ${cityOptions}
-        </select>
-      </div>
+    <div class="dsr-form-group">
+      <label for="${formId}-email">Email Address <span class="dsr-required">*</span></label>
+      <input type="email" id="${formId}-email" name="email" placeholder="your@email.com" required autocomplete="email">
     </div>
-    <div class="kg-form-group">
-      <label for="${formId}-service">Experience Interested In</label>
-      <select id="${formId}-service" name="service">
-        <option value="">Select an experience</option>
+    <div class="dsr-form-group">
+      <label for="${formId}-service">Experiences You're Interested In <span class="dsr-required">*</span></label>
+      <select id="${formId}-service" name="service" required>
+        <option value="">Select an experience...</option>
             ${serviceOptions}
+        <option value="Multiple / Not Sure">Multiple / Not Sure</option>
       </select>
     </div>
-    <div class="kg-form-group">
-      <label for="${formId}-message">Anything Else We Should Know? (optional)</label>
-      <textarea id="${formId}-message" name="message" placeholder="Group size, dates, special requests..."></textarea>
+    <div class="dsr-form-group">
+      <label for="${formId}-message">Anything Else We Should Know? <span class="dsr-optional">(optional)</span></label>
+      <textarea id="${formId}-message" name="message" placeholder="Group size, preferred dates, special requests..."></textarea>
     </div>
-    <div class="cf-turnstile" data-sitekey="${CLIENT.turnstileSiteKey}"></div>
-    <button type="submit" class="kg-form-submit">Send My Request</button>
-    <span class="kg-form-note">We respond within one business day. No spam, ever.</span>
+    <button type="submit" class="dsr-form-submit">Send My Request &rarr;</button>
+    <p class="dsr-form-note">&#128274; Your info is private. We'll never spam you.</p>
     <div id="${formId}-status" style="display:none;padding:12px 16px;border-radius:6px;margin-top:12px;font-weight:600;"></div>
   </form>
 </div>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<style>
+  .dsr-form-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    padding: 36px 32px;
+  }
+  @media (max-width: 600px) { .dsr-form-card { padding: 28px 20px; } }
+  .dsr-form-header { margin-bottom: 24px; }
+  .dsr-form-title {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin: 0 0 6px;
+  }
+  .dsr-form-subtitle {
+    font-size: 0.82rem;
+    color: #7E7C76;
+    margin: 0;
+  }
+  .dsr-form { display: flex; flex-direction: column; gap: 14px; }
+  .dsr-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 580px) { .dsr-form-row { grid-template-columns: 1fr; } }
+  .dsr-form-group { display: flex; flex-direction: column; gap: 6px; }
+  .dsr-form-group label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: 0.01em;
+  }
+  .dsr-required { color: var(--gold); }
+  .dsr-optional { font-weight: 400; color: #9e9a93; font-size: 0.78rem; }
+  .dsr-form-group input,
+  .dsr-form-group select,
+  .dsr-form-group textarea {
+    border: 1.5px solid #E2DDD8;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    font-family: var(--font-sans);
+    color: var(--charcoal);
+    background: #fff;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .dsr-form-group input::placeholder,
+  .dsr-form-group textarea::placeholder { color: #b0aca5; }
+  .dsr-form-group input:focus,
+  .dsr-form-group select:focus,
+  .dsr-form-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(189,148,72,0.15);
+  }
+  .dsr-form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 38px;
+    cursor: pointer;
+  }
+  .dsr-form-group textarea { min-height: 100px; resize: vertical; }
+  .dsr-form-submit {
+    width: 100%;
+    padding: 15px 24px;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    text-align: center;
+  }
+  .dsr-form-submit:hover { background: #c8953a; transform: translateY(-1px); }
+  .dsr-form-submit:active { transform: translateY(0); }
+  .dsr-form-note {
+    font-size: 0.75rem;
+    color: #9e9a93;
+    text-align: center;
+    margin: 2px 0 0;
+  }
+</style>
 <script>
 (function(){
   const form = document.getElementById('${formId}');
   if (!form) return;
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
-    const btn = form.querySelector('.kg-form-submit');
+    const btn = form.querySelector('.dsr-form-submit');
     const status = document.getElementById('${formId}-status');
     btn.disabled = true;
     btn.textContent = 'Sending…';
@@ -943,7 +1024,7 @@ function buildAboutPage() {
         ${CLIENT.aboutBody || '<p>' + CLIENT.description + '</p>'}
       </div>
       <div>
-        <img src="/images/photo-about.jpg" alt="Diamond Springs Ranch" style="width:100%;object-fit:cover;height:480px;">
+        <img src="/images/IMG_1004.JPG" alt="Diamond Springs Ranch" style="width:100%;object-fit:cover;height:480px;">
       </div>
     </div>
   </div>
