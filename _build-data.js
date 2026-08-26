@@ -282,7 +282,6 @@ const SERVICES = [
     faqs: [
       { q: 'Is the Rusty Saddle Bar open to the public?', a: 'The bar is available through private event bookings &mdash; not as a standalone walk-in bar. Call (316) 303-6195 to discuss your event.' },
       { q: 'Can I book the Rusty Saddle Bar for a corporate event?', a: 'Yes &mdash; it&rsquo;s part of our private event offering. The full ranch is available including the lodge, the trail string, and the bar. Call (316) 303-6195.' },
-      { q: 'Is it available for weddings?', a: 'Yes. Wedding receptions and ceremonies are among the events we host at the ranch. Call (316) 303-6195 to talk through what you have in mind.' },
       { q: 'How do I add the Rusty Saddle Bar to my event?', a: 'It&rsquo;s part of private event booking. Call (316) 303-6195 and we&rsquo;ll build the event package around your needs.' },
     ],
   },];
