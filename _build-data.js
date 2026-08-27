@@ -17,7 +17,7 @@ const CLIENT = {
   phone:           '(316) 303-6195',
   phoneTel:        '3163036195',
   email:           'susan@susanschrag.com',
-  description:     'Diamond Springs Ranch is a working ranch in Sedgwick, KS â€” guided horseback rides, Highland cattle experiences, luxury treehouse and covered wagon stays, private events, and the Dinner Date Experience. About 15 minutes north of Wichita.',
+  description:     'Diamond Springs Ranch is a working ranch in Sedgwick, KS - guided horseback rides, Highland cattle experiences, luxury treehouse and covered wagon stays, private events, and the Dinner Date Experience. About 15 minutes north of Wichita.',
   address:         '1734 SE 96th St, Sedgwick, KS 67135',
   domain:          'diamond-springs-ranch.com',
   state:           'KS',
@@ -403,6 +403,7 @@ const SERVICE_FAQS = [
 ];
 
 module.exports = { CLIENT, SERVICES, CITIES, REVIEWS, DIFFERENTIATORS, SERVICE_FAQS };
+
 
 
 
