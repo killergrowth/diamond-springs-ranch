@@ -110,6 +110,7 @@ const SERVICES = [
   {
     slug:       'guided-horseback-rides',
     name:       'Guided Horseback Rides',
+    heroBg:     '/images/trail_ride1.png',
     heroHeading: 'Where the <em>real</em> West still lives.',
     ctaLabel:   'Book a Trail Ride',
     shortDesc:  'Trail rides and riding lessons on a working Kansas ranch &mdash; 15 minutes north of Wichita.',
@@ -128,6 +129,7 @@ const SERVICES = [
   },
   {
     slug:       'highland-cattle-experience',
+    heroBg:     '/images/HighlandCattleExperience1.png',
     heroHeading: 'Meet the <em>herd.</em>',
     ctaLabel:   'Book the Ranch Corral',
     name:       'Highland Cattle Experience',

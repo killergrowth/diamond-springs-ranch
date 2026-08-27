@@ -1160,7 +1160,7 @@ function buildServicePage(svc) {
   const body = `
 ${svcSchema}
 <section class="v2-hero">
-  <div class="v2-hero-bg"></div>
+  <div class="v2-hero-bg" style="background-image:url('${heroBg}');"></div>
   <div class="v2-hero-overlay"></div>
   <div class="v2-hero-content">
     <div class="v2-hero-eyebrow">
