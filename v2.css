@@ -157,8 +157,8 @@ p { line-height: 1.75; }
 }
 .v2-hero-bg {
   position: absolute; inset: 0;
-  background-image: url('/images/Diamond_Springs_Home_Page2.jpg.png');
-  background-size: cover; background-position: center 28%;
+  background-image: url('/images/Hero_Image1.png');
+  background-size: cover; background-position: center 40%;
 }
 .v2-hero-overlay {
   position: absolute; inset: 0;
@@ -354,8 +354,8 @@ p { line-height: 1.75; }
 }
 .v2-quote-bg {
   position: absolute; inset: 0;
-  background-image: url('/images/og-image-dsr-notextdsr---cf646514-de64-4c13-8306-155400277067.jpg');
-  background-size: cover; background-position: center;
+  background-image: url('/images/trail_ride1.png');
+  background-size: cover; background-position: center 30%;
   background-attachment: fixed;
 }
 .v2-quote-overlay { position: absolute; inset: 0; background: rgba(12,8,4,0.6); }

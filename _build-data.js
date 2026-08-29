@@ -177,6 +177,7 @@ const SERVICES = [
     lodging:    true,
     lodgifyRentalId: '687675',
     lodgifyUrl:  'https://treelodges.lodgify.com/en/sunset-schooner',
+    heroBg:     '/images/Covered_Wagon_Stay1.png',
     name:       'Covered Wagon Stay',
     shortDesc:  'Spend the night in a fully equipped covered wagon on the open Kansas ranch.',
     icon:       '&#x1F6FA;',
@@ -194,6 +195,7 @@ const SERVICES = [
   },
   {
     slug:       'private-events',
+    heroBg:     '/images/The_House_at_Night2.png',
     heroHeading: 'Bring your <em>whole group.</em>',
     ctaLabel:   'Inquire About Events',
     name:       'Private Events &amp; Rentals',
@@ -212,6 +214,7 @@ const SERVICES = [
   },
   {
     slug:       'dinner-date-experience',
+    heroBg:     '/images/dinner-date-experience1.png',
     heroHeading: 'The most unforgettable <em>date night</em> in Kansas.',
     ctaLabel:   'Book the Dinner Date',
     name:       'Dinner Date Experience',
@@ -239,6 +242,7 @@ const SERVICES = [
     icon:       '&#x1F40E;',
     costRange:  'Call for current pricing &mdash; (316) 303-6195',
     photo:      '/images/photo-riding-lessons.jpg',
+    heroBg:     '/images/Riding_Lessons1.png',
     intro:      'Learning to ride the right way means learning with a horse that respects you and a method that sticks. We use Clinton Anderson&rsquo;s Down Under Horsemanship approach &mdash; built on clear communication, partnership, and mutual respect between horse and rider.',
     body:       '<p>There&rsquo;s a right way and a wrong way to learn to ride. The wrong way is getting thrown on a horse and hoping for the best. The right way is what we do here: Clinton Anderson&rsquo;s Down Under Horsemanship method, which teaches you how to communicate with a horse before you ever get in the saddle.</p><p>It&rsquo;s not just about staying on. It&rsquo;s about understanding what the horse is telling you, and knowing how to respond. That foundation changes everything &mdash; your safety, your confidence, your relationship with the horse, and how far you can go as a rider.</p><p>We offer private and group lessons for all ages and experience levels. First-timers are welcome. Returning riders who want to fix bad habits are welcome. Kids who&rsquo;ve been asking their parents for lessons since they could talk are especially welcome.</p><h2>Who Are Lessons For?</h2><p>Anyone who wants to ride well, not just ride. We&rsquo;ve worked with complete beginners who&rsquo;d never touched a horse, intermediate riders who picked up bad habits somewhere along the way, and young riders whose parents want them to learn properly from the start. The method works at every level.</p><h2>What to Expect</h2><p>You&rsquo;ll work on ground exercises first &mdash; desensitizing, yielding, building respect and communication. Then we move to mounted work at whatever pace fits where you are. By the end of your first lesson, you&rsquo;ll feel a difference. By the end of a series, you&rsquo;ll be a different rider.</p><h2>Booking</h2><p>Private and group slots available. By reservation only &mdash; call or text (316) 303-6195. We&rsquo;ll match you with the right horse and the right instructor based on your goals and experience level.</p><h2>Where Are We?</h2><p>Diamond Springs Ranch, 1734 SE 96th St, Sedgwick, KS 67135. About 15 minutes north of Wichita, 2 miles off I-135. Fully insured, reservation-only.</p><p>More to explore: <a href="/guided-horseback-rides/">Trail Rides</a>, <a href="/horse-day-camp/">Horse Day Camp</a>, <a href="/highland-cattle-experience/">Ranch Corral Experience</a>, <a href="/private-events/">Private Events</a>. See all <a href="/services/">ranch experiences</a>.</p>',
     metaDescription: 'Horseback riding lessons near Wichita, KS at Diamond Springs Ranch. Private and group lessons for all ages using Clinton Anderson Down Under Horsemanship. Call (316) 303-6195.',
@@ -252,6 +256,7 @@ const SERVICES = [
   },
   {
     slug:       'horse-day-camp',
+    heroBg:     '/images/Horse_Day_Camp1.png',
     heroHeading: 'A full week on the ranch. <em>Memories for a lifetime.</em>',
     ctaLabel:   'Inquire About Camp',
     name:       'Horse Day Camp',
@@ -279,6 +284,7 @@ const SERVICES = [
     icon:       '&#x1F37A;',
     costRange:  'Available with private events &mdash; call (316) 303-6195',
     photo:      '/images/photo-rusty-saddle-bar.jpg',
+    heroBg:     '/images/Screenshot_2026-08-27_144747.png',
     intro:      'The Rusty Saddle Bar is the on-site bar at Diamond Springs Ranch &mdash; available for private events, group bookings, and special experiences. It&rsquo;s part of what makes the ranch the right venue for events that need something more than a ballroom.',
     body:       '<p>The Rusty Saddle Bar is built into the fabric of the ranch. Not a pop-up. Not a rental tent with a bar table. A real on-site bar that brings the ranch atmosphere into every private event, corporate retreat, and group gathering we host.</p><p>Cold drinks, warm fires, open land &mdash; there&rsquo;s nothing like it near Wichita. If you&rsquo;re planning a corporate event, a private party, a wedding reception, or any group gathering and you want the full ranch experience, the Rusty Saddle is part of it.</p><p>The bar is available exclusively through private event booking &mdash; not as a standalone walk-in service. Everything at Diamond Springs Ranch is by reservation, and the Rusty Saddle Bar is no different.</p><h2>Private Events at the Ranch</h2><p>The Rusty Saddle Bar pairs with our full private event offering: the 6,000-square-foot lodge (up to 300 outdoor, 150 indoor), the trail string, the Highland cattle, and forty acres of open Kansas ranch land. If you&rsquo;re looking for a venue that gets people off their phones and into the moment, this is it.</p><p>Corporate retreats, birthday parties, family reunions, church events, wedding receptions &mdash; we&rsquo;ve hosted all of it. Call (316) 303-6195 and talk to us about what you have in mind. We&rsquo;ll build the event around you.</p><h2>Where Are We?</h2><p>Diamond Springs Ranch, 1734 SE 96th St, Sedgwick, KS 67135. About 15 minutes north of Wichita, 2 miles off I-135.</p><p>More to explore: <a href="/private-events/">Private Events</a>, <a href="/guided-horseback-rides/">Trail Rides</a>, <a href="/highland-cattle-experience/">Ranch Corral Experience</a>, <a href="/dinner-date-experience/">Dinner Date Experience</a>. See all <a href="/services/">ranch experiences</a>.</p>',
     metaDescription: 'The Rusty Saddle Bar at Diamond Springs Ranch near Wichita, KS. On-site bar available for private events, corporate retreats, and group bookings. Call (316) 303-6195.',
@@ -406,6 +412,7 @@ const SERVICE_FAQS = [
 ];
 
 module.exports = { CLIENT, SERVICES, CITIES, REVIEWS, DIFFERENTIATORS, SERVICE_FAQS };
+
 
 
 
