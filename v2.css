@@ -148,6 +148,84 @@ p { line-height: 1.75; }
   .v2-nav { padding: 18px 24px; }
   .v2-nav.scrolled { padding: 12px 24px; }
   .v2-nav-links { display: none; }
+  .v2-nav-book { display: none; }
+}
+
+/* ─── HAMBURGER BUTTON ─── */
+.v2-hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; gap: 5px;
+  background: none; border: none; cursor: pointer;
+  padding: 8px; z-index: 110;
+}
+.v2-hamburger span {
+  display: block; width: 26px; height: 2px;
+  background: rgba(255,255,255,0.85); border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+@media (max-width: 900px) {
+  .v2-hamburger { display: flex; }
+}
+
+/* ─── MOBILE OVERLAY ─── */
+.v2-mobile-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.55); z-index: 150;
+  opacity: 0; transition: opacity 0.3s;
+}
+.v2-mobile-overlay.open { display: block; opacity: 1; }
+
+/* ─── MOBILE DRAWER ─── */
+.v2-mobile-nav {
+  display: flex; flex-direction: column;
+  position: fixed; top: 0; right: -100%; width: min(320px, 88vw); height: 100vh;
+  background: rgba(22,17,11,0.98); backdrop-filter: blur(16px);
+  z-index: 200; padding: 28px 28px 40px;
+  overflow-y: auto; transition: right 0.32s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.v2-mobile-nav.open { right: 0; }
+.v2-mobile-close {
+  align-self: flex-end; background: none; border: none;
+  color: rgba(255,255,255,0.6); font-size: 2rem; line-height: 1;
+  cursor: pointer; margin-bottom: 24px; padding: 0;
+  transition: color 0.2s;
+}
+.v2-mobile-close:hover { color: var(--gold); }
+.v2-mobile-nav a {
+  display: block; padding: 12px 0;
+  font-family: var(--font-sans); font-size: 0.82rem;
+  font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: color 0.2s;
+}
+.v2-mobile-nav a:hover { color: var(--gold); }
+.v2-mobile-section { border-bottom: 1px solid rgba(255,255,255,0.08); }
+.v2-mobile-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; background: none; border: none; cursor: pointer;
+  padding: 12px 0; font-family: var(--font-sans);
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+}
+.v2-mobile-toggle:hover { color: var(--gold); }
+.v2-mobile-caret { font-size: 1.1rem; font-weight: 300; }
+.v2-mobile-group {
+  display: none; flex-direction: column;
+  padding: 0 0 8px 14px;
+}
+.v2-mobile-group.open { display: flex; }
+.v2-mobile-group a {
+  font-size: 0.76rem; color: rgba(255,255,255,0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.05); padding: 9px 0;
+}
+.v2-mobile-group a:hover { color: var(--gold); }
+.v2-mobile-book {
+  display: inline-block !important; margin-top: 24px;
+  background: var(--gold) !important; color: var(--white) !important;
+  text-align: center; padding: 14px 20px !important;
+  border: none !important; font-weight: 600 !important;
+  letter-spacing: 0.12em; border-radius: 2px;
 }
 
 /* ─── HERO ─── */
@@ -257,6 +335,11 @@ p { line-height: 1.75; }
 .v2-intro-photo:first-child { grid-column: span 2; height: 256px; }
 .v2-intro-photo:not(:first-child) { height: 184px; }
 @media (max-width: 900px) { .v2-intro-inner { grid-template-columns: 1fr; gap: 48px; } }
+@media (max-width: 640px) {
+  .v2-intro-photos { grid-template-columns: 1fr; gap: 8px; }
+  .v2-intro-photo:first-child { grid-column: span 1; height: 200px; }
+  .v2-intro-photo:not(:first-child) { height: 160px; }
+}
 
 /* ─── EXPERIENCES ─── */
 .v2-exp { padding: 100px 0; background: var(--black); overflow: hidden; }
@@ -405,7 +488,7 @@ p { line-height: 1.75; }
 @media (max-width: 900px) {
   .v2-story-inner { grid-template-columns: 1fr; }
   .v2-story-text { padding-left: 0; }
-  .v2-story-img img { height: 380px; }
+  .v2-story-img img { height: 280px; }
   .v2-story-badge { right: 12px; bottom: -20px; width: 96px; height: 96px; }
 }
 
@@ -557,3 +640,59 @@ p { line-height: 1.75; }
 .v2-footer-bottom a:hover { color: var(--gold); }
 @media (max-width: 900px) { .v2-footer-inner { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .v2-footer-inner { grid-template-columns: 1fr; } }
+/* ===== MOBILE IMAGE & SECTION FIXES (max-width: 640px) ===== */
+@media (max-width: 640px) {
+
+  /* Hero: reduce from 100vh to a tighter phone height */
+  .v2-hero { height: 85vh; min-height: 480px; }
+  .v2-hero-content h1 { font-size: clamp(2.2rem, 9vw, 3.2rem); }
+  .v2-hero-sub { font-size: 0.92rem; }
+  .v2-hero-btns { justify-content: center; }
+
+  /* Section padding � tighter on phone */
+  .v2-intro { padding: 60px 0 48px; }
+  .v2-exp { padding: 60px 0; }
+  .v2-story { padding: 60px 0; }
+  .v2-lodge { padding-bottom: 0; }
+  .v2-lodge-header { padding: 48px 0 32px; }
+  .v2-reviews { padding: 60px 0; }
+  .v2-plan { padding: 60px 0; }
+  .v2-cta { padding: 72px 0; }
+
+  /* Experience cards: shorter on phone */
+  .v2-exp-header, .v2-exp-cards { padding: 0 16px; }
+  .v2-exp-cards { grid-template-columns: 1fr; }
+  .v2-exp-card { height: auto; min-height: 360px; }
+  .v2-exp-card-body { position: relative; bottom: auto; padding: 24px 20px 28px; }
+  .v2-exp-card-bg { position: absolute; inset: 0; height: 100%; }
+  .v2-exp-card-desc { max-height: none; overflow: visible; margin-bottom: 16px; }
+  .v2-exp-card-cta { opacity: 1; transform: none; }
+
+  /* Lodge cards: single column, shorter */
+  .v2-lodge-cards { grid-template-columns: 1fr; }
+  .v2-lodge-card { height: 300px; }
+
+  /* Quote parallax section: fixed bg can be janky on iOS, reduce height */
+  .v2-quote { height: auto; min-height: 220px; padding: 56px 24px; }
+  .v2-quote-bg { background-attachment: scroll; }
+
+  /* Story image: already 280px from earlier, keep */
+  .v2-story-img img { height: 240px; }
+  .v2-story-badge { width: 80px; height: 80px; right: 8px; bottom: -16px; }
+  .v2-badge-num { font-size: 1.8rem; }
+  .v2-badge-label { font-size: 0.5rem; }
+
+  /* Intro photo grid: already single-column from earlier rule, keep heights sensible */
+  .v2-intro-photo:first-child { height: 180px; }
+  .v2-intro-photo:not(:first-child) { height: 140px; }
+
+  /* Reviews: already single col */
+  .v2-review { padding: 24px 20px; }
+
+  /* Footer */
+  .v2-footer { padding: 48px 0 0; }
+  .v2-footer-inner { gap: 28px; }
+
+  /* CTA buttons: stack vertically */
+  .v2-cta-btns { flex-direction: column; align-items: center; }
+}

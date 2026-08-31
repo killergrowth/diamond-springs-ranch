@@ -58,7 +58,7 @@
       </ul>
     </li>
     <li class="v2-nav-has-drop">
-      <a href="/v2/#lodging">Stay <span class="v2-nav-caret"></span></a>
+      <a href="/#lodging">Stay <span class="v2-nav-caret"></span></a>
       <ul class="v2-nav-drop">
         <li><a href="/luxury-treehouse-stay/">Sunset Reset Treehouse</a></li>
         <li><a href="/covered-wagon-stay/">Sunset Schooner</a></li>
@@ -73,7 +73,36 @@
     </li>
   </ul>
   <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="v2-nav-book">Book a Visit</a>
+  <button class="v2-hamburger" id="v2-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="v2-mobile-overlay" id="v2-mobile-overlay"></div>
+<div class="v2-mobile-nav" id="v2-mobile-nav">
+  <button class="v2-mobile-close" id="v2-mobile-close" aria-label="Close menu">&#x2715;</button>
+  <div class="v2-mobile-section">
+    <button class="v2-mobile-toggle" data-target="mob-exp">Experiences <span class="v2-mobile-caret">+</span></button>
+    <div class="v2-mobile-group" id="mob-exp">
+      <a href="/guided-horseback-rides/">Trail Rides</a>
+      <a href="/dinner-date-experience/">Dinner Date</a>
+      <a href="/highland-cattle-experience/">Ranch Corral</a>
+      <a href="/riding-lessons/">Riding Lessons</a>
+      <a href="/horse-day-camp/">Horse Day Camp</a>
+      <a href="/private-events/">Private Events</a>
+      <a href="/rusty-saddle-bar/">Rusty Saddle Bar</a>
+    </div>
+  </div>
+  <div class="v2-mobile-section">
+    <button class="v2-mobile-toggle" data-target="mob-stay">Stay <span class="v2-mobile-caret">+</span></button>
+    <div class="v2-mobile-group" id="mob-stay">
+      <a href="/luxury-treehouse-stay/">Sunset Reset Treehouse</a>
+      <a href="/covered-wagon-stay/">Sunset Schooner</a>
+    </div>
+  </div>
+  <a href="/about/">Our Story</a>
+  <a href="/contact/">Contact &amp; Directions</a>
+  <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" class="v2-mobile-book">Book a Visit</a>
+</div>
 
 <!-- â"€â"€â"€ HERO â"€â"€â"€ -->
 <section class="v2-hero">
@@ -196,9 +225,9 @@
       <div class="v2-exp-card-bg" style="background-image: url('/images/photo-highland-cow.jpg');"></div>
       <div class="v2-exp-card-overlay"></div>
       <div class="v2-exp-card-body">
-        <div class="v2-exp-card-name">Ranch Corral Experience</div>
-        <div class="v2-exp-card-price">Starts at $30 &bull; Up-close &bull; Highland &amp; Shorthorn Cattle</div>
-        <div class="v2-exp-card-desc">Feed and meet the herd. Our Scottish Highland and Shorthorn cattle are the most-photographed animals in Sedgwick County. Bundle with a morning trail ride for the full experience.</div>
+        <div class="v2-exp-card-name">Highland Cow Experience</div>
+        <div class="v2-exp-card-price">From $30 &bull; All Ages</div>
+        <div class="v2-exp-card-desc">Meet our lovable Highland cows up close! Step inside the corral to pet them, brush them, snap some unforgettable photos, and experience these gentle, shaggy cows for yourself. It's a fun, hands-on ranch experience for kids, couples, and families&mdash;and one you'll definitely want pictures of.</div>
         <a href="/services/ranch-corral-experience/" class="v2-exp-card-cta">Learn More &rarr;</a>
       </div>
     </div>
@@ -511,6 +540,10 @@
           <span><a href="tel:3163036195">(316) 303-6195</a></span>
         </div>
         <div class="v2-footer-contact-item">
+          <span>&#x2709;</span>
+          <span><a href="mailto:diamondspringsranch1@gmail.com" style="color:inherit;text-decoration:underline;">diamondspringsranch1@gmail.com</a></span>
+        </div>
+        <div class="v2-footer-contact-item">
           <span>&#x1F558;</span>
           <span>By appointment &amp; online booking via FareHarbor</span>
         </div>
@@ -534,6 +567,34 @@
   }, { passive: true });
 
   // Lightframe: also wire any future .fh-book links
+  // Hamburger mobile nav
+  const hamburger = document.getElementById('v2-hamburger');
+  const mobileNav = document.getElementById('v2-mobile-nav');
+  const mobileOverlay = document.getElementById('v2-mobile-overlay');
+  const mobileClose = document.getElementById('v2-mobile-close');
+  function openMobileNav() {
+    mobileNav.classList.add('open');
+    mobileOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileNav() {
+    mobileNav.classList.remove('open');
+    mobileOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if (hamburger) hamburger.addEventListener('click', openMobileNav);
+  if (mobileClose) mobileClose.addEventListener('click', closeMobileNav);
+  if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileNav);
+  document.querySelectorAll('.v2-mobile-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const group = document.getElementById(targetId);
+      if (group) group.classList.toggle('open');
+      const caret = btn.querySelector('.v2-mobile-caret');
+      if (caret) caret.textContent = group && group.classList.contains('open') ? '-' : '+';
+    });
+  });
+
   // FAQ accordion
   document.querySelectorAll('.v2-plan-faq-q').forEach(btn => {
     btn.addEventListener('click', () => {

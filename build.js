@@ -137,6 +137,11 @@ function buildBaseHead() {
   .dsr-section-dark .dsr-link-chip:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
   /* CTA section */
   .dsr-cta { position: relative; padding: 100px 0; text-align: center; overflow: hidden; }
+  @media (max-width: 640px) {
+    .dsr-cta { padding: 56px 0; }
+    .dsr-cta-inner h2 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+    .dsr-cta-btns { flex-direction: column; align-items: center; gap: 12px; }
+  }
   .dsr-cta-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
   .dsr-cta-overlay { position: absolute; inset: 0; background: rgba(12,8,4,0.72); }
   .dsr-cta-inner { position: relative; z-index: 2; max-width: 620px; margin: 0 auto; padding: 0 24px; }
@@ -228,15 +233,83 @@ function buildHeader() {
     </li>
   </ul>
   <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="v2-nav-book">Book a Visit</a>
+  <button class="v2-hamburger" id="v2-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile drawer -->
+<div class="v2-mobile-overlay" id="v2-mobile-overlay"></div>
+<nav class="v2-mobile-nav" id="v2-mobile-nav" aria-label="Mobile navigation">
+  <button class="v2-mobile-close" id="v2-mobile-close" aria-label="Close menu">&times;</button>
+  <a href="/">Home</a>
+  <div class="v2-mobile-section">
+    <button class="v2-mobile-toggle" aria-expanded="false">Experiences <span class="v2-mobile-caret">+</span></button>
+    <div class="v2-mobile-group">
+      <a href="/services/">All Experiences</a>
+      ${SERVICES.map(s => `<a href="/${s.slug}/">${s.name}</a>`).join('')}
+    </div>
+  </div>
+  <div class="v2-mobile-section">
+    <button class="v2-mobile-toggle" aria-expanded="false">Stay <span class="v2-mobile-caret">+</span></button>
+    <div class="v2-mobile-group">
+      <a href="/luxury-treehouse-stay/">Sunset Reset Treehouse</a>
+      <a href="/covered-wagon-stay/">Sunset Schooner</a>
+    </div>
+  </div>
+  <a href="/about/">Our Story</a>
+  <a href="/contact/">Visit / Contact</a>
+  <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" class="v2-mobile-book">Book a Visit</a>
+</nav>
+
 <script>
   (function(){
     const nav = document.getElementById('v2-nav');
     if (!nav) return;
     window.addEventListener('scroll', function() {
-      // On subpages the nav is always dark; scrolled class just keeps it consistent
       nav.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
+
+    // Hamburger / mobile drawer
+    const hamburger  = document.getElementById('v2-hamburger');
+    const mobileNav  = document.getElementById('v2-mobile-nav');
+    const overlay    = document.getElementById('v2-mobile-overlay');
+    const closeBtn   = document.getElementById('v2-mobile-close');
+
+    function openMenu() {
+      mobileNav.classList.add('open');
+      overlay.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      mobileNav.classList.remove('open');
+      overlay.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    if (hamburger) hamburger.addEventListener('click', openMenu);
+    if (closeBtn)  closeBtn.addEventListener('click', closeMenu);
+    if (overlay)   overlay.addEventListener('click', closeMenu);
+
+    // Accordion toggles inside mobile nav
+    document.querySelectorAll('.v2-mobile-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const group  = btn.nextElementSibling;
+        const caret  = btn.querySelector('.v2-mobile-caret');
+        const isOpen = group.classList.contains('open');
+        // close all others
+        document.querySelectorAll('.v2-mobile-group').forEach(function(g) { g.classList.remove('open'); });
+        document.querySelectorAll('.v2-mobile-caret').forEach(function(c) { c.textContent = '+'; });
+        document.querySelectorAll('.v2-mobile-toggle').forEach(function(b) { b.setAttribute('aria-expanded','false'); });
+        if (!isOpen) {
+          group.classList.add('open');
+          if (caret) caret.textContent = '\u2212';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
   })();
 </script>`;
 }
@@ -1000,6 +1073,7 @@ function buildAboutPage() {
     ogImage: '/images/photo-about.jpg',
   });
   const body = `
+<style>.v2-hero-bg { background-image: url('/images/DSR-Our-Story-Cover.jpg') !important; background-position: center 20% !important; }</style>
 <section class="v2-hero">
   <div class="v2-hero-bg"></div>
   <div class="v2-hero-overlay"></div>

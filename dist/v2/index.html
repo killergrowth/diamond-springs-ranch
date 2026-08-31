@@ -50,6 +50,39 @@
     </li>
   </ul>
   <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="v2-nav-book">Book a Visit</a>
+  <button class="v2-hamburger" id="v2-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="v2-mobile-overlay" id="v2-mobile-overlay"></div>
+<nav class="v2-mobile-nav" id="v2-mobile-nav" aria-label="Mobile navigation">
+  <button class="v2-mobile-close" id="v2-mobile-close" aria-label="Close menu">&#x2715;</button>
+  <ul class="v2-mobile-links">
+    <li class="v2-mobile-has-drop">
+      <button class="v2-mobile-drop-toggle">Experiences <span class="v2-mobile-caret">&#x25BE;</span></button>
+      <ul class="v2-mobile-drop">
+        <li><a href="/guided-horseback-rides/">Trail Rides</a></li>
+        <li><a href="/dinner-date-experience/">Dinner Date</a></li>
+        <li><a href="/highland-cattle-experience/">Ranch Corral</a></li>
+        <li><a href="/riding-lessons/">Riding Lessons</a></li>
+        <li><a href="/horse-day-camp/">Horse Day Camp</a></li>
+        <li><a href="/private-events/">Private Events</a></li>
+        <li><a href="/rusty-saddle-bar/">Rusty Saddle Bar</a></li>
+      </ul>
+    </li>
+    <li class="v2-mobile-has-drop">
+      <button class="v2-mobile-drop-toggle">Stay <span class="v2-mobile-caret">&#x25BE;</span></button>
+      <ul class="v2-mobile-drop">
+        <li><a href="/luxury-treehouse-stay/">Sunset Reset Treehouse</a></li>
+        <li><a href="/covered-wagon-stay/">Sunset Schooner</a></li>
+      </ul>
+    </li>
+    <li><a href="/about/">Our Story</a></li>
+    <li><a href="/contact/">Contact &amp; Directions</a></li>
+  </ul>
+  <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="v2-mobile-book">Book a Visit</a>
 </nav>
 
 <!-- ─── HERO ─── -->
@@ -447,6 +480,24 @@
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
+
+  // Hamburger / mobile drawer
+  const hamburger   = document.getElementById('v2-hamburger');
+  const mobileNav   = document.getElementById('v2-mobile-nav');
+  const overlay     = document.getElementById('v2-mobile-overlay');
+  const closeBtn    = document.getElementById('v2-mobile-close');
+  function openMenu()  { mobileNav.classList.add('open'); overlay.classList.add('open'); hamburger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  function closeMenu() { mobileNav.classList.remove('open'); overlay.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  if (hamburger) hamburger.addEventListener('click', openMenu);
+  if (closeBtn)  closeBtn.addEventListener('click', closeMenu);
+  if (overlay)   overlay.addEventListener('click', closeMenu);
+  // Mobile accordion dropdowns
+  document.querySelectorAll('.v2-mobile-drop-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const li = btn.closest('.v2-mobile-has-drop');
+      li.classList.toggle('open');
+    });
+  });
 
   // Lightframe: also wire any future .fh-book links
   // FAQ accordion
