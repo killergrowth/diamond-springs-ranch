@@ -649,7 +649,7 @@ p { line-height: 1.75; }
   .v2-hero-sub { font-size: 0.92rem; }
   .v2-hero-btns { justify-content: center; }
 
-  /* Section padding — tighter on phone */
+  /* Section padding ï¿½ tighter on phone */
   .v2-intro { padding: 60px 0 48px; }
   .v2-exp { padding: 60px 0; }
   .v2-story { padding: 60px 0; }
@@ -662,7 +662,12 @@ p { line-height: 1.75; }
   /* Experience cards: shorter on phone */
   .v2-exp-header, .v2-exp-cards { padding: 0 16px; }
   .v2-exp-cards { grid-template-columns: 1fr; }
-  .v2-exp-card { height: 260px; }
+  .v2-exp-card { height: auto; min-height: 0; overflow: visible; }
+  .v2-exp-card-overlay { position: absolute; inset: 0; height: 300px; }
+  .v2-exp-card-bg { position: absolute; inset: 0; height: 300px; }
+  .v2-exp-card-body { position: relative; bottom: auto; padding: 24px 20px 28px; background: var(--black); }
+  .v2-exp-card-desc { max-height: none !important; overflow: visible !important; margin-bottom: 16px; }
+  .v2-exp-card-cta { opacity: 1; transform: none; }
 
   /* Lodge cards: single column, shorter */
   .v2-lodge-cards { grid-template-columns: 1fr; }

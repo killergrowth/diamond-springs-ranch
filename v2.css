@@ -662,10 +662,11 @@ p { line-height: 1.75; }
   /* Experience cards: shorter on phone */
   .v2-exp-header, .v2-exp-cards { padding: 0 16px; }
   .v2-exp-cards { grid-template-columns: 1fr; }
-  .v2-exp-card { height: auto; min-height: 360px; }
-  .v2-exp-card-body { position: relative; bottom: auto; padding: 24px 20px 28px; }
-  .v2-exp-card-bg { position: absolute; inset: 0; height: 100%; }
-  .v2-exp-card-desc { max-height: none; overflow: visible; margin-bottom: 16px; }
+  .v2-exp-card { height: auto; min-height: 0; overflow: visible; }
+  .v2-exp-card-overlay { position: absolute; inset: 0; height: 300px; }
+  .v2-exp-card-bg { position: absolute; inset: 0; height: 300px; }
+  .v2-exp-card-body { position: relative; bottom: auto; padding: 24px 20px 28px; background: var(--black); }
+  .v2-exp-card-desc { max-height: none !important; overflow: visible !important; margin-bottom: 16px; }
   .v2-exp-card-cta { opacity: 1; transform: none; }
 
   /* Lodge cards: single column, shorter */
