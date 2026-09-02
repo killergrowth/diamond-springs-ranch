@@ -1,17 +1,17 @@
-/**
- * build.js — KillerGrowth PKG001 Build Orchestrator v1.0
+﻿/**
+ * build.js â€” KillerGrowth PKG001 Build Orchestrator v1.0
  *
- * Generates all pages from _build-data.js + _partials/ → dist/
+ * Generates all pages from _build-data.js + _partials/ â†’ dist/
  * PKG001 = pillar-only (no SxC matrix, no blog)
  *
  * Output structure:
- *   dist/index.html                        — Homepage
- *   dist/about/index.html                  — About
- *   dist/contact/index.html                — Contact
- *   dist/services/index.html               — Services overview
- *   dist/service-areas/index.html          — Cities overview
- *   dist/{service-slug}/index.html         — 1 per service
- *   dist/{city-slug}/index.html            — 1 per city
+ *   dist/index.html                        â€” Homepage
+ *   dist/about/index.html                  â€” About
+ *   dist/contact/index.html                â€” Contact
+ *   dist/services/index.html               â€” Services overview
+ *   dist/service-areas/index.html          â€” Cities overview
+ *   dist/{service-slug}/index.html         â€” 1 per service
+ *   dist/{city-slug}/index.html            â€” 1 per city
  *   dist/robots.txt
  *   dist/sitemap.xml
  *
@@ -24,7 +24,7 @@ const path = require('path');
 const { injectScripts, loadSiteScripts } = require('C:\\Users\\KillerGrowth\\.openclaw\\workspace\\tools\\kg-site-builder\\lib\\inject-scripts');
 const SITE_SCRIPTS = loadSiteScripts('diamond-springs-ranch');
 
-// ── Load data ─────────────────────────────────────────────────────────────────
+// â”€â”€ Load data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const { CLIENT, SERVICES, CITIES, REVIEWS, DIFFERENTIATORS, SERVICE_FAQS } = require('./_build-data.js');
 
 const DIST = path.join(__dirname, 'dist');
@@ -41,7 +41,7 @@ function plainText(s) {
 const SCHEMA_NAME = plainText(CLIENT.name);
 
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// â”€â”€ Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function mkdirp(dir) {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -74,12 +74,12 @@ function loadPartial(name) {
   return fs.readFileSync(path.join(__dirname, '_partials', name + '.html'), 'utf8');
 }
 
-// ── Partial builders ──────────────────────────────────────────────────────────
+// â”€â”€ Partial builders â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const BUILD_VERSION = Date.now().toString(36);
 
 function buildBaseHead() {
-  // V2 unified head — same fonts/CSS as the v2 homepage
+  // V2 unified head â€” same fonts/CSS as the v2 homepage
   return `<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/images/logo-black.png" media="(prefers-color-scheme: light)">
@@ -92,7 +92,7 @@ function buildBaseHead() {
 <style>
   /* Subpage interior overrides */
   body { background: var(--cream); }
-  /* Nav transparent on subpages — v2-hero is full-screen so same as homepage */
+  /* Nav transparent on subpages â€” v2-hero is full-screen so same as homepage */
   .v2-nav { background: transparent; padding: 14px 56px; }
   .v2-nav.scrolled { background: rgba(26,21,16,0.97); }
   @media (max-width: 900px) { .v2-nav { padding: 12px 24px; } }
@@ -199,7 +199,7 @@ function buildBaseHead() {
 }
 
 function buildHeader() {
-  // V2 nav — matches homepage exactly
+  // V2 nav â€” matches homepage exactly
   const svcDropItems = SERVICES.map(s =>
     `<li><a href="/${s.slug}/">${s.name}</a></li>`
   ).join('');
@@ -315,7 +315,7 @@ function buildHeader() {
 }
 
 function buildFooter() {
-  // V2 footer — matches homepage
+  // V2 footer â€” matches homepage
   const svcLinks = SERVICES.map(s =>
     `<li><a href="/${s.slug}/">${s.name}</a></li>`
   ).join('');
@@ -379,12 +379,12 @@ function buildCta() {
   // V2-style CTA section matching homepage design
   return `
 <section class="dsr-cta">
-  <div class="dsr-cta-bg" style="background-image:url('/images/DiamondSpringsBackgroundphoto.jpg');"></div>
+  <div class="dsr-cta-bg" style="background-image:url('/images/trail-ride2.png');"></div>
   <div class="dsr-cta-overlay"></div>
   <div class="dsr-cta-inner">
     <span class="overline">Diamond Springs Ranch</span>
     <h2>Ready to experience the ranch?</h2>
-    <p>All activities are by reservation. Call or book online — we\'d love to have you out.</p>
+    <p>All activities are by reservation. Call or book online &mdash; we\'d love to have you out.</p>
     <div class="dsr-cta-btns">
       <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold">Book Online</a>
       <a href="tel:${CLIENT.phoneRaw}" class="btn btn-light">${CLIENT.phone}</a>
@@ -559,7 +559,7 @@ function formHtml(formId, serviceSlug) {
     const btn = form.querySelector('.dsr-form-submit');
     const status = document.getElementById('${formId}-status');
     btn.disabled = true;
-    btn.textContent = 'Sending…';
+    btn.textContent = 'Sendingâ€¦';
     status.style.display = 'none';
     try {
       const res = await fetch('/submit', { method:'POST', body: new FormData(form) });
@@ -587,7 +587,7 @@ function formHtml(formId, serviceSlug) {
 </script>`;
 }
 
-// ── Reviews section ─────────────────────────────────────────────────────────────
+// â”€â”€ Reviews section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // -- Schema generators ---------------------------------------------------------
 
 function buildHomeSchema() {
@@ -597,7 +597,7 @@ function buildHomeSchema() {
       '@type': ['LocalBusiness'],
       '@id': `https://${CLIENT.domain}/#business`,
       name: SCHEMA_NAME,
-      description: `${CLIENT.name} in Sedgwick, KS offers guided horseback rides, Highland cattle experiences, luxury treehouse and covered wagon overnight stays, and private event rental — 17 miles north of Wichita.`,
+      description: `${CLIENT.name} in Sedgwick, KS offers guided horseback rides, Highland cattle experiences, luxury treehouse and covered wagon overnight stays, and private event rental â€” 17 miles north of Wichita.`,
       telephone: CLIENT.phone,
       email: CLIENT.email,
       address: { '@type': 'PostalAddress', streetAddress: '1734 SE 96th St', addressLocality: 'Sedgwick', addressRegion: CLIENT.state, postalCode: '67135', addressCountry: 'US' },
@@ -617,10 +617,10 @@ function buildHomeSchema() {
   ];
   // Add FAQPage from first service's FAQs for homepage relevance
   const homeFaqs = [
-    { q: 'What experiences does Diamond Springs Ranch offer?', a: 'Diamond Springs Ranch offers guided horseback trail rides, Highland cattle encounters, luxury treehouse overnight stays, covered wagon stays, private event rental, and the Dinner Date Experience — all by reservation in Sedgwick, KS.' },
-    { q: 'Where is Diamond Springs Ranch located?', a: 'Diamond Springs Ranch is at 1734 SE 96th St, Sedgwick, KS 67135 — 17 miles north of Wichita, approximately 25 minutes from central Wichita via K-15 North.' },
+    { q: 'What experiences does Diamond Springs Ranch offer?', a: 'Diamond Springs Ranch offers guided horseback trail rides, Highland cattle encounters, luxury treehouse overnight stays, covered wagon stays, private event rental, and the Dinner Date Experience â€” all by reservation in Sedgwick, KS.' },
+    { q: 'Where is Diamond Springs Ranch located?', a: 'Diamond Springs Ranch is at 1734 SE 96th St, Sedgwick, KS 67135 â€” 17 miles north of Wichita, approximately 25 minutes from central Wichita via K-15 North.' },
     { q: 'Do I need a reservation to visit Diamond Springs Ranch?', a: 'Yes. All experiences at Diamond Springs Ranch are by reservation only. Call or text (316) 303-6195 or email susan@susanschrag.com to book.' },
-    { q: 'How long has Diamond Springs Ranch been operating?', a: 'Diamond Springs Ranch has been welcoming guests since 2010 — over 15 years of operation in Sedgwick County, KS under owner Susan Schrag.' },
+    { q: 'How long has Diamond Springs Ranch been operating?', a: 'Diamond Springs Ranch has been welcoming guests since 2010 â€” over 15 years of operation in Sedgwick County, KS under owner Susan Schrag.' },
     { q: 'What is the Google rating for Diamond Springs Ranch?', a: 'Diamond Springs Ranch holds a 4.9-star Google rating across 281+ verified reviews.' },
   ];
   graph.push({
@@ -775,7 +775,7 @@ function buildReviews() {
         };
       }
     } catch(e) {
-      console.warn('  ⚠ Could not parse data/reviews.json — falling back to _build-data.js reviews');
+      console.warn('  âš  Could not parse data/reviews.json â€” falling back to _build-data.js reviews');
       reviewData = null;
     }
   }
@@ -812,7 +812,7 @@ function buildReviews() {
   return { html: rv, aggregateRating, reviewItems: reviewData ? reviewData.reviews : null };
 }
 
-// ── V2-style reviews section for subpages ───────────────────────────────────
+// â”€â”€ V2-style reviews section for subpages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function buildV2Reviews() {
   const reviewsFile = path.join(__dirname, 'data', 'reviews.json');
   let reviews = [];
@@ -838,9 +838,9 @@ function buildV2Reviews() {
 </section>`;
 }
 
-// ── Featured blog cards (published only) ─────────────────────────────────────
+// â”€â”€ Featured blog cards (published only) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-// ── Page wrappers ─────────────────────────────────────────────────────────────
+// â”€â”€ Page wrappers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const BASE_HEAD  = buildBaseHead();
 const HEADER     = buildHeader();
@@ -850,7 +850,7 @@ const REVIEWS_DATA = buildReviews(); // { html, aggregateRating, reviewItems }
 const REVIEWS_HTML = REVIEWS_DATA.html;
 
 function wrap(meta, bodyContent) {
-  // V2 unified template — same design language as homepage
+  // V2 unified template â€” same design language as homepage
   return `<!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -865,7 +865,7 @@ ${FOOTER}
 </html>`;
 }
 
-// ── Homepage ──────────────────────────────────────────────────────────────────
+// â”€â”€ Homepage â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function buildHomepage() {
   const meta = buildPageMeta({
@@ -883,7 +883,7 @@ function buildHomepage() {
       <div class="kg-card dsr-svc-card">
         ${s.cardPhoto
           ? `<div class="dsr-card-photo"><img src="/images/client-photos/${s.cardPhoto}" alt="${s.name}" loading="lazy"></div>`
-          : `<div class="kg-card-icon">${s.icon || '🔧'}</div>`
+          : `<div class="kg-card-icon">${s.icon || 'ðŸ”§'}</div>`
         }
         <div class="dsr-card-body">
           <h3>${s.name}</h3>
@@ -919,7 +919,7 @@ function buildHomepage() {
   <div class="kg-hero-overlay"></div>
   <div class="container">
     <div class="kg-hero-content">
-      <div class="kg-hero-badge">${CLIENT.heroBadge || '🏆 ' + CLIENT.primaryCity + '\'s Trusted ' + CLIENT.tradeLabel}</div>
+      <div class="kg-hero-badge">${CLIENT.heroBadge || 'ðŸ† ' + CLIENT.primaryCity + '\'s Trusted ' + CLIENT.tradeLabel}</div>
       <h1>${CLIENT.heroHeading || CLIENT.primaryCity + '\'s Trusted ' + CLIENT.tradeLabel}</h1>
       <p>${CLIENT.heroSubtext}</p>
       <div class="kg-hero-btns">
@@ -1006,15 +1006,15 @@ ${CTA}`;
 
   const homeSchema = buildHomeSchema();
   writeFile('index.html', wrap(meta + '\n' + homeSchema, body));
-  console.log('✓ homepage');
+  console.log('âœ“ homepage');
 }
 
-// ── Contact page ──────────────────────────────────────────────────────────────
+// â”€â”€ Contact page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function buildContactPage() {
   const meta = buildPageMeta({
     title: `Contact ${CLIENT.name} | Book a Ranch Experience | ${CLIENT.primaryCity}, ${CLIENT.state}`,
-    description: `Book your experience at ${CLIENT.name}. Call ${CLIENT.phone} or fill out our form. Horseback rides, treehouse stays, private events — all by reservation.`,
+    description: `Book your experience at ${CLIENT.name}. Call ${CLIENT.phone} or fill out our form. Horseback rides, treehouse stays, private events â€” all by reservation.`,
     canonical: '/contact/',
   });
   const body = `
@@ -1063,12 +1063,12 @@ ${CTA}`;
   console.log('\u2713 contact');
 }
 
-// ── About page ────────────────────────────────────────────────────────────────
+// â”€â”€ About page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function buildAboutPage() {
   const meta = buildPageMeta({
     title: `About Diamond Springs Ranch | Our Story | Sedgwick, KS`,
-    description: CLIENT.aboutDescription || `Learn the story behind Diamond Springs Ranch — a family-owned working ranch 15 minutes north of Wichita, KS. Meet owner Logan Schrag.`,
+    description: CLIENT.aboutDescription || `Learn the story behind Diamond Springs Ranch â€” a family-owned working ranch 15 minutes north of Wichita, KS. Meet owner Logan Schrag.`,
     canonical: '/about/',
     ogImage: '/images/photo-about.jpg',
   });
@@ -1109,7 +1109,7 @@ ${CTA}`;
   console.log('\u2713 about');
 }
 
-// ── Services overview ─────────────────────────────────────────────────────────
+// â”€â”€ Services overview â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function buildServicesPage() {
   const meta = buildPageMeta({
@@ -1210,7 +1210,7 @@ function buildServicePage(svc) {
   const heroBg = svc.heroBg || (svc.heroPhoto ? `/images/client-photos/${svc.heroPhoto}` : `/images/photo-${svc.slug}.jpg`);
   const meta = buildPageMeta({
     title: `${svc.name} in ${CLIENT.primaryCity}, ${CLIENT.state} | ${CLIENT.name}`,
-    description: svc.metaDescription || `${svc.shortDesc} — ${CLIENT.name} in ${CLIENT.primaryCity}, ${CLIENT.state}.`,
+    description: svc.metaDescription || `${svc.shortDesc} â€” ${CLIENT.name} in ${CLIENT.primaryCity}, ${CLIENT.state}.`,
     canonical: `/${svc.slug}/`,
     ogImage: svc.heroPhoto ? `/images/client-photos/${svc.heroPhoto}` : `/images/photo-${svc.slug}.jpg`,
   });
@@ -1288,10 +1288,10 @@ ${CTA}`;
 
 function buildServicePages() {
   SERVICES.forEach(svc => buildServicePage(svc));
-  console.log(`✓ ${SERVICES.length} service pages`);
+  console.log(`âœ“ ${SERVICES.length} service pages`);
 }
 
-// ── City pages (1 per city) ──────────────────────
+// â”€â”€ City pages (1 per city) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function buildCityPage(city) {
   const meta = buildPageMeta({
     title: `Ranch Experiences near ${city.name}, ${CLIENT.state} | ${CLIENT.name}`,
@@ -1362,7 +1362,7 @@ function buildCityPages() {
 
 function buildServiceAreasPage() {
   const meta = buildPageMeta({
-    title: `Service Areas | ${CLIENT.name} — Ranch Experiences Near Wichita, KS`,
+    title: `Service Areas | ${CLIENT.name} â€” Ranch Experiences Near Wichita, KS`,
     description: `Diamond Springs Ranch serves guests from ${CITIES.map(c => c.name).join(', ')} and surrounding communities.`,
     canonical: '/service-areas/',
   });
