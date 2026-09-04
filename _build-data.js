@@ -150,7 +150,7 @@ const SERVICES = [
   {
     slug:       'luxury-treehouse-stay',
     heroBg:     '/images/LuxuryTreehouseStay1.png',
-    heroHeading: 'Sleep above the <em>treeline.</em>',
+    heroHeading: 'Sleep among the <em>treeline.</em>',
     ctaLabel:   'Book the Treehouse',
     lodging:    true,
     lodgifyRentalId: '391057',
