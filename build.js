@@ -1277,7 +1277,6 @@ ${faqs.length ? `
 </section>` : ''}
 <section class="dsr-section">
   <div class="dsr-container">
-    <span class="dsr-section-label">We Serve</span>
     <h2 style="font-family:var(--font-serif);font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;margin-bottom:24px;">Rooted in Kansas. Welcoming guests <em>from everywhere.</em></h2>
     <div class="dsr-link-grid">${cityLinks}</div>
   </div>
