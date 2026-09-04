@@ -1103,6 +1103,9 @@ function buildAboutPage() {
     </div>
   </div>
 </section>
+<section class="dsr-section-alt" style="padding:0;">
+  <img src="/images/ChatGPT_Image_Sep_4__2026__08_32_39_AM.png" alt="The Schrag family at Diamond Springs Ranch" style="width:100%;display:block;max-height:600px;object-fit:cover;object-position:center 30%;">
+</section>
 ${buildV2Reviews()}
 ${CTA}`;
   writeFile('about/index.html', wrap(meta, body));
