@@ -1073,7 +1073,7 @@ function buildAboutPage() {
     ogImage: '/images/photo-about.jpg',
   });
   const body = `
-<style>.v2-hero-bg { background-image: url('/images/ChatGPT_Image_Sep_4__2026__08_32_39_AM.png') !important; background-position: center 15% !important; }</style>
+<style>.v2-hero-bg { background-image: url('/images/ChatGPT_Image_Sep_4__2026__08_45_01_AM.png') !important; background-position: center 15% !important; }</style>
 <section class="v2-hero">
   <div class="v2-hero-bg"></div>
   <div class="v2-hero-overlay"></div>
