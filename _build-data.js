@@ -276,6 +276,24 @@ const SERVICES = [
       { q: 'When do sessions run?', a: 'Primarily summer. Call (316) 303-6195 for current session dates and availability.' },
     ],
   },
+  {
+    slug:       'rusty-saddle-bar',
+    heroBg:     '/images/photo-rusty-saddle-bar.jpg',
+    heroHeading: 'The Rusty Saddle Bar. <em>Your ranch watering hole.</em>',
+    ctaLabel:   'Inquire About Private Events',
+    name:       'Rusty Saddle Bar',
+    shortDesc:  'On-site bar available for private events, corporate retreats, and group bookings at Diamond Springs Ranch.',
+    icon:       '&#x1F37B;',
+    costRange:  'Available for private events &mdash; call (316) 303-6195',
+    photo:      '/images/photo-rusty-saddle-bar.jpg',
+    intro:      'The Rusty Saddle Bar is the on-site gathering spot at Diamond Springs Ranch. Available for private events, corporate retreats, and group bookings. Cold drinks, ranch atmosphere, and a setting you won&rsquo;t find anywhere else near Wichita.',
+    body:       '<p>The Rusty Saddle Bar brings the full ranch experience together. Whether you&rsquo;re winding down after a trail ride, celebrating a private event, or hosting a corporate retreat, it&rsquo;s the spot to gather and enjoy the ranch atmosphere at its best.</p><p>Available for private bookings alongside our other event services. Ask about including the Rusty Saddle Bar in your private event or group package when you call.</p><h2>Private Events &amp; Group Bookings</h2><p>The Rusty Saddle Bar is available as part of private event rentals at Diamond Springs Ranch. Contact us to discuss availability and packages for your group.</p><h2>Where Are We?</h2><p>Diamond Springs Ranch, 1734 SE 96th St, Sedgwick, KS 67135. About 15 minutes north of Wichita, 2 miles off I-135.</p>',
+    metaDescription: 'The Rusty Saddle Bar at Diamond Springs Ranch near Wichita, KS. On-site bar available for private events, corporate retreats, and group bookings. Call (316) 303-6195.',
+    faqs: [
+      { q: 'Is the Rusty Saddle Bar open to the public?', a: 'The Rusty Saddle Bar is available as part of private event bookings. Call (316) 303-6195 to ask about availability for your group.' },
+      { q: 'Can I include the bar in my private event?', a: 'Yes &mdash; ask about including the Rusty Saddle Bar when booking your private event or group package.' },
+    ],
+  },
 ];
 
 // â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
