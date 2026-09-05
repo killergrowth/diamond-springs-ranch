@@ -179,7 +179,7 @@ const SERVICES = [
     lodgifyUrl:  'https://treelodges.lodgify.com/en/sunset-schooner',
     heroBg:     '/images/Covered_Wagon_Stay1.png',
     name:       'Covered Wagon Stay',
-    shortDesc:  'Spend the night in a fully equipped covered wagon on the open Kansas ranch.',
+    shortDesc:  'Experience the romance of the Old West in a covered wagon tucked beneath the trees on our working Kansas ranch &mdash; with the comforts you&rsquo;d rather not leave behind.',
     icon:       '&#x1F6FA;',
     costRange:  'Call for current nightly rates &mdash; (316) 303-6195',
     intro:      'Experience the romance of the Old West in a covered wagon tucked beneath the trees on our working Kansas ranch &mdash; with the comforts you&rsquo;d rather not leave behind.',
