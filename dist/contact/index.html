@@ -310,7 +310,7 @@
       <label for="contact-form-message">Anything Else We Should Know? <span class="dsr-optional">(optional)</span></label>
       <textarea id="contact-form-message" name="message" placeholder="Group size, preferred dates, special requests..."></textarea>
     </div>
-    <button type="submit" class="dsr-form-submit">Send My Request &rarr;</button>
+    <button type="submit" class="dsr-form-submit">Send My Note to the Ranch &rarr;</button>
     <p class="dsr-form-note">&#128274; Your info is private. We'll never spam you.</p>
     <div id="contact-form-status" style="display:none;padding:12px 16px;border-radius:6px;margin-top:12px;font-weight:600;"></div>
   </form>
@@ -426,7 +426,7 @@
         status.style.color = '#c0392b';
         status.textContent = data.error || 'Something went wrong. Please try again or call us.';
         btn.disabled = false;
-        btn.textContent = 'Send My Request';
+        btn.textContent = 'Send My Note to the Ranch';
       }
     } catch(err) {
       status.style.display = 'block';
@@ -434,7 +434,7 @@
       status.style.color = '#c0392b';
       status.textContent = 'Network error. Please try again or call us directly.';
       btn.disabled = false;
-      btn.textContent = 'Send My Request';
+      btn.textContent = 'Send My Note to the Ranch';
     }
   });
 })();
