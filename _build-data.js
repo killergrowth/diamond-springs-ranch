@@ -276,25 +276,7 @@ const SERVICES = [
       { q: 'When do sessions run?', a: 'Primarily summer. Call (316) 303-6195 for current session dates and availability.' },
     ],
   },
-  {
-    slug:       'rusty-saddle-bar',
-    heroHeading: 'Cold drinks. Warm fire. <em>The Rusty Saddle Bar.</em>',
-    ctaLabel:   'Contact Us',
-    name:       'Rusty Saddle Bar',
-    shortDesc:  'On-site bar for private events, group bookings, and special experiences at Diamond Springs Ranch.',
-    icon:       '&#x1F37A;',
-    costRange:  'Available with private events &mdash; call (316) 303-6195',
-    photo:      '/images/photo-rusty-saddle-bar.jpg',
-    heroBg:     '/images/Screenshot_2026-08-27_144747.png',
-    intro:      'The Rusty Saddle Bar is the on-site bar at Diamond Springs Ranch &mdash; available for private events, group bookings, and special experiences. It&rsquo;s part of what makes the ranch the right venue for events that need something more than a ballroom.',
-    body:       '<p>The Rusty Saddle Bar is built into the fabric of the ranch. Not a pop-up. Not a rental tent with a bar table. A real on-site bar that brings the ranch atmosphere into every private event, corporate retreat, and group gathering we host.</p><p>Cold drinks, warm fires, open land &mdash; there&rsquo;s nothing like it near Wichita. If you&rsquo;re planning a corporate event, a private party, a wedding reception, or any group gathering and you want the full ranch experience, the Rusty Saddle is part of it.</p><p>The bar is available exclusively through private event booking &mdash; not as a standalone walk-in service. Everything at Diamond Springs Ranch is by reservation, and the Rusty Saddle Bar is no different.</p><h2>Private Events at the Ranch</h2><p>The Rusty Saddle Bar pairs with our full private event offering: the 6,000-square-foot lodge (up to 300 outdoor, 150 indoor), the trail string, the Highland cattle, and forty acres of open Kansas ranch land. If you&rsquo;re looking for a venue that gets people off their phones and into the moment, this is it.</p><p>Corporate retreats, birthday parties, family reunions, church events, wedding receptions &mdash; we&rsquo;ve hosted all of it. Call (316) 303-6195 and talk to us about what you have in mind. We&rsquo;ll build the event around you.</p><h2>Where Are We?</h2><p>Diamond Springs Ranch, 1734 SE 96th St, Sedgwick, KS 67135. About 15 minutes north of Wichita, 2 miles off I-135.</p><p>More to explore: <a href="/private-events/">Private Events</a>, <a href="/guided-horseback-rides/">Trail Rides</a>, <a href="/highland-cattle-experience/">Ranch Corral Experience</a>, <a href="/dinner-date-experience/">Dinner Date Experience</a>. See all <a href="/services/">ranch experiences</a>.</p>',
-    metaDescription: 'The Rusty Saddle Bar at Diamond Springs Ranch near Wichita, KS. On-site bar available for private events, corporate retreats, and group bookings. Call (316) 303-6195.',
-    faqs: [
-      { q: 'Is the Rusty Saddle Bar open to the public?', a: 'The bar is available through private event bookings &mdash; not as a standalone walk-in bar. Call (316) 303-6195 to discuss your event.' },
-      { q: 'Can I book the Rusty Saddle Bar for a corporate event?', a: 'Yes &mdash; it&rsquo;s part of our private event offering. The full ranch is available including the lodge, the trail string, and the bar. Call (316) 303-6195.' },
-      { q: 'How do I add the Rusty Saddle Bar to my event?', a: 'It&rsquo;s part of private event booking. Call (316) 303-6195 and we&rsquo;ll build the event package around your needs.' },
-    ],
-  },];
+];
 
 // â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 // CITIES â€” Wichita metro and surrounding areas that send guests
