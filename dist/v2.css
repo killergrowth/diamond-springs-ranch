@@ -235,7 +235,7 @@ p { line-height: 1.75; }
 }
 .v2-hero-bg {
   position: absolute; inset: 0;
-  background-image: url('/images/Hero_Image1.png');
+  background-image: url('/images/hero-sunset-v2.png');
   background-size: cover; background-position: center 40%;
 }
 .v2-hero-overlay {
