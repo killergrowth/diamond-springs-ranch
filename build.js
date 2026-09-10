@@ -928,7 +928,6 @@ function buildHomepage() {
       <p>${CLIENT.heroSubtext}</p>
       <div class="kg-hero-btns">
         <a href="/contact/" class="btn btn-primary">Book a Visit &rarr;</a>
-        <a href="tel:${CLIENT.phoneRaw}" class="btn btn-outline-white">${CLIENT.phone}</a>
       </div>
     </div>
   </div>
@@ -1260,7 +1259,6 @@ function buildServicePage(svc) {
     <h3>Book This Experience</h3>
     <p>Questions about ${svc.name.toLowerCase()}? We'll get you scheduled.</p>
     <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold" style="display:block;text-align:center;margin-bottom:16px;">Book Online &rarr;</a>
-    <a href="tel:${CLIENT.phoneRaw}" class="btn btn-light" style="display:block;text-align:center;margin-bottom:16px;">${CLIENT.phone}</a>
     <a href="mailto:${CLIENT.email}" style="display:block;text-align:center;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.45);">${CLIENT.email}</a>`;
 
   const body = `
