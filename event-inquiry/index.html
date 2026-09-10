@@ -114,6 +114,82 @@
   .ei-success p { font-size: 0.92rem; color: #7E7C76; line-height: 1.65; }
   .ei-success a { color: var(--gold); }
 
+  /* Form field styles */
+  .dsr-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  @media (max-width: 580px) { .dsr-form-row { grid-template-columns: 1fr; } }
+  .dsr-form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .dsr-form-group label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: 0.01em;
+    font-family: var(--font-sans);
+  }
+  .dsr-form-group input,
+  .dsr-form-group select,
+  .dsr-form-group textarea {
+    border: 1.5px solid #E2DDD8;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    font-family: var(--font-sans);
+    color: var(--charcoal);
+    background: #fff;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+  }
+  .dsr-form-group input::placeholder,
+  .dsr-form-group textarea::placeholder { color: #b0aca5; }
+  .dsr-form-group input:focus,
+  .dsr-form-group select:focus,
+  .dsr-form-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(189,148,72,0.15);
+  }
+  .dsr-form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 38px;
+    cursor: pointer;
+  }
+  .dsr-form-group textarea { min-height: 110px; resize: vertical; }
+  .dsr-form-submit {
+    width: 100%;
+    padding: 15px 24px;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    text-align: center;
+    margin-top: 8px;
+    display: block;
+  }
+  .dsr-form-submit:hover { background: #c8953a; transform: translateY(-1px); }
+  .dsr-form-submit:active { transform: translateY(0); }
+  .dsr-form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .dsr-form-note {
+    font-size: 0.75rem;
+    color: #9e9a93;
+    text-align: center;
+    margin: 8px 0 0;
+  }
+  /* Checkbox group */
+  .dsr-check-grid { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 6px; }
+  .dsr-check-label { display: flex; align-items: center; gap: 8px; font-weight: 400; font-size: 0.9rem; color: #333; cursor: pointer; font-family: var(--font-sans); }
+  .dsr-check-label input[type=checkbox] { accent-color: var(--gold); width: 16px; height: 16px; cursor: pointer; flex-shrink: 0; }
+
   /* Info strip below card */
   .ei-info-strip {
     display: flex;
@@ -287,148 +363,122 @@
 
           <!-- Contact Info -->
           <div class="ei-section-label">Your Contact Information</div>
-          <div class="kg-form-wrapper">
-            <div class="kg-form-row">
-              <div class="kg-form-group">
-                <label for="ei-name">Full Name <span style="color:#c0392b">*</span></label>
-                <input type="text" id="ei-name" name="name" required autocomplete="name" placeholder="Your full name">
-              </div>
-              <div class="kg-form-group">
-                <label for="ei-phone">Phone Number <span style="color:#c0392b">*</span></label>
-                <input type="tel" id="ei-phone" name="phone" required autocomplete="tel" placeholder="(316) 555-5555">
-              </div>
+          <div class="dsr-form-row">
+            <div class="dsr-form-group">
+              <label for="ei-name">Full Name <span style="color:#c0392b">*</span></label>
+              <input type="text" id="ei-name" name="name" required autocomplete="name" placeholder="Your full name">
             </div>
-            <div class="kg-form-row">
-              <div class="kg-form-group">
-                <label for="ei-email">Email Address</label>
-                <input type="email" id="ei-email" name="email" autocomplete="email" placeholder="your@email.com">
-              </div>
-              <div class="kg-form-group">
-                <label for="ei-city">City / Where You're From</label>
-                <input type="text" id="ei-city" name="city" autocomplete="address-level2" placeholder="Wichita, KS">
-              </div>
+            <div class="dsr-form-group">
+              <label for="ei-phone">Phone Number <span style="color:#c0392b">*</span></label>
+              <input type="tel" id="ei-phone" name="phone" required autocomplete="tel" placeholder="(316) 555-5555">
+            </div>
+          </div>
+          <div class="dsr-form-row">
+            <div class="dsr-form-group">
+              <label for="ei-email">Email Address</label>
+              <input type="email" id="ei-email" name="email" autocomplete="email" placeholder="your@email.com">
+            </div>
+            <div class="dsr-form-group">
+              <label for="ei-city">City / Where You're From</label>
+              <input type="text" id="ei-city" name="city" autocomplete="address-level2" placeholder="Wichita, KS">
             </div>
           </div>
 
           <!-- Event Profile -->
           <div class="ei-section-label">Your Event</div>
-          <div class="kg-form-wrapper">
-            <div class="kg-form-row">
-              <div class="kg-form-group">
-                <label for="ei-event-name">Event Name / Occasion</label>
-                <input type="text" id="ei-event-name" name="event_name" placeholder="e.g. Smith Family Reunion">
-              </div>
-              <div class="kg-form-group">
-                <label for="ei-event-type">Type of Event <span style="color:#c0392b">*</span></label>
-                <select id="ei-event-type" name="event_type" required>
-                  <option value="">Select event type&hellip;</option>
-                  <option value="Corporate Retreat / Team Building">Corporate Retreat / Team Building</option>
-                  <option value="Wedding / Engagement">Wedding / Engagement</option>
-                  <option value="Family Reunion">Family Reunion</option>
-                  <option value="Birthday Party">Birthday Party</option>
-                  <option value="Church / School Group">Church / School Group</option>
-                  <option value="Scout / Youth Group">Scout / Youth Group</option>
-                  <option value="Photography Session">Photography Session</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
+          <div class="dsr-form-row">
+            <div class="dsr-form-group">
+              <label for="ei-event-name">Event Name / Occasion</label>
+              <input type="text" id="ei-event-name" name="event_name" placeholder="e.g. Smith Family Reunion">
             </div>
-            <div class="kg-form-group" id="ei-other-wrap" style="display:none">
-              <label for="ei-event-other">If Other, Please Describe</label>
-              <input type="text" id="ei-event-other" name="event_type_other" placeholder="Tell us a bit about your event">
+            <div class="dsr-form-group">
+              <label for="ei-event-type">Type of Event <span style="color:#c0392b">*</span></label>
+              <select id="ei-event-type" name="event_type" required>
+                <option value="">Select event type&hellip;</option>
+                <option value="Corporate Retreat / Team Building">Corporate Retreat / Team Building</option>
+                <option value="Wedding / Engagement">Wedding / Engagement</option>
+                <option value="Family Reunion">Family Reunion</option>
+                <option value="Birthday Party">Birthday Party</option>
+                <option value="Church / School Group">Church / School Group</option>
+                <option value="Scout / Youth Group">Scout / Youth Group</option>
+                <option value="Photography Session">Photography Session</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
+          </div>
+          <div class="dsr-form-group" id="ei-other-wrap" style="display:none">
+            <label for="ei-event-other">If Other, Please Describe</label>
+            <input type="text" id="ei-event-other" name="event_type_other" placeholder="Tell us a bit about your event">
           </div>
 
           <!-- Event Details -->
           <div class="ei-section-label">Dates &amp; Attendance</div>
-          <div class="kg-form-wrapper">
-            <div class="kg-form-row">
-              <div class="kg-form-group">
-                <label for="ei-date-pref">Preferred Date(s) <span style="color:#c0392b">*</span></label>
-                <input type="text" id="ei-date-pref" name="preferred_dates" required placeholder="e.g. June 14, 2026 or mid-July">
-              </div>
-              <div class="kg-form-group">
-                <label for="ei-dates-flexible">Are Your Dates Flexible?</label>
-                <select id="ei-dates-flexible" name="dates_flexible">
-                  <option value="">Select&hellip;</option>
-                  <option value="Yes, dates are flexible">Yes, dates are flexible</option>
-                  <option value="Somewhat flexible (within a week or two)">Somewhat flexible (within a week or two)</option>
-                  <option value="No, dates are firm">No, dates are firm</option>
-                </select>
-              </div>
+          <div class="dsr-form-row">
+            <div class="dsr-form-group">
+              <label for="ei-date-pref">Preferred Date(s) <span style="color:#c0392b">*</span></label>
+              <input type="text" id="ei-date-pref" name="preferred_dates" required placeholder="e.g. June 14, 2026 or mid-July">
             </div>
-            <div class="kg-form-row">
-              <div class="kg-form-group">
-                <label for="ei-attendees">Number of Guests <span style="color:#c0392b">*</span></label>
-                <input type="number" id="ei-attendees" name="attendees" required min="1" placeholder="Estimated headcount">
-              </div>
-              <div class="kg-form-group">
-                <label for="ei-duration">Estimated Duration</label>
-                <select id="ei-duration" name="duration">
-                  <option value="">Select&hellip;</option>
-                  <option value="A few hours">A few hours</option>
-                  <option value="Half day">Half day</option>
-                  <option value="Full day">Full day</option>
-                  <option value="Overnight / multi-day">Overnight / multi-day</option>
-                  <option value="Not sure yet">Not sure yet</option>
-                </select>
-              </div>
+            <div class="dsr-form-group">
+              <label for="ei-dates-flexible">Are Your Dates Flexible?</label>
+              <select id="ei-dates-flexible" name="dates_flexible">
+                <option value="">Select&hellip;</option>
+                <option value="Yes, dates are flexible">Yes, dates are flexible</option>
+                <option value="Somewhat flexible (within a week or two)">Somewhat flexible (within a week or two)</option>
+                <option value="No, dates are firm">No, dates are firm</option>
+              </select>
+            </div>
+          </div>
+          <div class="dsr-form-row">
+            <div class="dsr-form-group">
+              <label for="ei-attendees">Number of Guests <span style="color:#c0392b">*</span></label>
+              <input type="number" id="ei-attendees" name="attendees" required min="1" placeholder="Estimated headcount">
+            </div>
+            <div class="dsr-form-group">
+              <label for="ei-duration">Estimated Duration</label>
+              <select id="ei-duration" name="duration">
+                <option value="">Select&hellip;</option>
+                <option value="A few hours">A few hours</option>
+                <option value="Half day">Half day</option>
+                <option value="Full day">Full day</option>
+                <option value="Overnight / multi-day">Overnight / multi-day</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
             </div>
           </div>
 
           <!-- Experiences -->
           <div class="ei-section-label">What Are You Interested In?</div>
-          <div class="kg-form-wrapper">
-            <div class="kg-form-group">
-              <label>Ranch Experiences (check all that apply)</label>
-              <div style="display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:4px;">
-                <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:#333;cursor:pointer;">
-                  <input type="checkbox" name="experiences" value="Guided Trail Rides"> Guided Trail Rides
-                </label>
-                <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:#333;cursor:pointer;">
-                  <input type="checkbox" name="experiences" value="Covered Wagon Experience"> Covered Wagon
-                </label>
-                <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:#333;cursor:pointer;">
-                  <input type="checkbox" name="experiences" value="Highland Cattle Encounter"> Highland Cattle
-                </label>
-                <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:#333;cursor:pointer;">
-                  <input type="checkbox" name="experiences" value="Lodge / Covered Space"> Lodge / Covered Space
-                </label>
-                <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:#333;cursor:pointer;">
-                  <input type="checkbox" name="experiences" value="Outdoor Space / Fire Pit"> Outdoor Space / Fire Pit
-                </label>
-                <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:#333;cursor:pointer;">
-                  <input type="checkbox" name="experiences" value="Treehouse / Lodging"> Treehouse / Lodging
-                </label>
-                <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:#333;cursor:pointer;">
-                  <input type="checkbox" name="experiences" value="Catering / Food Arrangements"> Catering / Food
-                </label>
-                <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:#333;cursor:pointer;">
-                  <input type="checkbox" name="experiences" value="Not Sure Yet - Looking for Options"> Not Sure Yet
-                </label>
-              </div>
+          <div class="dsr-form-group">
+            <label>Ranch Experiences (check all that apply)</label>
+            <div class="dsr-check-grid">
+              <label class="dsr-check-label"><input type="checkbox" name="experiences" value="Guided Trail Rides"> Guided Trail Rides</label>
+              <label class="dsr-check-label"><input type="checkbox" name="experiences" value="Covered Wagon Experience"> Covered Wagon</label>
+              <label class="dsr-check-label"><input type="checkbox" name="experiences" value="Highland Cattle Encounter"> Highland Cattle</label>
+              <label class="dsr-check-label"><input type="checkbox" name="experiences" value="Lodge / Covered Space"> Lodge / Covered Space</label>
+              <label class="dsr-check-label"><input type="checkbox" name="experiences" value="Outdoor Space / Fire Pit"> Outdoor Space / Fire Pit</label>
+              <label class="dsr-check-label"><input type="checkbox" name="experiences" value="Treehouse / Lodging"> Treehouse / Lodging</label>
+              <label class="dsr-check-label"><input type="checkbox" name="experiences" value="Catering / Food Arrangements"> Catering / Food</label>
+              <label class="dsr-check-label"><input type="checkbox" name="experiences" value="Not Sure Yet - Looking for Options"> Not Sure Yet</label>
             </div>
           </div>
 
           <!-- Message -->
           <div class="ei-section-label">Anything Else?</div>
-          <div class="kg-form-wrapper">
-            <div class="kg-form-group">
-              <label for="ei-message">Tell us more about your event</label>
-              <textarea id="ei-message" name="message" rows="5" style="resize:vertical;min-height:110px" placeholder="Any special requests, questions, or things we should know to help plan your event&hellip;"></textarea>
-            </div>
-
-            <!-- Submit -->
-            <button type="submit" class="kg-form-submit" id="ei-submit">
-              Send My Event Details &rarr;
-            </button>
-            <p class="kg-form-note">&#128274; Your information is private. We'll reach out within one business day.</p>
-
-            <!-- Error message -->
-            <p id="ei-error" style="display:none;color:#c0392b;font-size:0.88rem;margin-top:12px;text-align:center;">
-              Something went wrong. Please email us at <a href="mailto:diamondspringsranch1@gmail.com" style="color:#c0392b;">diamondspringsranch1@gmail.com</a> or try again.
-            </p>
+          <div class="dsr-form-group">
+            <label for="ei-message">Anything else we should know?</label>
+            <textarea id="ei-message" name="message" rows="5" placeholder="Any special requests, questions, or things we should know to help plan your event&hellip;"></textarea>
           </div>
+
+          <!-- Submit -->
+          <button type="submit" class="dsr-form-submit" id="ei-submit">
+            Send My Event Details &rarr;
+          </button>
+          <p class="dsr-form-note">&#128274; Your information is private. We'll reach out within one business day.</p>
+
+          <!-- Error message -->
+          <p id="ei-error" style="display:none;color:#c0392b;font-size:0.88rem;margin-top:12px;text-align:center;">
+            Something went wrong. Please email us at <a href="mailto:diamondspringsranch1@gmail.com" style="color:#c0392b;">diamondspringsranch1@gmail.com</a> or try again.
+          </p>
 
         </form>
       </div><!-- /ei-form-wrap -->
