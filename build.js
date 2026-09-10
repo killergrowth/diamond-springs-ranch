@@ -1261,6 +1261,20 @@ function buildServicePage(svc) {
     <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold" style="display:block;text-align:center;margin-bottom:16px;">Book Online &rarr;</a>
     <a href="mailto:${CLIENT.email}" style="display:block;text-align:center;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.45);">${CLIENT.email}</a>`;
 
+  const peBookingBanner = svc.slug === 'private-events' ? `
+<section style="background:var(--charcoal);padding:40px 24px;border-top:3px solid var(--gold);">
+  <div style="max-width:860px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;">
+    <div style="flex:1 1 300px;">
+      <h3 style="font-family:var(--font-serif);font-size:1.6rem;font-weight:300;color:#fff;margin:0 0 8px;">Plan Your Event Now</h3>
+      <p style="font-size:0.92rem;color:rgba(255,255,255,0.65);margin:0;">Give us the details of the event you're planning &mdash; we'll build a custom experience around your group.</p>
+    </div>
+    <div style="flex:0 0 auto;text-align:center;">
+      <a href="/event-inquiry/" class="btn btn-gold" style="display:inline-block;padding:14px 36px;letter-spacing:0.1em;font-size:0.85rem;">INQUIRE ABOUT EVENTS &rarr;</a>
+      <p style="margin:10px 0 0;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4)">${CLIENT.email}</p>
+    </div>
+  </div>
+</section>` : '';
+
   const body = `
 ${svcSchema}
 <section class="v2-hero">
@@ -1282,6 +1296,10 @@ ${svcSchema}
 </section>
 <section class="dsr-section">
   <div class="dsr-container">
+    ${svc.slug === 'private-events' ? `
+    <div class="dsr-prose" style="max-width:760px;">
+      ${svc.body || '<p>' + svc.shortDesc + '</p>'}
+    </div>` : `
     <div class="dsr-two-col">
       <div class="dsr-prose">
         ${svc.body || '<p>' + svc.shortDesc + '</p>'}
@@ -1291,9 +1309,10 @@ ${svcSchema}
           ${bookingSidebar}
         </div>
       </div>
-    </div>
+    </div>`}
   </div>
 </section>
+${peBookingBanner}
 ${dinnerCollage}
 ${peCollage}
 ${buildV2Reviews(1)}
