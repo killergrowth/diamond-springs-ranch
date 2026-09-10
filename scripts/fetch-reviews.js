@@ -1,6 +1,6 @@
 'use strict';
 /**
- * fetch-reviews.js - Timnath Painting
+ * fetch-reviews.js - Keystone Painting
  * Fetches 5-star Google reviews via Places API (New) using service account OAuth.
  * Writes to data/reviews.json. Safe to run in cron â€” never overwrites on failure.
  *

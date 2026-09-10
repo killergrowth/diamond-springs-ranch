@@ -59,7 +59,7 @@ const pages = [
   {
     slug: 'horse-day-camp',
     title: 'Horse Day Camp | Diamond Springs Ranch | Sedgwick, KS',
-    description: 'Horse day camp near Wichita at Diamond Springs Ranch. Summer sessions for kids ages 9-14. Real horsemanship on a working ranch. Call (316) 303-6195.',
+    description: 'Horse day camp near Wichita at Diamond Springs Ranch. Summer sessions for kids ages 9-14. Real horsemanship on a working ranch..',
     canonical: 'https://diamondspringsranch.com/horse-day-camp/',
     hero: makeHero(
       'Diamond Springs Ranch &bull; Sedgwick, Kansas',
@@ -71,7 +71,7 @@ const pages = [
   {
     slug: 'riding-lessons',
     title: 'Horseback Riding Lessons | Diamond Springs Ranch | Sedgwick, KS',
-    description: 'Horseback riding lessons near Wichita at Diamond Springs Ranch. Private and group lessons for all ages using Clinton Anderson\'s proven method. Call (316) 303-6195.',
+    description: 'Horseback riding lessons near Wichita at Diamond Springs Ranch. Private and group lessons for all ages using Clinton Anderson\'s proven method..',
     canonical: 'https://diamondspringsranch.com/riding-lessons/',
     hero: makeHero(
       'Diamond Springs Ranch &bull; Sedgwick, Kansas',

@@ -384,10 +384,10 @@ function buildCta() {
   <div class="dsr-cta-inner">
     <span class="overline">Diamond Springs Ranch</span>
     <h2>Ready to experience the ranch?</h2>
-    <p>All activities are by reservation. Call or book online &mdash; we\'d love to have you out.</p>
+    <p>All activities are by reservation. Book online &mdash; we\'d love to have you out.</p>
     <div class="dsr-cta-btns">
       <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold">Book Online</a>
-      <a href="tel:${CLIENT.phoneRaw}" class="btn btn-light">${CLIENT.phone}</a>
+      <a href="/contact/" class="btn btn-light">Contact Us</a>
     </div>
   </div>
 </section>`;
@@ -1018,7 +1018,7 @@ ${CTA}`;
 function buildContactPage() {
   const meta = buildPageMeta({
     title: `Contact ${CLIENT.name} | Book a Ranch Experience | ${CLIENT.primaryCity}, ${CLIENT.state}`,
-    description: `Book your experience at ${CLIENT.name}. Call ${CLIENT.phone} or fill out our form. Horseback rides, treehouse stays, private events � all by reservation.`,
+    description: `Book your experience at ${CLIENT.name}. Fill out our form or book online. Horseback rides, treehouse stays, private events � all by reservation.`,
     canonical: '/contact/',
   });
   const body = `
@@ -1031,10 +1031,10 @@ function buildContactPage() {
       <span class="overline">Sedgwick, Kansas &bull; 15 Minutes from Wichita</span>
     </div>
     <h1>Come <em>visit</em> the ranch.</h1>
-    <p class="v2-hero-sub">All activities are by reservation. Call or book online &mdash; we'd love to have you out.</p>
+    <p class="v2-hero-sub">All activities are by reservation. Book online &mdash; we'd love to have you out.</p>
     <div class="v2-hero-btns">
       <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold">Book a Visit</a>
-      <a href="tel:${CLIENT.phoneRaw}" class="btn btn-light">Call Us</a>
+      <a href="/contact/" class="btn btn-light">Contact Us</a>
     </div>
   </div>
   <div class="v2-hero-scroll-hint"><span>Scroll</span><div class="v2-scroll-line"></div></div>
@@ -1366,9 +1366,9 @@ ${citySchema}
       <div>
         <div class="dsr-sidebar-card">
           <h3>Book a Ranch Experience</h3>
-          <p>All activities by reservation. Call or book online.</p>
+          <p>All activities by reservation. Book online.</p>
           <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="btn btn-gold" style="display:block;text-align:center;margin-bottom:16px;">Book Online &rarr;</a>
-          <a href="tel:${CLIENT.phoneRaw}" class="btn btn-light" style="display:block;text-align:center;">${CLIENT.phone}</a>
+          <a href="/contact/" class="btn btn-light" style="display:block;text-align:center;">Contact Us</a>
         </div>
       </div>
     </div>
