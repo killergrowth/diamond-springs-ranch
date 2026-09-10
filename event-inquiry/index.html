@@ -19,11 +19,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
-<link rel="stylesheet" href="/v2.css">
-<link rel="stylesheet" href="/assets/css/kg-forms.css">
+<link rel="stylesheet" href="/v2.css?v=mtvvb9i4">
 <style>
   body { background: var(--cream); }
-  .v2-nav { background: rgba(26,21,16,0.97); padding: 14px 56px; }
+  .v2-nav { background: transparent; padding: 14px 56px; }
+  .v2-nav.scrolled { background: rgba(26,21,16,0.97); }
   @media (max-width: 900px) { .v2-nav { padding: 12px 24px; } }
 
   /* Page hero */
@@ -151,64 +151,108 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="v2-nav" id="v2-nav">
-  <a href="/" class="v2-logo">
-    <img src="/images/logo-white.png" alt="Diamond Springs Ranch" class="v2-logo-img">
-    <span class="v2-logo-text">DIAMOND SPRINGS RANCH</span>
+  <a href="/" class="v2-nav-logo">
+    <img src="/images/logo-white.png" alt="Diamond Springs Ranch">
+    <span class="v2-nav-logo-text">Diamond Springs Ranch</span>
   </a>
-  <div class="v2-nav-links">
-    <div class="v2-dropdown">
-      <button class="v2-dropdown-btn">EXPERIENCES <span class="v2-caret">&#9660;</span></button>
-      <div class="v2-dropdown-menu">
-        <a href="/guided-horseback-rides/">Guided Horseback Rides</a>
-        <a href="/dinner-date-experience/">Dinner Date Experience</a>
-        <a href="/highland-cattle-experience/">Highland Cattle</a>
-        <a href="/riding-lessons/">Riding Lessons</a>
-        <a href="/horse-day-camp/">Horse Day Camp</a>
-        <a href="/private-events/">Private Events &amp; Rentals</a>
-      </div>
-    </div>
-    <div class="v2-dropdown">
-      <button class="v2-dropdown-btn">STAY <span class="v2-caret">&#9660;</span></button>
-      <div class="v2-dropdown-menu">
-        <a href="/luxury-treehouse-stay/">Sunset Reset Treehouse</a>
-        <a href="/covered-wagon-stay/">Sunset Schooner</a>
-      </div>
-    </div>
-    <a href="/about/">OUR STORY</a>
-    <div class="v2-dropdown">
-      <button class="v2-dropdown-btn">VISIT <span class="v2-caret">&#9660;</span></button>
-      <div class="v2-dropdown-menu">
-        <a href="/contact/">Visit / Contact</a>
-        <a href="/faq/">FAQ</a>
-      </div>
-    </div>
-  </div>
-  <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" class="v2-book-btn" target="_blank" rel="noopener">BOOK A VISIT</a>
-  <button class="v2-hamburger" id="v2-hamburger" aria-label="Open menu">
+  <ul class="v2-nav-links">
+    <li class="v2-nav-has-drop">
+      <a href="/services/">Experiences <span class="v2-nav-caret"></span></a>
+      <ul class="v2-nav-drop"><li><a href="/guided-horseback-rides/">Guided Horseback Rides</a></li><li><a href="/highland-cattle-experience/">Highland Cattle Experience</a></li><li><a href="/luxury-treehouse-stay/">Luxury Treehouse Stay</a></li><li><a href="/covered-wagon-stay/">Covered Wagon Stay</a></li><li><a href="/private-events/">Private Events &amp; Rentals</a></li><li><a href="/dinner-date-experience/">Dinner Date Experience</a></li><li><a href="/riding-lessons/">Horseback Riding Lessons</a></li><li><a href="/horse-day-camp/">Horse Day Camp</a></li></ul>
+    </li>
+    <li class="v2-nav-has-drop">
+      <a href="/#lodging">Stay <span class="v2-nav-caret"></span></a>
+      <ul class="v2-nav-drop">
+        <li><a href="/luxury-treehouse-stay/">Sunset Reset Treehouse</a></li>
+        <li><a href="/covered-wagon-stay/">Sunset Schooner</a></li>
+      </ul>
+    </li>
+    <li><a href="/about/">Our Story</a></li>
+    <li class="v2-nav-has-drop">
+      <a href="/contact/">Visit <span class="v2-nav-caret"></span></a>
+      <ul class="v2-nav-drop">
+        <li><a href="/contact/">Contact &amp; Directions</a></li>
+      </ul>
+    </li>
+  </ul>
+  <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" onclick="return !(window.FH && FH.open({ shortname: 'diamondspringsranch', fallback: 'simple', fullItems: 'yes', view: 'items' }));" class="v2-nav-book">Book a Visit</a>
+  <button class="v2-hamburger" id="v2-hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- MOBILE NAV -->
-<div class="v2-mobile-nav" id="v2-mobile-nav">
-  <button class="v2-mobile-close" id="v2-mobile-close">&#10005;</button>
-  <div class="v2-mobile-links">
-    <a href="/guided-horseback-rides/">Guided Horseback Rides</a>
-    <a href="/dinner-date-experience/">Dinner Date Experience</a>
-    <a href="/highland-cattle-experience/">Highland Cattle</a>
-    <a href="/riding-lessons/">Riding Lessons</a>
-    <a href="/horse-day-camp/">Horse Day Camp</a>
-    <a href="/private-events/">Private Events &amp; Rentals</a>
-    <a href="/luxury-treehouse-stay/">Sunset Reset Treehouse</a>
-    <a href="/covered-wagon-stay/">Sunset Schooner</a>
-    <a href="/about/">Our Story</a>
-    <a href="/contact/">Visit / Contact</a>
-    <a href="/faq/">FAQ</a>
-    <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" class="v2-mobile-book" target="_blank" rel="noopener">Book a Visit</a>
+<!-- Mobile drawer -->
+<div class="v2-mobile-overlay" id="v2-mobile-overlay"></div>
+<nav class="v2-mobile-nav" id="v2-mobile-nav" aria-label="Mobile navigation">
+  <button class="v2-mobile-close" id="v2-mobile-close" aria-label="Close menu">&times;</button>
+  <a href="/">Home</a>
+  <div class="v2-mobile-section">
+    <button class="v2-mobile-toggle" aria-expanded="false">Experiences <span class="v2-mobile-caret">+</span></button>
+    <div class="v2-mobile-group">
+      <a href="/services/">All Experiences</a>
+      <a href="/guided-horseback-rides/">Guided Horseback Rides</a><a href="/highland-cattle-experience/">Highland Cattle Experience</a><a href="/luxury-treehouse-stay/">Luxury Treehouse Stay</a><a href="/covered-wagon-stay/">Covered Wagon Stay</a><a href="/private-events/">Private Events &amp; Rentals</a><a href="/dinner-date-experience/">Dinner Date Experience</a><a href="/riding-lessons/">Horseback Riding Lessons</a><a href="/horse-day-camp/">Horse Day Camp</a>
+    </div>
   </div>
-</div>
+  <div class="v2-mobile-section">
+    <button class="v2-mobile-toggle" aria-expanded="false">Stay <span class="v2-mobile-caret">+</span></button>
+    <div class="v2-mobile-group">
+      <a href="/luxury-treehouse-stay/">Sunset Reset Treehouse</a>
+      <a href="/covered-wagon-stay/">Sunset Schooner</a>
+    </div>
+  </div>
+  <a href="/about/">Our Story</a>
+  <a href="/contact/">Visit / Contact</a>
+  <a href="https://fareharbor.com/embeds/book/diamondspringsranch/?full-items=yes" class="v2-mobile-book">Book a Visit</a>
+</nav>
+
+<script>
+  (function(){
+    const nav = document.getElementById('v2-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    const hamburger  = document.getElementById('v2-hamburger');
+    const mobileNav  = document.getElementById('v2-mobile-nav');
+    const overlay    = document.getElementById('v2-mobile-overlay');
+    const closeBtn   = document.getElementById('v2-mobile-close');
+
+    function openMenu() {
+      mobileNav.classList.add('open');
+      overlay.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      mobileNav.classList.remove('open');
+      overlay.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    if (hamburger) hamburger.addEventListener('click', openMenu);
+    if (closeBtn)  closeBtn.addEventListener('click', closeMenu);
+    if (overlay)   overlay.addEventListener('click', closeMenu);
+
+    document.querySelectorAll('.v2-mobile-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const group  = btn.nextElementSibling;
+        const caret  = btn.querySelector('.v2-mobile-caret');
+        const isOpen = group.classList.contains('open');
+        document.querySelectorAll('.v2-mobile-group').forEach(function(g) { g.classList.remove('open'); });
+        document.querySelectorAll('.v2-mobile-caret').forEach(function(c) { c.textContent = '+'; });
+        document.querySelectorAll('.v2-mobile-toggle').forEach(function(b) { b.setAttribute('aria-expanded','false'); });
+        if (!isOpen) {
+          group.classList.add('open');
+          if (caret) caret.textContent = '\u2212';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  })();
+</script>
 
 <!-- HERO -->
 <section class="ei-hero">
