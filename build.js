@@ -430,15 +430,9 @@ function formHtml(formId, serviceSlug) {
     <p class="dsr-form-subtitle">We'll be in touch as quick as we can.</p>
   </div>
   <form id="${formId}" class="dsr-form" method="POST" action="/submit" novalidate>
-    <div class="dsr-form-row">
-      <div class="dsr-form-group">
-        <label for="${formId}-name">Name <span class="dsr-required">*</span></label>
-        <input type="text" id="${formId}-name" name="name" placeholder="Your full name" required autocomplete="name">
-      </div>
-      <div class="dsr-form-group">
-        <label for="${formId}-phone">Phone Number <span class="dsr-required">*</span></label>
-        <input type="tel" id="${formId}-phone" name="phone" placeholder="(316) 555-5555" required autocomplete="tel">
-      </div>
+    <div class="dsr-form-group">
+      <label for="${formId}-name">Name <span class="dsr-required">*</span></label>
+      <input type="text" id="${formId}-name" name="name" placeholder="Your full name" required autocomplete="name">
     </div>
     <div class="dsr-form-group">
       <label for="${formId}-email">Email Address <span class="dsr-required">*</span></label>
