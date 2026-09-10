@@ -279,6 +279,7 @@ const SERVICES = [
   },
   {
     slug:       'rusty-saddle-bar',
+    hideFromNav: true,
     hideFromDropdown: true,
     heroBg:     '/images/photo-rusty-saddle-bar-new.jpg',
     heroHeading: 'The Rusty Saddle Bar. <em>Your ranch watering hole.</em>',

@@ -200,7 +200,7 @@ function buildBaseHead() {
 
 function buildHeader() {
   // V2 nav � matches homepage exactly
-  const svcDropItems = SERVICES.map(s =>
+  const svcDropItems = SERVICES.filter(s => !s.hideFromNav).map(s =>
     `<li><a href="/${s.slug}/">${s.name}</a></li>`
   ).join('');
   const cityDropItems = CITIES.map(c =>
