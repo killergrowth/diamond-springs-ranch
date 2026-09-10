@@ -345,7 +345,6 @@ function buildFooter() {
       <div class="v2-footer-col">
         <h4>Contact</h4>
         <div class="v2-footer-contact-item"><span>&#128205;</span><span><a href="https://maps.google.com/?q=1734+SE+96th+St,+Sedgwick,+KS+67135" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">${CLIENT.address}</a></span></div>
-        <div class="v2-footer-contact-item"><span>&#128222;</span><span><a href="tel:${CLIENT.phoneRaw}">${CLIENT.phone}</a></span></div>
         <div class="v2-footer-contact-item"><span>&#9993;</span><span><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></span></div>
         <div class="v2-footer-contact-item"><span>&#128336;</span><span>${CLIENT.hours}</span></div>
       </div>
@@ -1045,7 +1044,6 @@ function buildContactPage() {
         <div class="dsr-sidebar-card">
           <h3>Get in Touch</h3>
           <ul class="dsr-sidebar-contact" style="list-style:none;padding:0;">
-            <li><span>&#128222;</span><div><strong style="display:block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;">Phone</strong><a href="tel:${CLIENT.phoneRaw}" style="color:rgba(255,255,255,0.8);">${CLIENT.phone}</a></div></li>
             <li><span>&#9993;</span><div><strong style="display:block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;">Email</strong><a href="mailto:${CLIENT.email}" style="color:rgba(255,255,255,0.8);">${CLIENT.email}</a></div></li>
             <li><span>&#128205;</span><div><strong style="display:block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;">Address</strong><a href="https://maps.google.com/?q=1734+SE+96th+St,+Sedgwick,+KS+67135" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.8);text-decoration:underline;">${CLIENT.address}</a></div></li>
             <li><span>&#128336;</span><div><strong style="display:block;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;">Hours</strong><span style="color:rgba(255,255,255,0.8);">${CLIENT.hours}</span></div></li>
