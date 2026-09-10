@@ -1253,8 +1253,8 @@ function buildServicePage(svc) {
 
   const bookingSidebar = svc.lodging ? `
     <h3>Reserve Your Stay</h3>
-    <p>Check availability and book your overnight at Diamond Springs Ranch.</p>
-    <a href="${svc.lodgifyUrl}" target="_blank" rel="noopener" class="btn btn-gold" style="display:block;text-align:center;margin-bottom:12px;">Check Availability &rarr;</a>
+    <p>Book your overnight at Diamond Springs Ranch.</p>
+    <a href="${svc.lodgifyUrl}" target="_blank" rel="noopener" class="btn btn-gold" style="display:block;text-align:center;margin-bottom:12px;">Book Online &rarr;</a>
     <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);text-align:center;">Secure booking powered by FareHarbor.</p>` : `
     <h3>Plan Your Event Now</h3>
     <p>${svc.slug === 'private-events' ? 'Give us the details of the event you\'re planning.' : `Questions about ${svc.name.toLowerCase()}? We\'ll get you scheduled.`}</p>
