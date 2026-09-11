@@ -1,15 +1,15 @@
-/**
- * Cloudflare Pages Function — /submit-event
- * Diamond Springs Ranch — Event Inquiry Form
+﻿/**
+ * Cloudflare Pages Function â€” /submit-event
+ * Diamond Springs Ranch â€” Event Inquiry Form
  *
  * Required CF env vars (same as submit.js):
- *   GMAIL_SERVICE_EMAIL  — Service account email
- *   GMAIL_PRIVATE_KEY    — Service account private key (literal \n for newlines)
- *   GMAIL_FROM           — Impersonated sender
- *   GMAIL_TO             — Lead notification recipient
+ *   GMAIL_SERVICE_EMAIL  â€” Service account email
+ *   GMAIL_PRIVATE_KEY    â€” Service account private key (literal \n for newlines)
+ *   GMAIL_FROM           â€” Impersonated sender
+ *   GMAIL_TO             â€” Lead notification recipient
  */
 
-// ── JWT / Gmail helpers ──────────────────────────────────────────────────────
+// â”€â”€ JWT / Gmail helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function objToB64url(obj) {
   const json = JSON.stringify(obj);
@@ -59,7 +59,7 @@ async function getGmailAccessToken(serviceEmail, privateKeyPem, impersonateEmail
   return data.access_token;
 }
 
-// ── Email builder ────────────────────────────────────────────────────────────
+// â”€â”€ Email builder â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function row(label, value, alt) {
   const bg = alt ? 'background:#f5f5f5;' : '';
@@ -80,7 +80,7 @@ function buildHtmlEmail(fields) {
   } = fields;
 
   const typeDisplay = event_type === 'Other' && event_type_other
-    ? `Other — ${event_type_other}`
+    ? `Other â€” ${event_type_other}`
     : (event_type || 'Not specified');
 
   return `<!DOCTYPE html>
@@ -133,7 +133,7 @@ function buildHtmlEmail(fields) {
 </html>`;
 }
 
-// ── Handler ──────────────────────────────────────────────────────────────────
+// â”€â”€ Handler â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const JSON_HEADERS = {
   'Content-Type': 'application/json',
@@ -143,6 +143,17 @@ const JSON_HEADERS = {
 export async function onRequestPost({ request, env }) {
   try {
     const form = await request.formData();
+
+    // Turnstile validation
+    const turnstileToken = form.get('cf-turnstile-response') || '';
+    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `secret=${encodeURIComponent(env.TURNSTILE_SECRET)}&response=${encodeURIComponent(turnstileToken)}`,
+    });
+    const verifyData = await verifyRes.json();
+    if (!verifyData.success) return new Response(JSON.stringify({ ok: false, error: 'Bot check failed.' }), { status: 400, headers: JSON_HEADERS });
+
 
     const fields = {
       name:              form.get('name')             || '(no name)',
@@ -167,7 +178,7 @@ export async function onRequestPost({ request, env }) {
     );
 
     const eventLabel = fields.event_type ? ` (${fields.event_type})` : '';
-    const subject = `New Event Inquiry — Diamond Springs Ranch${eventLabel}`;
+    const subject = `New Event Inquiry â€” Diamond Springs Ranch${eventLabel}`;
     const htmlBody = buildHtmlEmail(fields);
 
     const mimeLines = [

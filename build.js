@@ -1472,9 +1472,10 @@ function copyAssets() {
       fs.statSync(s).isDirectory() ? copyDir(s, d) : fs.copyFileSync(s, d);
     });
   };
-  copyDir(path.join(__dirname, 'assets'),     path.join(DIST, 'assets'));
-  copyDir(path.join(__dirname, 'images'),      path.join(DIST, 'images'));
-  copyDir(path.join(__dirname, 'v2'),          path.join(DIST, 'v2'));
+  copyDir(path.join(__dirname, 'assets'),        path.join(DIST, 'assets'));
+  copyDir(path.join(__dirname, 'images'),         path.join(DIST, 'images'));
+  copyDir(path.join(__dirname, 'v2'),             path.join(DIST, 'v2'));
+  copyDir(path.join(__dirname, 'event-inquiry'),  path.join(DIST, 'event-inquiry'));
   // v2.css lives at root, copy to dist root for homepage
   const v2cssSrc = path.join(__dirname, 'v2.css');
   if (fs.existsSync(v2cssSrc)) fs.copyFileSync(v2cssSrc, path.join(DIST, 'v2.css'));

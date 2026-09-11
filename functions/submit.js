@@ -1,22 +1,22 @@
-/**
- * Cloudflare Pages Function — /submit
+﻿/**
+ * Cloudflare Pages Function â€” /submit
  * KillerGrowth PKG002 Template v1.0
  *
  * Returns JSON { ok: true } or { ok: false, error: string }
  * Sends branded HTML email via Gmail API (service account JWT auth).
  *
- * Required Cloudflare env vars (set in Pages → Settings → Environment Variables):
- *   TURNSTILE_SECRET     — Cloudflare Turnstile secret key
- *   GMAIL_SERVICE_EMAIL  — Service account email (openclaw-agent@killergrowth.iam.gserviceaccount.com)
- *   GMAIL_PRIVATE_KEY    — Service account private key (literal \n for newlines)
- *   GMAIL_FROM           — Impersonated sender (brickley@killergrowth.com)
- *   GMAIL_TO             — Lead notification recipient
- *   NOTIFY_EMAIL_CLIENT  — Optional: also CC the client
+ * Required Cloudflare env vars (set in Pages â†’ Settings â†’ Environment Variables):
+ *   TURNSTILE_SECRET     â€” Cloudflare Turnstile secret key
+ *   GMAIL_SERVICE_EMAIL  â€” Service account email (openclaw-agent@killergrowth.iam.gserviceaccount.com)
+ *   GMAIL_PRIVATE_KEY    â€” Service account private key (literal \n for newlines)
+ *   GMAIL_FROM           â€” Impersonated sender (brickley@killergrowth.com)
+ *   GMAIL_TO             â€” Lead notification recipient
+ *   NOTIFY_EMAIL_CLIENT  â€” Optional: also CC the client
  *
  * Replace CLIENT_NAME, CLIENT_ADDRESS, CLIENT_PHONE below when scaffolding.
  */
 
-// ── JWT / Gmail helpers ──────────────────────────────────────────────────────
+// â”€â”€ JWT / Gmail helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function objToB64url(obj) {
   const json = JSON.stringify(obj);
@@ -66,7 +66,7 @@ async function getGmailAccessToken(serviceEmail, privateKeyPem, impersonateEmail
   return data.access_token;
 }
 
-// ── Email builder ────────────────────────────────────────────────────────────
+// â”€â”€ Email builder â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function buildHtmlEmail(fields, clientName, clientAddress, clientPhone, primaryColor, secondaryColor) {
   const { name, email, phone, city, service, message } = fields;
@@ -103,7 +103,7 @@ function buildHtmlEmail(fields, clientName, clientAddress, clientPhone, primaryC
 </html>`;
 }
 
-// ── Handler ──────────────────────────────────────────────────────────────────
+// â”€â”€ Handler â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const JSON_HEADERS = {
   'Content-Type': 'application/json',
@@ -125,8 +125,15 @@ export async function onRequestPost({ request, env }) {
     const city    = form.get('city')    || '';
     const service = form.get('service') || '';
     const message = form.get('message') || '';
-
-    // Turnstile skipped during testing — add back when going live
+    // Turnstile validation
+    const turnstileToken = form.get('cf-turnstile-response') || '';
+    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `secret=${encodeURIComponent(env.TURNSTILE_SECRET)}&response=${encodeURIComponent(turnstileToken)}`,
+    });
+    const verifyData = await verifyRes.json();
+    if (!verifyData.success) return new Response(JSON.stringify({ ok: false, error: 'Bot check failed.' }), { status: 400, headers: JSON_HEADERS });
 
     const accessToken = await getGmailAccessToken(
       env.GMAIL_SERVICE_EMAIL,

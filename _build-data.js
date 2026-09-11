@@ -1,11 +1,11 @@
-'use strict';
+﻿'use strict';
 /**
- * _build-data.js � Diamond Springs Ranch
+ * _build-data.js ï¿½ Diamond Springs Ranch
  * Built by Norris Jr | 2026-07-15
  * Voice rewrite by Claudia | 2026-08-24
  *
  * Diamond Springs Ranch is a working Western experience ranch
- * at 1734 SE 96th St, Sedgwick KS 67135 � 15 minutes north of Wichita.
+ * at 1734 SE 96th St, Sedgwick KS 67135 ï¿½ 15 minutes north of Wichita.
  * Guests come for guided horseback rides, Highland cattle encounters,
  * luxury treehouse and covered wagon overnight stays, and private events.
  */
@@ -37,7 +37,7 @@ const CLIENT = {
   fontUrl:         'https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap',
   ctaHeading:      'Come out to the ranch.',
   ctaSubtext:      'Everything is by reservation. <a href="/contact/">Contact us</a> or <a href="https://fareharbor.com/embeds/book/diamondspringsranch/items/?full-items=yes" target="_blank">book now</a> &mdash; we&rsquo;d love to have you out here.',
-  turnstileSiteKey:'1x00000000000000000000AA', // CF test key � swap for real widget when live
+  turnstileSiteKey:'0x4AAAAAAD2FjYOFOKcm258-', // CF test key ï¿½ swap for real widget when live
   social:          [],
 
   // Build.js required fields
@@ -70,18 +70,18 @@ const CLIENT = {
   ],
 };
 
-// ��������������������������������������������������������������
-// REVIEWS � fetched via fetch-reviews.js from Google Maps link
-// ��������������������������������������������������������������
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// REVIEWS ï¿½ fetched via fetch-reviews.js from Google Maps link
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 let REVIEWS = [];
 try {
   const _rv = require('./data/reviews.json');
   if (_rv.reviews && _rv.reviews.length > 0) REVIEWS = _rv.reviews;
 } catch(e) {}
 
-// ��������������������������������������������������������������
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 // DIFFERENTIATORS
-// ��������������������������������������������������������������
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 const DIFFERENTIATORS = [
   {
     heading: 'We&rsquo;re not selling rides. We&rsquo;re selling what you take home.',
@@ -101,9 +101,9 @@ const DIFFERENTIATORS = [
   },
 ];
 
-// ��������������������������������������������������������������
-// SERVICES � Experience categories for Diamond Springs Ranch
-// ��������������������������������������������������������������
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// SERVICES ï¿½ Experience categories for Diamond Springs Ranch
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 const SERVICES = [
   {
     slug:       'guided-horseback-rides',
@@ -297,9 +297,9 @@ const SERVICES = [
   },
 ];
 
-// ��������������������������������������������������������������
-// CITIES � Wichita metro and surrounding areas that send guests
-// ��������������������������������������������������������������
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// CITIES ï¿½ Wichita metro and surrounding areas that send guests
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 const CITIES = [
   {
     slug:        'wichita-ks',
@@ -403,9 +403,9 @@ const CITIES = [
   },
 ];
 
-// ��������������������������������������������������������������
-// SERVICE FAQS � general FAQs for the homepage / about page
-// ��������������������������������������������������������������
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// SERVICE FAQS ï¿½ general FAQs for the homepage / about page
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 const SERVICE_FAQS = [
   { q: 'Where is Diamond Springs Ranch?', a: 'At 1734 SE 96th St, Sedgwick, KS 67135 &mdash; about 15 minutes north of Wichita on US-81. Most Wichita addresses reach us in 25 minutes.' },
   { q: 'Do I need a reservation?', a: 'Yes &mdash; everything is by reservation. We don&rsquo;t do walk-ins. <a href="/contact/">Contact us</a> or <a href="https://fareharbor.com/embeds/book/diamondspringsranch/items/?full-items=yes" target="_blank">book now online</a>.' },
