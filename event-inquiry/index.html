@@ -188,7 +188,35 @@
   /* Checkbox group */
   .dsr-check-grid { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 6px; }
   .dsr-check-label { display: flex; align-items: center; gap: 8px; font-weight: 400; font-size: 0.9rem; color: #333; cursor: pointer; font-family: var(--font-sans); }
-  .dsr-check-label input[type=checkbox] { accent-color: var(--gold); width: 16px; height: 16px; cursor: pointer; flex-shrink: 0; }
+  .dsr-check-label input[type=checkbox] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #aaa;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .dsr-check-label input[type=checkbox]:checked {
+    background: #111;
+    border-color: #111;
+  }
+  .dsr-check-label input[type=checkbox]:checked::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 8px;
+    height: 13px;
+    border: 3px solid #fff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
 
   /* Info strip below card */
   .ei-info-strip {
