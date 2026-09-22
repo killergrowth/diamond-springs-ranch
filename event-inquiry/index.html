@@ -397,13 +397,17 @@
           </div>
           <div class="dsr-form-row">
             <div class="dsr-form-group">
-              <label for="ei-email">Email Address</label>
-              <input type="email" id="ei-email" name="email" autocomplete="email" placeholder="your@email.com">
+              <label for="ei-email">Email Address <span style="color:#c0392b">*</span></label>
+              <input type="email" id="ei-email" name="email" required autocomplete="email" placeholder="your@email.com">
             </div>
             <div class="dsr-form-group">
-              <label for="ei-city">City / Where You're From</label>
-              <input type="text" id="ei-city" name="city" autocomplete="address-level2" placeholder="Wichita, KS">
+              <label for="ei-phone">Phone Number <span style="color:#c0392b">*</span></label>
+              <input type="tel" id="ei-phone" name="phone" required autocomplete="tel" placeholder="(316) 555-0100">
             </div>
+          </div>
+          <div class="dsr-form-group">
+            <label for="ei-city">City / Where You're From</label>
+            <input type="text" id="ei-city" name="city" autocomplete="address-level2" placeholder="Wichita, KS">
           </div>
 
           <!-- Event Profile -->
@@ -582,6 +586,11 @@
     }
   })();
 
+  // Clear stale error on any field interaction
+  document.getElementById('ei-form').addEventListener('input', function() {
+    document.getElementById('ei-error').style.display = 'none';
+  });
+
   // Show/hide "If Other" field
   document.getElementById('ei-event-type').addEventListener('change', function() {
     document.getElementById('ei-other-wrap').style.display = this.value === 'Other' ? '' : 'none';
@@ -596,14 +605,17 @@
     btn.textContent = 'Sending\u2026';
     errEl.style.display = 'none';
 
-    // Collect checkboxes
-    const experiences = Array.from(document.querySelectorAll('input[name="experiences"]:checked'))
-      .map(cb => cb.value).join(', ');
+    // Collect checkboxes — use .checked property directly (works regardless of CSS override)
+    const checkedBoxes = [];
+    document.querySelectorAll('input[name="experiences"]').forEach(function(cb) {
+      if (cb.checked) checkedBoxes.push(cb.value);
+    });
+    const experiences = checkedBoxes.join(', ');
 
     const formData = new FormData(this);
-    // Remove individual checkbox entries; replace with combined string
+    // Remove individual checkbox entries; replace with single combined string
     formData.delete('experiences');
-    if (experiences) formData.set('experiences', experiences);
+    formData.set('experiences', experiences || '');
 
     try {
       const res = await fetch('/submit-event', { method: 'POST', body: formData });

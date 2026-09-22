@@ -113,7 +113,7 @@ function buildHtmlEmail(fields) {
             ${row('Flexible Dates?', dates_flexible || 'Not specified', false)}
             ${row('Est. Attendees', attendees || 'Not specified', true)}
             ${row('Duration', duration || 'Not specified', false)}
-            ${row('Experiences', experiences || 'Not specified', true)}
+            ${row('Experiences', experiences || 'None selected', true)}
           </table>
 
           ${message ? `

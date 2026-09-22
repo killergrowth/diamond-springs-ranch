@@ -215,7 +215,7 @@ function buildHeader() {
   <ul class="v2-nav-links">
     <li class="v2-nav-has-drop">
       <a href="/services/">Experiences <span class="v2-nav-caret"></span></a>
-      <ul class="v2-nav-drop">${svcDropItems}</ul>
+      <ul class="v2-nav-drop">${svcDropItems}<li><a href="/luxury-treehouse-stay/">Sunset Reset Treehouse</a></li><li><a href="/covered-wagon-stay/">Sunset Schooner</a></li></ul>
     </li>
     <li class="v2-nav-has-drop">
       <a href="/#lodging">Stay <span class="v2-nav-caret"></span></a>
@@ -248,6 +248,8 @@ function buildHeader() {
     <div class="v2-mobile-group">
       <a href="/services/">All Experiences</a>
       ${SERVICES.map(s => `<a href="/${s.slug}/">${s.name}</a>`).join('')}
+      <a href="/luxury-treehouse-stay/">Sunset Reset Treehouse</a>
+      <a href="/covered-wagon-stay/">Sunset Schooner</a>
     </div>
   </div>
   <div class="v2-mobile-section">
