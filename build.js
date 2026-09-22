@@ -1101,7 +1101,7 @@ function buildAboutPage() {
   </div>
 </section>
 <section class="dsr-section-alt" style="padding:0;">
-  <img src="/images/DSC09289.jpeg" alt="The Schrag family at Diamond Springs Ranch" style="width:100%;display:block;max-height:600px;object-fit:cover;object-position:center 70%;">
+  <img src="/images/DSC09289.jpeg" alt="The Schrag family at Diamond Springs Ranch" style="width:100%;display:block;max-height:420px;object-fit:cover;object-position:center 65%;">
 </section>
 ${buildV2Reviews(0)}
 ${CTA}`;
