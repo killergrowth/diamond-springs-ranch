@@ -18,6 +18,7 @@ jobs:
         run: node scripts/fetch-reviews.js
         env:
           GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
       - name: Commit updated reviews
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
